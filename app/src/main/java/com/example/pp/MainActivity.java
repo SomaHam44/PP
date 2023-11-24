@@ -36,17 +36,19 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_fooldal:
-                loadFragmentAndAddToBackStack(new FooldalFragment(), "home");
+                loadFragmentAndAddToBackStack(FooldalFragment.newInstance(profileName), "home");
+                //loadFragmentAndAddToBackStack(new FooldalFragment(), "home");
 
                 //showMessage("Főoldal");
                 return true;
             case R.id.action_profil:
-                loadFragmentAndAddToBackStack(new ProfilFragment(), "profil");
+                loadFragmentAndAddToBackStack(ProfilFragment.newInstance(profileName), "home");
+                //loadFragmentAndAddToBackStack(new ProfilFragment(), "profil");
 
                 //showMessage("Profil");
                 return true;
             case R.id.action_beallitasok:
-                //showMessage("Beállítások");
+                showMessage("Beállítások");
                 return true;
         }
         return true;

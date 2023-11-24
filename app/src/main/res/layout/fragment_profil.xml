@@ -10,10 +10,12 @@
         android:id="@+id/profileTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="Profil szerkesztése"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/profileImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,12 +24,13 @@
         android:id="@+id/profileImageView"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:src="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileTextView"
         app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/profileEditText"
         android:layout_width="0dp"
@@ -36,6 +39,7 @@
         android:ems="10"
         android:hint="Név"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/profileImageView"
         app:layout_constraintStart_toStartOf="@+id/profileImageView"
         app:layout_constraintTop_toBottomOf="@+id/profileImageView" />
