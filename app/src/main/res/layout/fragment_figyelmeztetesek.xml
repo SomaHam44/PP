@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FigyelmeztetesekFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/figyelmeztetesek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Figyelmeztetések"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="106dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/figyelmeztetesekLista"
+        android:layout_width="328dp"
+        android:layout_height="293dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/figyelmeztetesek"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="@+id/figyelmeztetesek"
+        app:layout_constraintTop_toBottomOf="@+id/figyelmeztetesek" />
+
+    <Button
+        android:id="@+id/btnFigyelmeztetesekVissza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Vissza"
+        app:layout_constraintStart_toStartOf="@+id/figyelmeztetesekLista"
+        app:layout_constraintTop_toBottomOf="@+id/figyelmeztetesekLista" />
+
+    <Button
+        android:id="@+id/btnGyogyszertarKeresohoz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gyógyszertár keresése"
+        app:layout_constraintBottom_toBottomOf="@+id/btnVissza"
+        app:layout_constraintEnd_toEndOf="@+id/figyelmeztetesekLista"
+        app:layout_constraintTop_toTopOf="@+id/btnFigyelmeztetesekVissza"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
