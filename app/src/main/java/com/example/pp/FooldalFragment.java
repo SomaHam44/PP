@@ -44,11 +44,9 @@ public class FooldalFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_fooldal, container,
                 false);
-        TextView profileNameTextView =
-                rootView.findViewById(R.id.profileNameTextView);
-        if(mName != null) {
-            profileNameTextView.setText(mName);
-        }
+
+
+
         return rootView;
     }
 }

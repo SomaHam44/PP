@@ -36,15 +36,36 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_fooldal:
                 loadFragment(FooldalFragment.newInstance(), "fooldal");
-                //showMessage("Főoldal");
+                showMessage("Főoldal");
                 return true;
             case R.id.action_beallitasok:
                 loadFragment(BeallitasokFragment.newInstance(), "beallitasok");
-                //showMessage("Profil");
-                return true;
-            case R.id.action_gyogyszereim:
                 showMessage("Beállítások");
                 return true;
+            case R.id.action_gyogyszereim:
+                loadFragment(GyogyszereimFragment.newInstance(), "gyogyszereim");
+                showMessage("Gyógyszereim");
+                return true;
+            case R.id.action_figyelmeztetesek:
+                loadFragment(FigyelmeztetesekFragment.newInstance(), "figyelmeztetesek");
+                showMessage("Figyelmeztetések");
+                return true;
+            case R.id.action_vasarlasRogzitese:
+                loadFragment(VasarlasRogziteseFragment.newInstance(), "vasarlasRogzitese");
+                showMessage("Vásárlás rögzítése");
+                return true;
+            case R.id.action_gyogyszerHozzaad:
+                loadFragment(GyogyszerHozzaadasaFragment.newInstance(), "gyogyszerHozzaad");
+                showMessage("Gyógyszer hozzáadása");
+                return true;
+            case R.id.action_gyogyszertarKeres:
+                loadFragment(GyogyszertarKeresFragment.newInstance(), "gyogyszertarKeres");
+                showMessage("Gyógyszertár keresése");
+                return true;
+
+
+
+
         }
         return true;
     }
