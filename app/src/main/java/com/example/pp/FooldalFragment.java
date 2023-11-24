@@ -15,29 +15,13 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class FooldalFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     private static final String NAME_PARAM = "name";
     private String mName;
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public FooldalFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment FooldalFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static FooldalFragment newInstance(String name) {
         FooldalFragment fragment = new FooldalFragment();
         Bundle args = new Bundle();

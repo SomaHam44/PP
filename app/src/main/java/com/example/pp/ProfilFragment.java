@@ -16,14 +16,7 @@ import android.widget.EditText;
  * create an instance of this fragment.
  */
 public class ProfilFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String NAME_PARAM = "name";
-    //private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    //private String mParam1;
     private String mName;
 
     public ProfilFragment() {

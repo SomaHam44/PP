@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar foToolbar = findViewById(R.id.fo_toolbar);
         setSupportActionBar(foToolbar);
 
-        loadFragmentAndAddToBackStack(new FooldalFragment(), "home");
+        loadFragment(new FooldalFragment(), "fooldal");
+
     }
 
     @Override
@@ -36,15 +37,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_fooldal:
-                loadFragmentAndAddToBackStack(FooldalFragment.newInstance(profileName), "home");
-                //loadFragmentAndAddToBackStack(new FooldalFragment(), "home");
-
+                loadFragment(FooldalFragment.newInstance(profileName), "fooldal");
                 //showMessage("Főoldal");
                 return true;
             case R.id.action_profil:
-                loadFragmentAndAddToBackStack(ProfilFragment.newInstance(profileName), "home");
-                //loadFragmentAndAddToBackStack(new ProfilFragment(), "profil");
-
+                loadFragment(ProfilFragment.newInstance(profileName), "profil");
                 //showMessage("Profil");
                 return true;
             case R.id.action_beallitasok:
@@ -58,26 +55,20 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
     }
-    private void loadFragmentAndAddToBackStack(Fragment fragment, String tag) {
-        loadFragment(fragment, tag, true);
-    }
-
-    private void loadFragment(Fragment fragment, String tag, boolean addToBackStack) {
+    private void loadFragment(Fragment fragment, String tag) {
         FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment, tag);
-        if(addToBackStack) {
-            fragmentTransaction.addToBackStack(tag);
-        }
+        fragmentTransaction.addToBackStack(tag);
         fragmentTransaction.commit();
     }
 
     public void profileSave(String name) {
         profileName = name;
-        loadFragmentAndAddToBackStack(FooldalFragment.newInstance(profileName), "home");
+        loadFragment(FooldalFragment.newInstance(profileName), "fooldal");
     }
     public void profileCancel() {
-        loadFragmentAndAddToBackStack(FooldalFragment.newInstance(profileName), "home");
+        loadFragment(FooldalFragment.newInstance(profileName), "fooldal");
     }
 
 
