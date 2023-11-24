@@ -1,18 +1,16 @@
 package com.example.pp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private String profileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +35,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_fooldal:
-                loadFragment(FooldalFragment.newInstance(profileName), "fooldal");
+                loadFragment(FooldalFragment.newInstance(), "fooldal");
                 //showMessage("Főoldal");
                 return true;
-            case R.id.action_profil:
-                loadFragment(ProfilFragment.newInstance(profileName), "profil");
+            case R.id.action_beallitasok:
+                loadFragment(BeallitasokFragment.newInstance(), "beallitasok");
                 //showMessage("Profil");
                 return true;
-            case R.id.action_beallitasok:
+            case R.id.action_gyogyszereim:
                 showMessage("Beállítások");
                 return true;
         }
@@ -64,11 +62,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void profileSave(String name) {
-        profileName = name;
-        loadFragment(FooldalFragment.newInstance(profileName), "fooldal");
+        loadFragment(FooldalFragment.newInstance(), "fooldal");
     }
     public void profileCancel() {
-        loadFragment(FooldalFragment.newInstance(profileName), "fooldal");
+        loadFragment(FooldalFragment.newInstance(), "fooldal");
     }
 
 

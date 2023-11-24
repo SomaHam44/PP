@@ -22,10 +22,9 @@ public class FooldalFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static FooldalFragment newInstance(String name) {
+    public static FooldalFragment newInstance() {
         FooldalFragment fragment = new FooldalFragment();
         Bundle args = new Bundle();
-        args.putString(NAME_PARAM, name);
         fragment.setArguments(args);
         return fragment;
     }

@@ -8,13 +8,40 @@
         app:showAsAction="always"
         />
     <item
-        android:id="@+id/action_profil"
-        android:title="Profil"
+        android:id="@+id/action_beallitasok"
+        android:title="Beállítások"
+        android:icon="@android:drawable/ic_menu_manage"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/action_figyelmeztetesek"
+        android:title="Figyelmeztetések"
         app:showAsAction="never"
         />
     <item
-        android:id="@+id/action_beallitasok"
-        android:title="Beállítások"
+        android:id="@+id/action_gyogyszereim"
+        android:title="Gyógyszereim"
         app:showAsAction="never"
         />
+    <item
+        android:id="@+id/action_vasarlasRogzitese"
+        android:title="Vásárlás rögzítése"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_gyogyszerHozzaad"
+        android:title="Új gyógyszer hozzáadása"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_gyogyszertarKeres"
+        android:title="Gyógyszertár keresés"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_gyogyszerBevetel"
+        android:title="Gyógyszer bevétel"
+        app:showAsAction="never"
+        />
+
 </menu>

@@ -12,14 +12,14 @@ import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ProfilFragment#newInstance} factory method to
+ * Use the {@link BeallitasokFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProfilFragment extends Fragment {
+public class BeallitasokFragment extends Fragment {
     private static final String NAME_PARAM = "name";
     private String mName;
 
-    public ProfilFragment() {
+    public BeallitasokFragment() {
         // Required empty public constructor
     }
 
@@ -31,10 +31,9 @@ public class ProfilFragment extends Fragment {
      * @return A new instance of fragment ProfilFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProfilFragment newInstance(String name) {
-        ProfilFragment fragment = new ProfilFragment();
+    public static BeallitasokFragment newInstance() {
+        BeallitasokFragment fragment = new BeallitasokFragment();
         Bundle args = new Bundle();
-        args.putString(NAME_PARAM, name);
         fragment.setArguments(args);
         return fragment;
     }
@@ -50,14 +49,16 @@ public class ProfilFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_profil,
+        View rootView = inflater.inflate(R.layout.fragment_beallitasok,
                 container, false);
-        final EditText profileEditText =
+       /* final EditText profileEditText =
                 rootView.findViewById(R.id.profileEditText);
+
+
         if(mName != null) {
             profileEditText.setText(mName);
         }
-        Button cancelButton = rootView.findViewById(R.id.cancelButton);
+        /*Button cancelButton = rootView.findViewById(R.id.cancelButton);
         Button saveButton = rootView.findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +73,7 @@ public class ProfilFragment extends Fragment {
                 ((MainActivity)getActivity()).profileCancel();
             }
         });
+        */
         return rootView;
 
     }

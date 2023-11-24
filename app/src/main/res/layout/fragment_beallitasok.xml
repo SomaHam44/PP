@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BeallitasokFragment">
+
+    <TextView
+        android:id="@+id/beallitasok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="106dp"
+        android:text="Beállítások"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nev"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Név:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beallitasok" />
+
+    <TextView
+        android:id="@+id/szuletesiDatum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Születési dátum:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nev"
+        app:layout_constraintTop_toBottomOf="@+id/nev" />
+
+    <TextView
+        android:id="@+id/tajSzam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TAJ szám:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/szuletesiDatum"
+        app:layout_constraintTop_toBottomOf="@+id/szuletesiDatum" />
+
+    <TextView
+        android:id="@+id/rendszeresSzedes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Rendszeresen szedek gyógyszert:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tajSzam"
+        app:layout_constraintTop_toBottomOf="@+id/tajSzam" />
+
+    <EditText
+        android:id="@+id/editTextNev"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Név"
+        app:layout_constraintBottom_toBottomOf="@+id/nev"
+        app:layout_constraintEnd_toEndOf="@+id/beallitasok"
+        app:layout_constraintStart_toEndOf="@+id/nev"
+        app:layout_constraintTop_toTopOf="@+id/nev"/>
+
+    <DatePicker
+        android:id="@+id/editTextSzulDatum"
+        android:layout_width="130dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:hint="Születési dátum"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="@+id/szuletesiDatum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/szuletesiDatum"
+        app:layout_constraintTop_toTopOf="@+id/szuletesiDatum" />
+
+    <EditText
+        android:id="@+id/editTextTajSzam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="TAJ szám"
+        app:layout_constraintBottom_toBottomOf="@+id/tajSzam"
+        app:layout_constraintStart_toEndOf="@+id/tajSzam"
+        app:layout_constraintTop_toTopOf="@+id/tajSzam" />
+
+    <CheckBox
+        android:id="@+id/checkboxRendszeresSzedes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rendszeresSzedes"
+        app:layout_constraintStart_toEndOf="@+id/rendszeresSzedes"
+        app:layout_constraintTop_toTopOf="@+id/rendszeresSzedes" />
+
+    <TextView
+        android:id="@+id/idopontok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Időpontok:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/rendszeresSzedes"
+        app:layout_constraintTop_toBottomOf="@+id/rendszeresSzedes" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idopontLista"
+        android:layout_width="351dp"
+        android:layout_height="163dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/idopontok"
+        app:layout_constraintTop_toBottomOf="@+id/idopontok" />
+
+    <Button
+        android:id="@+id/btnVisszaAFooldalra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Vissza"
+        app:layout_constraintStart_toStartOf="@+id/idopontLista"
+        app:layout_constraintTop_toBottomOf="@+id/idopontLista" />
+
+    <Button
+        android:id="@+id/btnTovabb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tovább"
+        app:layout_constraintBottom_toBottomOf="@+id/btnVisszaAFooldalra"
+        app:layout_constraintEnd_toEndOf="@+id/idopontLista"
+        app:layout_constraintTop_toTopOf="@+id/btnVisszaAFooldalra"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
