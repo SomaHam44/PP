@@ -11,11 +11,13 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private DBHelper adatbazis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
 
         Toolbar foToolbar = findViewById(R.id.fo_toolbar);
         setSupportActionBar(foToolbar);
@@ -62,9 +64,10 @@ public class MainActivity extends AppCompatActivity {
                 loadFragment(GyogyszertarKeresFragment.newInstance(), "gyogyszertarKeres");
                 showMessage("Gyógyszertár keresése");
                 return true;
-
-
-
+            case R.id.action_gyogyszerBevetel:
+                loadFragment(GyogyszerBevetelFragment.newInstance(), "gyogyszerBevetel");
+                showMessage("Gyógyszer bevétele");
+                return true;
 
         }
         return true;
@@ -82,11 +85,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public void profileSave(String name) {
-        loadFragment(FooldalFragment.newInstance(), "fooldal");
-    }
-    public void profileCancel() {
-        loadFragment(FooldalFragment.newInstance(), "fooldal");
+    private void init() {
+        adatbazis = new DBHelper(this);
     }
 
 
