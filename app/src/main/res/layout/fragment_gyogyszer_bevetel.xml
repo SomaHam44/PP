@@ -26,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dátum:"
+        android:textSize="25sp"
         app:layout_constraintTop_toTopOf="@+id/ListaBtn"
         tools:layout_editor_absoluteX="47dp" />
 
@@ -34,6 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Időpont:"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/ListaBtn"
         tools:layout_editor_absoluteX="46dp" />
 
@@ -43,7 +45,36 @@
         android:layout_height="64dp"
         android:layout_marginTop="32dp"
         android:text="Lista"
-        app:layout_constraintTop_toBottomOf="@+id/CimText"
-        tools:layout_editor_absoluteX="201dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CimText" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gyogyszerLista"
+        android:layout_width="351dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ListaBtn" />
+
+    <Button
+        android:id="@+id/btnTovabb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mentés"
+        app:layout_constraintBottom_toBottomOf="@+id/btnVissza"
+        app:layout_constraintEnd_toEndOf="@+id/gyogyszerLista"
+        app:layout_constraintTop_toTopOf="@+id/btnVissza"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnVissza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Vissza"
+        app:layout_constraintStart_toStartOf="@+id/gyogyszerLista"
+        app:layout_constraintTop_toBottomOf="@+id/gyogyszerLista" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
