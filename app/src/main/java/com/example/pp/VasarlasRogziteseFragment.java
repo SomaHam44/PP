@@ -63,7 +63,7 @@ public class VasarlasRogziteseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        btnTovabb.setOnClickListener(new View.OnClickListener() {
+        /*btnTovabb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -76,6 +76,7 @@ public class VasarlasRogziteseFragment extends Fragment {
 
             }
         });
+        */
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_vasarlas_rogzitese, container, false);
     }

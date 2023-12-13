@@ -5,7 +5,6 @@
     <item
         android:id="@+id/action_fooldal"
         android:title="@string/fo_oldal"
-        android:icon="@android:drawable/ic_menu_home"
         app:showAsAction="always"
         />
     <item

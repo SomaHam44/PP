@@ -42,7 +42,7 @@ public class GyogyszereimFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        btnTovabb.setOnClickListener(new View.OnClickListener() {
+        /*btnTovabb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -55,6 +55,8 @@ public class GyogyszereimFragment extends Fragment {
 
             }
         });
+        */
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_gyogyszereim, container, false);
     }

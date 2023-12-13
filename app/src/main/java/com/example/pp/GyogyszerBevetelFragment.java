@@ -37,12 +37,13 @@ public class GyogyszerBevetelFragment extends Fragment {
                              Bundle savedInstanceState) {
 
 
-        btnMentes.setOnClickListener(new View.OnClickListener() {
+        /*btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
+        */
         return inflater.inflate(R.layout.fragment_gyogyszer_bevetel, container, false);
     }
 }

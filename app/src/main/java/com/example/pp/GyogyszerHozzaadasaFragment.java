@@ -65,7 +65,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        btnMentes.setOnClickListener(new View.OnClickListener() {
+        /*btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -78,6 +78,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
 
             }
         });
+        */
         return inflater.inflate(R.layout.fragment_gyogyszer_hozzaadasa, container, false);
     }
 }

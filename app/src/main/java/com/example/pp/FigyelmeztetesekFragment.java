@@ -63,7 +63,7 @@ public class FigyelmeztetesekFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        btnGyogyszertarKereso.setOnClickListener(new View.OnClickListener() {
+        /*btnGyogyszertarKereso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -76,7 +76,7 @@ public class FigyelmeztetesekFragment extends Fragment {
 
             }
         });
-
+*/
         return inflater.inflate(R.layout.fragment_figyelmeztetesek, container, false);
     }
 }

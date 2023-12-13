@@ -58,7 +58,7 @@ public class BeallitasokFragment extends Fragment {
                 rootView.findViewById(R.id.editTextNev);
 
 
-        btnTovabb.setOnClickListener(new View.OnClickListener() {
+        /*btnTovabb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

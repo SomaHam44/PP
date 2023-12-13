@@ -66,7 +66,7 @@ public class GyogyszerReszletekFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        btnMentes.setOnClickListener(new View.OnClickListener() {
+        /*btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -79,6 +79,8 @@ public class GyogyszerReszletekFragment extends Fragment {
 
             }
         });
+        */
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_gyogyszer_reszletek, container, false);
     }
