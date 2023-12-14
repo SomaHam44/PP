@@ -17,21 +17,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/gyogyszertarTerkep"
-        android:layout_width="360dp"
-        android:layout_height="400dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/gyogyszertarKeres"
-        app:layout_constraintTop_toBottomOf="@+id/gyogyszertarKeres" />
-
     <Button
         android:id="@+id/btnGyogyszertarKeresVissza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Vissza"
-        app:layout_constraintStart_toStartOf="@+id/gyogyszertarTerkep"
-        app:layout_constraintTop_toBottomOf="@+id/gyogyszertarTerkep" />
+        app:layout_constraintStart_toStartOf="@+id/gyogyszertarKeres"
+        app:layout_constraintTop_toBottomOf="@+id/map" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="349dp"
+        android:layout_height="383dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/gyogyszertarKeres"
+        app:layout_constraintStart_toStartOf="@+id/gyogyszertarKeres"
+        app:layout_constraintTop_toBottomOf="@+id/gyogyszertarKeres" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
