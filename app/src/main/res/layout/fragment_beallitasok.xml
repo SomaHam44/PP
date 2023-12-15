@@ -91,19 +91,20 @@
         android:id="@+id/btnVisszaAFooldalra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginBottom="56dp"
         android:text="Vissza"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="591dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnTovabb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="38dp"
         android:text="Tovább"
         app:layout_constraintBottom_toBottomOf="@+id/btnVisszaAFooldalra"
-        app:layout_constraintTop_toTopOf="@+id/btnVisszaAFooldalra"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="279dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
