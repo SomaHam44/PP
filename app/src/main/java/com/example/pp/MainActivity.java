@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-
         adatbazis = new DBHelper(this);
     }
 

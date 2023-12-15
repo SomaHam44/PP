@@ -2,6 +2,7 @@ package com.example.pp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -9,22 +10,23 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "pirulapolc.db";
     private static final int version = 1;
 
-    private static final String TABLE_NAME = "Profil";
+    private static final String TABLE_PROFIL = "Profil";
 
-    private static final String COL_ID = "profilID";
-    private static final String COL_NEV = "nev";
+    private static final String P_ID = "profilID";
+    private static final String P_NEV = "nev";
+    private static final String P_DATUM = "szuldatum";
+    private static final String P_TAJ = "TAJ";
 
-    private static final String COL_DATUM = "szuldatum";
-
-    private static final String COL_TAJ = "TAJ";
-
+    private static final String TABLE_GYOGYSZEREK="Gyogyszerek";
+    private static final String GY_NEV = "gyogyszerNev";
+    private static final String GY_LEJARAT = "lejarat";
+    private static final String GY_KESZLET = "keszlet";
+    private static final String GY_MOD = "utolsomod";
 
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, version);
-
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
@@ -44,7 +46,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 ");";
 
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
@@ -53,11 +54,31 @@ public class DBHelper extends SQLiteOpenHelper {
     public boolean profilModositas(int Id, String nev, String datum, Integer taj) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COL_NEV, nev);
-        values.put(COL_DATUM, datum);
-        values.put(COL_TAJ, taj);
-        return db.update(TABLE_NAME, values, "Id = ?", new String[]{Integer.toString(Id)})> 0;
+        values.put(P_NEV, nev);
+        values.put(P_DATUM, datum);
+        values.put(P_TAJ, taj);
+        return db.update(TABLE_PROFIL, values, "Id = ?", new String[]{Integer.toString(Id)})> 0;
     }
+    public Cursor profilMegjelenites(int Id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery(" SELECT * FROM " + TABLE_PROFIL +
+                " WHERE " +  P_ID + " == ? ", new String[]{Integer.toString(Id)});
+    }
+
+    public boolean gyogyszerHozzaadas(String nev, String lejarat, Integer keszlet, String modDatum){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(GY_NEV, nev);
+        values.put(GY_LEJARAT, lejarat);
+        values.put(GY_KESZLET, keszlet);
+        values.put(GY_MOD, modDatum);
+        return db.insert(TABLE_GYOGYSZEREK, null, values) != -1;
+    }
+    public Cursor listazas() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery(" SELECT * FROM " + TABLE_GYOGYSZEREK, null);
+    }
+
 
 
 }

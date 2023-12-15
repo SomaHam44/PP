@@ -52,6 +52,7 @@ public class BeallitasokFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        adatbazis = new DBHelper(getActivity());
     }
 
     @Override
@@ -59,8 +60,8 @@ public class BeallitasokFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_beallitasok,
                 container, false);
-        editTextNev =
-                rootView.findViewById(R.id.editTextNev);
+
+
 
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,14 +77,14 @@ public class BeallitasokFragment extends Fragment {
                     try {
                         int taj = Integer.parseInt(tajString);
                         if (adatbazis.profilModositas(1, nev, szulDatum, taj)) {
-                            Toast.makeText(getActivity(), "Sikeres felvétel", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Sikeres művelet", Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            Toast.makeText(getActivity(), "Sikertelen felvétel", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Sikertelen művelet", Toast.LENGTH_SHORT).show();
                         }
                     }
                     catch (NumberFormatException ex) {
-                        Toast.makeText(getActivity(),"Az elkészítési időnek és az árnak számnak kell lennie!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),"A TAJ számnak számnak kell lennie!", Toast.LENGTH_SHORT).show();
                     }
                 }
 
