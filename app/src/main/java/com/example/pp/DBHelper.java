@@ -18,6 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String P_TAJ = "TAJ";
 
     private static final String TABLE_GYOGYSZEREK="Gyogyszerek";
+    private static final String GY_ID="gyogyszerID";
     private static final String GY_NEV = "gyogyszerNev";
     private static final String GY_LEJARAT = "lejarat";
     private static final String GY_KESZLET = "keszlet";
@@ -30,21 +31,20 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String Create_Profil_Table = "CREATE TABLE IF NOT EXISTS Profil(" +
-                "profilID INTEGER NOT NULL DEFAULT 1," +
-                "nev TEXT," +
-                "szuldatum TEXT," +
-                "TAJ INTEGER," +
-                "PRIMARY KEY(profilID));";
-        String Create_Gyogyszerek_Table = "CREATE TABLE IF NOT EXISTS Gyogyszerek (" +
-                "gyogyszerID INTEGER NOT NULL," +
-                "gyogyszerNev TEXT," +
-                "lejarat TEXT," +
-                "keszlet INTEGER," +
-                "utolsomod TEXT," +
-                "PRIMARY KEY(gyogyszerID AUTOINCREMENT)" +
-                ");";
-
+        String Create_Profil_Table = "CREATE TABLE IF NOT EXISTS " + TABLE_PROFIL+ "("
+                + P_ID +" INTEGER NOT NULL DEFAULT 1,"
+                + P_NEV +" TEXT NOT NULL,"
+                + P_DATUM +" TEXT,"
+                + P_TAJ +" INTEGER," +
+                " PRIMARY KEY("+P_ID+"));";
+        String Create_Gyogyszerek_Table = "CREATE TABLE IF NOT EXISTS " +TABLE_GYOGYSZEREK+"("
+                + GY_ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + GY_NEV +" TEXT NOT NULL,"
+                + GY_LEJARAT +" TEXT,"
+                + GY_KESZLET +" INTEGER,"
+                + GY_MOD +" TEXT);";
+        sqLiteDatabase.execSQL(Create_Profil_Table);
+        sqLiteDatabase.execSQL(Create_Gyogyszerek_Table);
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
