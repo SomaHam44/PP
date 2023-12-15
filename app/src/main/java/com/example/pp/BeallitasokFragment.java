@@ -62,6 +62,7 @@ public class BeallitasokFragment extends Fragment {
         editTextNev= rootView.findViewById(R.id.editTextNev);
         editSzulDatum= rootView.findViewById(R.id.editSzulDatum);
         editTajSzam= rootView.findViewById(R.id.editTajSzam);
+        btnMentes=rootView.findViewById(R.id.btnMentes);
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
