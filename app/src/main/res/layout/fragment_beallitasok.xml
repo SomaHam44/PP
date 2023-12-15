@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="106dp"
         android:text="Beállítások"
-        android:textSize="50sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="38dp"
         android:text="Név:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         android:id="@+id/szuletesiDatum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="Születési dátum:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/nev"
@@ -42,21 +42,11 @@
         android:id="@+id/tajSzam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="TAJ szám:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/szuletesiDatum"
         app:layout_constraintTop_toBottomOf="@+id/szuletesiDatum" />
-
-    <TextView
-        android:id="@+id/rendszeresSzedes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Rendszeresen szedek gyógyszert:"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tajSzam"
-        app:layout_constraintTop_toBottomOf="@+id/tajSzam" />
 
     <EditText
         android:id="@+id/editTextNev"
@@ -97,42 +87,13 @@
         app:layout_constraintStart_toEndOf="@+id/tajSzam"
         app:layout_constraintTop_toTopOf="@+id/tajSzam" />
 
-    <CheckBox
-        android:id="@+id/checkboxRendszeresSzedes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/rendszeresSzedes"
-        app:layout_constraintStart_toEndOf="@+id/rendszeresSzedes"
-        app:layout_constraintTop_toTopOf="@+id/rendszeresSzedes" />
-
-    <TextView
-        android:id="@+id/idopontok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Időpontok:"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/rendszeresSzedes"
-        app:layout_constraintTop_toBottomOf="@+id/rendszeresSzedes" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idopontLista"
-        android:layout_width="351dp"
-        android:layout_height="163dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="@+id/idopontok"
-        app:layout_constraintTop_toBottomOf="@+id/idopontok" />
-
     <Button
         android:id="@+id/btnVisszaAFooldalra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="Vissza"
-        app:layout_constraintStart_toStartOf="@+id/idopontLista"
-        app:layout_constraintTop_toBottomOf="@+id/idopontLista" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="591dp" />
 
     <Button
         android:id="@+id/btnTovabb"
@@ -140,9 +101,9 @@
         android:layout_height="wrap_content"
         android:text="Tovább"
         app:layout_constraintBottom_toBottomOf="@+id/btnVisszaAFooldalra"
-        app:layout_constraintEnd_toEndOf="@+id/idopontLista"
         app:layout_constraintTop_toTopOf="@+id/btnVisszaAFooldalra"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="279dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
