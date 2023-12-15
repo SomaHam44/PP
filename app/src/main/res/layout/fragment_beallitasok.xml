@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="@+id/szuletesiDatum" />
 
     <EditText
-        android:id="@+id/editTextTajSzam"
+        android:id="@+id/editTajSzam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
