@@ -10,6 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
 public class MainActivity extends AppCompatActivity {
     private DBHelper adatbazis;
 
