@@ -27,9 +27,7 @@ public class BeallitasokFragment extends Fragment {
     private DatePicker editSzulDatum;
     private EditText editTajSzam;
     private Button btnMegse, btnMentes;
-
     private DBHelper adatbazis;
-
     public BeallitasokFragment() {
         // Required empty public constructor
     }
@@ -53,6 +51,7 @@ public class BeallitasokFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         adatbazis = new DBHelper(getActivity());
+
     }
 
     @Override
@@ -60,9 +59,9 @@ public class BeallitasokFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_beallitasok,
                 container, false);
-
-
-
+        editTextNev= rootView.findViewById(R.id.editTextNev);
+        editSzulDatum= rootView.findViewById(R.id.editSzulDatum);
+        editTajSzam= rootView.findViewById(R.id.editTajSzam);
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,37 +91,6 @@ public class BeallitasokFragment extends Fragment {
         });
 
 
-        /*btnTovabb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        btnVissza.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-
-        /*Button cancelButton = rootView.findViewById(R.id.cancelButton);
-        Button saveButton = rootView.findViewById(R.id.saveButton);
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String name = profileEditText.getText().toString();
-                ((MainActivity)getActivity()).profileSave(name);
-            }
-        });
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).profileCancel();
-            }
-        });
-        */
         return rootView;
 
     }
