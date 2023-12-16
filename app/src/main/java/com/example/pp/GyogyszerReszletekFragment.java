@@ -26,17 +26,11 @@ public class GyogyszerReszletekFragment extends Fragment {
     private CheckBox cbRendszeres;
     private RecyclerView rvIdopontok;
     private Button btnVissza, btnMentes;
+    private DBHelper adatbazis;
 
     public GyogyszerReszletekFragment() {
         // Required empty public constructor
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment GyogyszerReszletekFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static GyogyszerReszletekFragment newInstance() {
         GyogyszerReszletekFragment fragment = new GyogyszerReszletekFragment();
         Bundle args = new Bundle();
@@ -47,6 +41,7 @@ public class GyogyszerReszletekFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        adatbazis = new DBHelper(getActivity());
     }
 
     @Override

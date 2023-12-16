@@ -34,14 +34,6 @@ public class BeallitasokFragment extends Fragment {
     public BeallitasokFragment() {
         // Required empty public constructor
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     *.
-     */
-    // TODO: Rename and change types and number of parameters
     public static BeallitasokFragment newInstance() {
         BeallitasokFragment fragment = new BeallitasokFragment();
         Bundle args = new Bundle();
@@ -111,14 +103,9 @@ public class BeallitasokFragment extends Fragment {
         btnMegse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Toast.makeText(getActivity(), "Nem történt beállítás", Toast.LENGTH_SHORT).show();
-
             }
         });
-
-
         return rootView;
-
     }
 }

@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar foToolbar = findViewById(R.id.fo_toolbar);
         setSupportActionBar(foToolbar);
-
         loadFragment(new FooldalFragment(), "fooldal");
 
     }

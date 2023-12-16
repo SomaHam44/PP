@@ -51,7 +51,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        adatbazis = new DBHelper(getActivity());
     }
 
     @Override

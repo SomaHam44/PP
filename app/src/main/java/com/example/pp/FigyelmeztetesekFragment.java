@@ -25,14 +25,6 @@ public class FigyelmeztetesekFragment extends Fragment {
     public FigyelmeztetesekFragment() {
         // Required empty public constructor
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment FigyelmeztetesekFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static FigyelmeztetesekFragment newInstance() {
         FigyelmeztetesekFragment fragment = new FigyelmeztetesekFragment();
         Bundle args = new Bundle();

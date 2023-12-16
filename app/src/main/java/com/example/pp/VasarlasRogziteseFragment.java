@@ -22,18 +22,10 @@ public class VasarlasRogziteseFragment extends Fragment {
     private EditText editTextKiszereles;
     private DatePicker dpLejarat;
     private Button btnFelvesz, btnTovabb;
-
+    private DBHelper adatbazis;
     public VasarlasRogziteseFragment() {
         // Required empty public constructor
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment VasarlasRogziteseFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static VasarlasRogziteseFragment newInstance() {
         VasarlasRogziteseFragment fragment = new VasarlasRogziteseFragment();
         Bundle args = new Bundle();
@@ -45,6 +37,7 @@ public class VasarlasRogziteseFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        adatbazis = new DBHelper(getActivity());
     }
 
     @Override
