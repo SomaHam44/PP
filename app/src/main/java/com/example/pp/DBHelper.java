@@ -32,11 +32,10 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String Create_Profil_Table = "CREATE TABLE IF NOT EXISTS " + TABLE_PROFIL+ "("
-                + P_ID +" INTEGER NOT NULL DEFAULT 1,"
+                + P_ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + P_NEV +" TEXT NOT NULL,"
                 + P_DATUM +" TEXT,"
-                + P_TAJ +" INTEGER," +
-                " PRIMARY KEY("+P_ID+"));";
+                + P_TAJ +" INTEGER);";
         String Create_Gyogyszerek_Table = "CREATE TABLE IF NOT EXISTS " +TABLE_GYOGYSZEREK+"("
                 + GY_ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + GY_NEV +" TEXT NOT NULL,"
@@ -51,13 +50,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean profilModositas(int Id, String nev, String datum, Integer taj) {
+    public boolean profilHozzaadas(String nev, String datum, Integer taj) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(P_NEV, nev);
         values.put(P_DATUM, datum);
         values.put(P_TAJ, taj);
-        return db.update(TABLE_PROFIL, values, "Id = ?", new String[]{Integer.toString(Id)})> 0;
+        return db.insert(TABLE_PROFIL, null, values)!= -1;
     }
     public Cursor profilMegjelenites(int Id) {
         SQLiteDatabase db = this.getWritableDatabase();

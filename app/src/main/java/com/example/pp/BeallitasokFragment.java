@@ -63,7 +63,13 @@ public class BeallitasokFragment extends Fragment {
         editSzulDatum= rootView.findViewById(R.id.editSzulDatum);
         editTajSzam= rootView.findViewById(R.id.editTajSzam);
         btnMentes=rootView.findViewById(R.id.btnMentes);
+
+
+
+
+
         btnMentes.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 String nev = editTextNev.getText().toString().trim();
@@ -73,10 +79,9 @@ public class BeallitasokFragment extends Fragment {
                     Toast.makeText(getActivity(), "Minden mező kitöltése kötelező", Toast.LENGTH_SHORT).show();
                 }
                 else {
-
                     try {
                         int taj = Integer.parseInt(tajString);
-                        if (adatbazis.profilModositas(1, nev, szulDatum, taj)) {
+                        if (adatbazis.profilHozzaadas(nev, szulDatum, taj)) {
                             Toast.makeText(getActivity(), "Sikeres művelet", Toast.LENGTH_SHORT).show();
                         }
                         else {
