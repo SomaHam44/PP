@@ -49,14 +49,11 @@ public class BeallitasokFragment extends Fragment {
         return fragment;
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         adatbazis = new DBHelper(getActivity());
-
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -109,7 +106,6 @@ public class BeallitasokFragment extends Fragment {
                         Toast.makeText(getActivity(),"A TAJ számnak számnak kell lennie!", Toast.LENGTH_SHORT).show();
                     }
                 }
-
             }
         });
         btnMegse.setOnClickListener(new View.OnClickListener() {

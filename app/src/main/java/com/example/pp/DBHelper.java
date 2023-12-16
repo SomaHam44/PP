@@ -21,6 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String GY_ID="gyogyszerID";
     private static final String GY_NEV = "gyogyszerNev";
     private static final String GY_LEJARAT = "lejarat";
+    private static final String GY_NAPI = "napi";
     private static final String GY_KESZLET = "keszlet";
     private static final String GY_MOD = "utolsomod";
 
@@ -40,6 +41,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + GY_ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + GY_NEV +" TEXT NOT NULL,"
                 + GY_LEJARAT +" TEXT,"
+                + GY_NAPI +" INTEGER,"
                 + GY_KESZLET +" INTEGER,"
                 + GY_MOD +" TEXT);";
         sqLiteDatabase.execSQL(Create_Profil_Table);
@@ -68,11 +70,12 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT MAX("+P_ID+") FROM "+ TABLE_PROFIL+"", null);
     }
 
-    public boolean gyogyszerHozzaadas(String nev, String lejarat, Integer keszlet, String modDatum){
+    public boolean gyogyszerHozzaadas(String nev, String lejarat, Integer napi, Integer keszlet, String modDatum){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(GY_NEV, nev);
         values.put(GY_LEJARAT, lejarat);
+        values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
         values.put(GY_MOD, modDatum);
         return db.insert(TABLE_GYOGYSZEREK, null, values) != -1;
