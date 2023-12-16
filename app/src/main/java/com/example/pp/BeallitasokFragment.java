@@ -59,15 +59,15 @@ public class BeallitasokFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_beallitasok,
                 container, false);
-        editTextNev= rootView.findViewById(R.id.editTextNev);
-        editSzulDatum= rootView.findViewById(R.id.editSzulDatum);
-        editTajSzam= rootView.findViewById(R.id.editTajSzam);
-        btnMentes=rootView.findViewById(R.id.btnMentes);
-        btnMegse=rootView.findViewById(R.id.btnMegse);
+        editTextNev = rootView.findViewById(R.id.editTextNev);
+        editSzulDatum = rootView.findViewById(R.id.editSzulDatum);
+        editTajSzam = rootView.findViewById(R.id.editTajSzam);
+        btnMentes = rootView.findViewById(R.id.btnMentes);
+        btnMegse = rootView.findViewById(R.id.btnMegse);
 
         try {
             int maxId = -1;
-            Cursor c1 = adatbazis.legrissebbId();
+            Cursor c1 = adatbazis.legfrissebbId();
             if (c1.moveToFirst()) {
                 maxId = c1.getInt(0);
             }
@@ -111,6 +111,8 @@ public class BeallitasokFragment extends Fragment {
         btnMegse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Toast.makeText(getActivity(), "Nem történt beállítás", Toast.LENGTH_SHORT).show();
 
             }
         });

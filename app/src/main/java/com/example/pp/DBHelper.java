@@ -11,7 +11,6 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final int version = 1;
 
     private static final String TABLE_PROFIL = "Profil";
-
     private static final String P_ID = "profilID";
     private static final String P_NEV = "nev";
     private static final String P_DATUM = "szuldatum";
@@ -65,7 +64,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery(" SELECT * FROM " + TABLE_PROFIL +
                 " WHERE " +  P_ID + " == ? ", new String[]{Integer.toString(Id)});
     }
-    public Cursor legrissebbId(){
+    public Cursor legfrissebbId(){
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT MAX("+P_ID+") FROM "+ TABLE_PROFIL+"", null);
     }
