@@ -2,6 +2,7 @@ package com.example.pp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -63,10 +64,11 @@ public class BeallitasokFragment extends Fragment {
         editSzulDatum= rootView.findViewById(R.id.editSzulDatum);
         editTajSzam= rootView.findViewById(R.id.editTajSzam);
         btnMentes=rootView.findViewById(R.id.btnMentes);
-
-
-
-
+        Cursor cursor = adatbazis.profilMegjelenites(1);
+        while (cursor.moveToNext()) {
+            editTextNev.append(cursor.getString(1));
+            editTajSzam.append(cursor.getString(3));
+        }
 
         btnMentes.setOnClickListener(new View.OnClickListener() {
 

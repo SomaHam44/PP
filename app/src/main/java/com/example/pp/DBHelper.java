@@ -59,7 +59,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_PROFIL, null, values)!= -1;
     }
     public Cursor profilMegjelenites(int Id) {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery(" SELECT * FROM " + TABLE_PROFIL +
                 " WHERE " +  P_ID + " == ? ", new String[]{Integer.toString(Id)});
     }
