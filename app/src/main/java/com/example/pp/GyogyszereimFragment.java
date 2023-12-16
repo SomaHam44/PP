@@ -1,5 +1,6 @@
 package com.example.pp;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,8 +25,9 @@ import android.widget.EditText;
  * create an instance of this fragment.
  */
 public class GyogyszereimFragment extends Fragment {
-    private RecyclerView rvGyogyszereim;
-    private Button btnHozzaad, btnTovabb;
+    private RecyclerView gyogyszerLista;
+    private Button btnHozzaad, btnMegse;
+    private DBHelper adatbazis;
 
     public GyogyszereimFragment() {
         // Required empty public constructor
@@ -37,27 +44,29 @@ public class GyogyszereimFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        adatbazis = new DBHelper(getActivity());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        /*btnTovabb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        View rootView = inflater.inflate(R.layout.fragment_gyogyszereim, container, false);
+        gyogyszerLista= rootView.findViewById(R.id.gyogyszerLista);
+        btnHozzaad=rootView.findViewById(R.id.btnHozzaad);
+        btnMegse=rootView.findViewById(R.id.btnMegse);
+        List<Gyogyszer> lista = new ArrayList<>();
+        try {
+            Cursor c = adatbazis.listazas();
+            while (c.moveToNext()) {
 
             }
-        });
+            c.close();
+        }
+        catch (Exception ex) {
+            Toast.makeText(getActivity(),"Kérem adjon hozzá gyógyszert a listához!", Toast.LENGTH_SHORT).show();
+        }
 
-        btnHozzaad.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
-        */
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gyogyszereim, container, false);
+        return rootView;
     }
 }
