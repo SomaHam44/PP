@@ -93,12 +93,13 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
             }
         });
 
-        btnVissza.setOnClickListener(new View.OnClickListener() {
+        /*btnVissza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
+        */
 
         return inflater.inflate(R.layout.fragment_gyogyszer_hozzaadasa, container, false);
     }

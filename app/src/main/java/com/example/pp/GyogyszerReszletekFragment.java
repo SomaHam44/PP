@@ -27,15 +27,6 @@ public class GyogyszerReszletekFragment extends Fragment {
     private RecyclerView rvIdopontok;
     private Button btnVissza, btnMentes;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public GyogyszerReszletekFragment() {
         // Required empty public constructor
     }
@@ -56,16 +47,17 @@ public class GyogyszerReszletekFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        View rootView = inflater.inflate(R.layout.fragment_gyogyszer_reszletek, container, false);
+        editTextNev = rootView.findViewById(R.id.editTextNev);
+        editTextHatoanyag = rootView.findViewById(R.id.editTextHatoanyag);
+        editTextTajSzam = rootView.findViewById(R.id.editTextTajSzam);
+        editTextLink = rootView.findViewById(R.id.editTextLink);
+        rvIdopontok = rootView.findViewById(R.id.idopontok);
         /*btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
