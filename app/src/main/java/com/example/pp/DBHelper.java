@@ -33,7 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String Create_Profil_Table = "CREATE TABLE IF NOT EXISTS " + TABLE_PROFIL+ "("
                 + P_ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + P_NEV +" TEXT NOT NULL,"
+                + P_NEV +" TEXT,"
                 + P_DATUM +" TEXT,"
                 + P_TAJ +" INTEGER);";
         String Create_Gyogyszerek_Table = "CREATE TABLE IF NOT EXISTS " +TABLE_GYOGYSZEREK+"("
@@ -63,6 +63,10 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery(" SELECT * FROM " + TABLE_PROFIL +
                 " WHERE " +  P_ID + " == ? ", new String[]{Integer.toString(Id)});
     }
+    public Cursor legrissebbId(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT MAX("+P_ID+") FROM "+ TABLE_PROFIL+"", null);
+    }
 
     public boolean gyogyszerHozzaadas(String nev, String lejarat, Integer keszlet, String modDatum){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -77,8 +81,6 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.rawQuery(" SELECT * FROM " + TABLE_GYOGYSZEREK, null);
     }
-
-
 
 }
 

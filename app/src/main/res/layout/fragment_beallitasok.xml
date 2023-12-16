@@ -62,18 +62,16 @@
         app:layout_constraintTop_toTopOf="@+id/nev"/>
 
     <DatePicker
-        android:id="@+id/editSzulDatum"
-        android:layout_width="130dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="48dp"
+        android:id="@+id/datePicker"
+        android:layout_width="15dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Születési dátum"
         android:inputType="date"
-        app:layout_constraintBottom_toBottomOf="@+id/szuletesiDatum"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/szuletesiDatum"
-        app:layout_constraintTop_toTopOf="@+id/szuletesiDatum" />
+        app:layout_constraintBottom_toBottomOf="@+id/editSzulDatum"
+        app:layout_constraintStart_toEndOf="@+id/editSzulDatum"
+        app:layout_constraintTop_toTopOf="@+id/editSzulDatum" />
 
     <EditText
         android:id="@+id/editTajSzam"
@@ -105,6 +103,18 @@
         android:text="Mentés"
         app:layout_constraintBottom_toBottomOf="@+id/btnMegse"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editSzulDatum"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="@+id/szuletesiDatum"
+        app:layout_constraintStart_toEndOf="@+id/szuletesiDatum"
+        app:layout_constraintTop_toTopOf="@+id/szuletesiDatum"
+        app:layout_constraintVertical_bias="0.47" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

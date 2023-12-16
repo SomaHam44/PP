@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -64,14 +66,27 @@ public class BeallitasokFragment extends Fragment {
         editSzulDatum= rootView.findViewById(R.id.editSzulDatum);
         editTajSzam= rootView.findViewById(R.id.editTajSzam);
         btnMentes=rootView.findViewById(R.id.btnMentes);
-        Cursor cursor = adatbazis.profilMegjelenites(1);
-        while (cursor.moveToNext()) {
-            editTextNev.append(cursor.getString(1));
-            editTajSzam.append(cursor.getString(3));
+        btnMegse=rootView.findViewById(R.id.btnMegse);
+
+        try {
+            int maxId = -1;
+            Cursor c1 = adatbazis.legrissebbId();
+            if (c1.moveToFirst()) {
+                maxId = c1.getInt(0);
+            }
+            c1.close();
+            Cursor c2 = adatbazis.profilMegjelenites(maxId);
+            while (c2.moveToNext()) {
+                editTextNev.append(c2.getString(1));
+                editTajSzam.append(c2.getString(3));
+            }
+            c2.close();
+        }
+        catch (Exception ex) {
+            Toast.makeText(getActivity(),"Kérem adja meg a személyes adatait!", Toast.LENGTH_SHORT).show();
         }
 
         btnMentes.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 String nev = editTextNev.getText().toString().trim();
@@ -94,6 +109,12 @@ public class BeallitasokFragment extends Fragment {
                         Toast.makeText(getActivity(),"A TAJ számnak számnak kell lennie!", Toast.LENGTH_SHORT).show();
                     }
                 }
+
+            }
+        });
+        btnMegse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
