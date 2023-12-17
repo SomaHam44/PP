@@ -32,8 +32,6 @@ public class GyogyszereimFragment extends Fragment {
     public GyogyszereimFragment() {
         // Required empty public constructor
     }
-
-    // TODO: Rename and change types and number of parameters
     public static GyogyszereimFragment newInstance() {
         GyogyszereimFragment fragment = new GyogyszereimFragment();
         Bundle args = new Bundle();
@@ -52,9 +50,9 @@ public class GyogyszereimFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszereim, container, false);
         gyogyszerLista= rootView.findViewById(R.id.gyogyszerLista);
-        btnHozzaad=rootView.findViewById(R.id.btnHozzaad);
-        btnMegse=rootView.findViewById(R.id.btnMegse);
-        List<Gyogyszer> lista = new ArrayList<>();
+        btnHozzaad = rootView.findViewById(R.id.btnHozzaad);
+        btnMegse = rootView.findViewById(R.id.btnMegse);
+        List<Gyogyszer> gyogyszeresLista = new ArrayList<>();
         try {
             Cursor c = adatbazis.listazas();
             while (c.moveToNext()) {

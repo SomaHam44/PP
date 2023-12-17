@@ -41,15 +41,47 @@ public class GyogyszerBevetelFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszer_bevetel, container, false);
+        btnLista = rootView.findViewById(R.id.ListaBtn);
+        btnMinden = rootView.findViewById(R.id.btnMinden);
+        btnSemmi = rootView.findViewById(R.id.btnSemmi);
+        btnVissza = rootView.findViewById(R.id.btnVissza);
+        rvGyogyszerLista = rootView.findViewById(R.id.gyogyszerLista);
+        btnMentes = rootView.findViewById(R.id.btnTovabb);
 
 
-        /*btnMentes.setOnClickListener(new View.OnClickListener() {
+        btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
-        */
+        btnLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        btnMinden.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        btnSemmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        btnVissza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         return rootView;
     }
 }

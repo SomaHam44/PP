@@ -34,6 +34,11 @@
         app:showAsAction="never"
         />
     <item
+        android:id="@+id/action_gyogyszerReszletek"
+        android:title="Gyógyszer részletek"
+        app:showAsAction="never"
+        />
+    <item
         android:id="@+id/action_gyogyszertarKeres"
         android:title="Gyógyszertár keresés"
         app:showAsAction="never"

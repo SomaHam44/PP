@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gyógyszertár keresése"
-        app:layout_constraintBottom_toBottomOf="@+id/btnVissza"
+        app:layout_constraintBottom_toBottomOf="@+id/btnFigyelmeztetesekVissza"
         app:layout_constraintEnd_toEndOf="@+id/figyelmeztetesekLista"
         app:layout_constraintTop_toTopOf="@+id/btnFigyelmeztetesekVissza"
         app:layout_constraintVertical_bias="1.0" />

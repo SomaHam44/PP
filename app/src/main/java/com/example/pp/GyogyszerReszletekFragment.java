@@ -21,8 +21,9 @@ import android.widget.EditText;
 public class GyogyszerReszletekFragment extends Fragment {
     private EditText editTextNev;
     private EditText editTextHatoanyag;
-    private EditText editTextTajSzam;
     private EditText editTextLink;
+
+    private EditText editTextNumber;
     private CheckBox cbRendszeres;
     private RecyclerView rvIdopontok;
     private Button btnVissza, btnMentes;
@@ -50,10 +51,13 @@ public class GyogyszerReszletekFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszer_reszletek, container, false);
         editTextNev = rootView.findViewById(R.id.editTextNev);
         editTextHatoanyag = rootView.findViewById(R.id.editTextHatoanyag);
-        editTextTajSzam = rootView.findViewById(R.id.editTextTajSzam);
         editTextLink = rootView.findViewById(R.id.editTextLink);
-        rvIdopontok = rootView.findViewById(R.id.idopontok);
-        /*btnMentes.setOnClickListener(new View.OnClickListener() {
+        editTextNumber = rootView.findViewById(R.id.editTextNumber);
+        rvIdopontok = rootView.findViewById(R.id.idopontLista);
+        cbRendszeres = rootView.findViewById(R.id.cbRendszeresSzedes);
+        btnMentes = rootView.findViewById(R.id.btnTovabb);
+        btnVissza = rootView.findViewById(R.id.btnVissza);
+        btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -66,8 +70,6 @@ public class GyogyszerReszletekFragment extends Fragment {
 
             }
         });
-        */
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_gyogyszer_reszletek, container, false);
     }

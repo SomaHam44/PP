@@ -43,7 +43,9 @@ public class FigyelmeztetesekFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_figyelmeztetesek, container, false);
         rvFigyelmeztetesek = rootView.findViewById(R.id.figyelmeztetesekLista);
-        /*btnGyogyszertarKereso.setOnClickListener(new View.OnClickListener() {
+        btnGyogyszertarKereso = rootView.findViewById(R.id.btnGyogyszertarKeresohoz);
+        btnVissza = rootView.findViewById(R.id.btnFigyelmeztetesekVissza);
+        btnGyogyszertarKereso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -57,7 +59,6 @@ public class FigyelmeztetesekFragment extends Fragment {
 
             }
         });
-*/
         return inflater.inflate(R.layout.fragment_figyelmeztetesek, container, false);
     }
 }

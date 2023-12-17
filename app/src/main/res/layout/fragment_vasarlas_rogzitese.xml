@@ -123,7 +123,7 @@
         app:layout_constraintTop_toTopOf="@+id/lejarat" />
 
     <Button
-        android:id="@+id/btnHozzaadp"
+        android:id="@+id/btnHozzaado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"

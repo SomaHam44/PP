@@ -11,12 +11,15 @@
         android:id="@+id/cim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="87dp"
+        android:layout_marginBottom="12dp"
         android:text="Gyógyszer részletek"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNev"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="87dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nev"
@@ -67,8 +70,8 @@
         android:layout_marginTop="16dp"
         android:text="Hány napra elég:"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/kezdoKeszlet"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="@+id/kezdoKeszlet"
+        app:layout_constraintTop_toBottomOf="@+id/kezdoKeszlet" />
 
     <EditText
         android:id="@+id/editTextNev"
@@ -95,14 +98,11 @@
         app:layout_constraintStart_toEndOf="@+id/hatoanyag"
         app:layout_constraintTop_toTopOf="@+id/hatoanyag" />
 
-    <EditText
-        android:id="@+id/editTextTajSzam"
+    <CheckBox
+        android:id="@+id/cbRendszeresSzedes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:ems="8"
-        android:hint="TAJ szám"
-        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/rendszeres"
         app:layout_constraintStart_toEndOf="@+id/rendszeres"
         app:layout_constraintTop_toTopOf="@+id/rendszeres"/>
@@ -159,11 +159,13 @@
         android:id="@+id/editTextLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="link"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/hanyNapra"
-        app:layout_constraintTop_toTopOf="@+id/hanyNapra"
-        tools:layout_editor_absoluteX="210dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hanyNapra"
+        app:layout_constraintTop_toTopOf="@+id/hanyNapra" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
