@@ -16,6 +16,7 @@
         android:layout_marginTop="96dp"
         android:text="Gyógyszer bevétele"
         android:textSize="40sp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +29,7 @@
         android:layout_marginEnd="16dp"
         android:text="Dátum:"
         android:textSize="25sp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/ListaBtn"
         app:layout_constraintEnd_toStartOf="@+id/ListaBtn"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +43,7 @@
         android:layout_marginEnd="24dp"
         android:text="Időpont:"
         android:textSize="25sp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/ListaBtn"
         app:layout_constraintEnd_toStartOf="@+id/ListaBtn"
         app:layout_constraintHorizontal_bias="0.0"
@@ -54,6 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Lista"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CimText" />
@@ -74,6 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Mindent be"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/IdopontText"
         app:layout_constraintTop_toBottomOf="@+id/IdopontText" />
 
@@ -82,6 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Semmit nem"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnMinden"
         app:layout_constraintEnd_toEndOf="@+id/gyogyszerLista"
         app:layout_constraintTop_toTopOf="@+id/btnMinden"
@@ -92,6 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mentés"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnVissza"
         app:layout_constraintEnd_toEndOf="@+id/gyogyszerLista"
         app:layout_constraintTop_toTopOf="@+id/btnVissza"
@@ -103,6 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Vissza"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/gyogyszerLista"
         app:layout_constraintTop_toBottomOf="@+id/gyogyszerLista" />
 

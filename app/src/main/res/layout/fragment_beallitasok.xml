@@ -13,6 +13,7 @@
         android:layout_marginTop="106dp"
         android:text="Beállítások"
         android:textSize="40sp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +26,7 @@
         android:layout_marginTop="38dp"
         android:text="Név:"
         android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beallitasok" />
 
@@ -35,6 +37,7 @@
         android:layout_marginTop="32dp"
         android:text="Születési dátum:"
         android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/nev"
         app:layout_constraintTop_toBottomOf="@+id/nev" />
 
@@ -45,6 +48,7 @@
         android:layout_marginTop="32dp"
         android:text="TAJ szám:"
         android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/szuletesiDatum"
         app:layout_constraintTop_toBottomOf="@+id/szuletesiDatum" />
 
@@ -57,6 +61,8 @@
         android:hint="Név"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/nev"
         app:layout_constraintEnd_toEndOf="@+id/beallitasok"
         app:layout_constraintStart_toEndOf="@+id/nev"
@@ -82,6 +88,8 @@
         android:hint="TAJ szám"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/tajSzam"
         app:layout_constraintStart_toEndOf="@+id/tajSzam"
         app:layout_constraintTop_toTopOf="@+id/tajSzam" />
@@ -93,6 +101,7 @@
         android:layout_marginStart="38dp"
         android:layout_marginTop="200dp"
         android:text="Mégse"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTajSzam" />
 
@@ -102,6 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="38dp"
         android:text="Mentés"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnMegse"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -113,6 +123,8 @@
         android:ems="10"
         android:inputType="date"
         android:hint="Születési dátum"
+        android:textColorHint="@color/colorPrimary"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/szuletesiDatum"
         app:layout_constraintStart_toEndOf="@+id/szuletesiDatum"
         app:layout_constraintTop_toTopOf="@+id/szuletesiDatum"

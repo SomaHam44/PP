@@ -14,6 +14,7 @@
         android:layout_marginTop="106dp"
         android:text="Figyelmeztetések"
         android:textSize="40sp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Vissza"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/figyelmeztetesekLista"
         app:layout_constraintTop_toBottomOf="@+id/figyelmeztetesekLista" />
 
@@ -43,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gyógyszertár keresése"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnFigyelmeztetesekVissza"
         app:layout_constraintEnd_toEndOf="@+id/figyelmeztetesekLista"
         app:layout_constraintTop_toTopOf="@+id/btnFigyelmeztetesekVissza"
