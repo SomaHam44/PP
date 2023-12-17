@@ -79,12 +79,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Név"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/nev"
         app:layout_constraintEnd_toEndOf="@+id/cim"
         app:layout_constraintStart_toEndOf="@+id/nev"
-        app:layout_constraintTop_toTopOf="@+id/nev"/>
+        app:layout_constraintTop_toTopOf="@+id/nev" />
 
     <EditText
         android:id="@+id/editTextHatoanyag"
@@ -92,8 +93,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:ems="10"
-        android:inputType="date"
         android:hint="Hatóanyag"
+        android:inputType="date"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/hatoanyag"
         app:layout_constraintStart_toEndOf="@+id/hatoanyag"
         app:layout_constraintTop_toTopOf="@+id/hatoanyag" />
@@ -103,9 +105,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/rendszeres"
         app:layout_constraintStart_toEndOf="@+id/rendszeres"
-        app:layout_constraintTop_toTopOf="@+id/rendszeres"/>
+        app:layout_constraintTop_toTopOf="@+id/rendszeres" />
 
     <TextView
         android:id="@+id/idopontok"
@@ -122,6 +126,7 @@
         android:layout_width="351dp"
         android:layout_height="163dp"
         android:layout_marginTop="16dp"
+        android:scrollbars="vertical"
         app:layout_constraintStart_toStartOf="@+id/idopontok"
         app:layout_constraintTop_toBottomOf="@+id/idopontok" />
 
@@ -146,11 +151,12 @@
 
     <EditText
         android:id="@+id/editTextNumber"
-        android:layout_width="44dp"
-        android:layout_height="41dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:ems="10"
         android:inputType="number"
+        android:hint="db"
         app:layout_constraintBottom_toBottomOf="@+id/kezdoKeszlet"
         app:layout_constraintStart_toEndOf="@+id/kezdoKeszlet"
         app:layout_constraintTop_toTopOf="@+id/kezdoKeszlet" />
@@ -163,6 +169,7 @@
         android:ems="10"
         android:hint="link"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/hanyNapra"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/hanyNapra"

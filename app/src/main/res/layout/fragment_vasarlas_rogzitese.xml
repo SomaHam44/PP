@@ -64,6 +64,7 @@
         android:layout_width="351dp"
         android:layout_height="250dp"
         android:layout_marginTop="16dp"
+        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dobozSzama" />
@@ -101,7 +102,7 @@
     <EditText
         android:id="@+id/editTextKiszereles"
         android:layout_width="157dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="8"
