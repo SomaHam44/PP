@@ -21,7 +21,8 @@ import android.widget.EditText;
 public class VasarlasRogziteseFragment extends Fragment {
     private EditText editTextKiszereles;
     private DatePicker dpLejarat;
-    private Button btnFelvesz, btnTovabb;
+    private Button btnFelvesz, btnTovabb, btnVissza;
+    private RecyclerView rvVasarlasLista;
     private DBHelper adatbazis;
     public VasarlasRogziteseFragment() {
         // Required empty public constructor
@@ -44,8 +45,12 @@ public class VasarlasRogziteseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_vasarlas_rogzitese, container, false);
+        btnFelvesz = rootView.findViewById(R.id.btnFelvesz);
         editTextKiszereles = rootView.findViewById(R.id.editTextKiszereles);
-        dpLejarat = rootView.findViewById(R.id.lejarat);
+        dpLejarat = rootView.findViewById(R.id.dpLejarat);
+        btnTovabb = rootView.findViewById(R.id.btnTovabb);
+        btnVissza = rootView.findViewById(R.id.btnVissza);
+        rvVasarlasLista = rootView.findViewById(R.id.vasarlasLista);
         /*btnTovabb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +59,13 @@ public class VasarlasRogziteseFragment extends Fragment {
         });
 
         btnFelvesz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        btnVissza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

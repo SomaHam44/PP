@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
-        android:text="Gyógyszer bevétel"
+        android:text="Gyógyszer bevétele"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
@@ -25,24 +25,33 @@
         android:id="@+id/DatumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:text="Dátum:"
         android:textSize="25sp"
-        app:layout_constraintTop_toTopOf="@+id/ListaBtn"
-        tools:layout_editor_absoluteX="47dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ListaBtn"
+        app:layout_constraintEnd_toStartOf="@+id/ListaBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ListaBtn" />
 
     <TextView
         android:id="@+id/IdopontText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:text="Időpont:"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/ListaBtn"
-        tools:layout_editor_absoluteX="46dp" />
+        app:layout_constraintEnd_toStartOf="@+id/ListaBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/DatumText"
+        app:layout_constraintTop_toBottomOf="@+id/DatumText"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/ListaBtn"
-        android:layout_width="98dp"
-        android:layout_height="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Lista"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,11 +61,30 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gyogyszerLista"
         android:layout_width="351dp"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ListaBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMinden" />
+
+    <Button
+        android:id="@+id/btnMinden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Mindent be"
+        app:layout_constraintStart_toStartOf="@+id/IdopontText"
+        app:layout_constraintTop_toBottomOf="@+id/IdopontText" />
+
+    <Button
+        android:id="@+id/btnSemmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Semmit nem"
+        app:layout_constraintBottom_toBottomOf="@+id/btnMinden"
+        app:layout_constraintEnd_toEndOf="@+id/gyogyszerLista"
+        app:layout_constraintTop_toTopOf="@+id/btnMinden"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnTovabb"
@@ -66,7 +94,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/btnVissza"
         app:layout_constraintEnd_toEndOf="@+id/gyogyszerLista"
         app:layout_constraintTop_toTopOf="@+id/btnVissza"
-        app:layout_constraintVertical_bias="1.0" />
+         />
 
     <Button
         android:id="@+id/btnVissza"

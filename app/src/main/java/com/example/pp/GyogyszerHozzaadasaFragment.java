@@ -34,13 +34,6 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment GyogyszerHozzaadasaFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static GyogyszerHozzaadasaFragment newInstance() {
         GyogyszerHozzaadasaFragment fragment = new GyogyszerHozzaadasaFragment();
         Bundle args = new Bundle();
@@ -63,7 +56,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
         editTextSzam = rootView.findViewById(R.id.editTextNumber);
         editTextLink = rootView.findViewById(R.id.editTextLink);
         cbRendszeres = rootView.findViewById(R.id.checkBox);
-        rvAdagolas = rootView.findViewById(R.id.idopontok);
+        rvAdagolas = rootView.findViewById(R.id.idopontLista);
         btnVissza = rootView.findViewById(R.id.btnVissza);
         btnMentes = rootView.findViewById(R.id.btnMentes);
 
@@ -93,13 +86,13 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
             }
         });
 
-        /*btnVissza.setOnClickListener(new View.OnClickListener() {
+        btnVissza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
-        */
+        
 
         return inflater.inflate(R.layout.fragment_gyogyszer_hozzaadasa, container, false);
     }

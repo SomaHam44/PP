@@ -112,7 +112,7 @@
         app:layout_constraintTop_toTopOf="@+id/kiszereles" />
 
     <DatePicker
-        android:id="@+id/editTextLejarat"
+        android:id="@+id/dpLejarat"
         android:layout_width="135dp"
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
@@ -121,5 +121,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/lejarat"
         app:layout_constraintStart_toEndOf="@+id/lejarat"
         app:layout_constraintTop_toTopOf="@+id/lejarat" />
+
+    <Button
+        android:id="@+id/btnHozzaadp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="200dp"
+        android:text="Hozzáad"
+        app:layout_constraintBottom_toBottomOf="@+id/dobozSzama"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dobozSzama" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

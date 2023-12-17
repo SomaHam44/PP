@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="@+id/nev"/>
 
     <DatePicker
-        android:id="@+id/datePicker"
+        android:id="@+id/dpSzulDatum"
         android:layout_width="15dp"
         android:layout_height="29dp"
         android:layout_marginStart="8dp"

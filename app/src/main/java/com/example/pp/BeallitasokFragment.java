@@ -27,7 +27,8 @@ import android.widget.Toast;
  */
 public class BeallitasokFragment extends Fragment {
     private EditText editTextNev;
-    private DatePicker editSzulDatum;
+    private EditText editSzulDatum;
+    private DatePicker dpSzulDatum;
     private EditText editTajSzam;
     private Button btnMegse, btnMentes;
     private DBHelper adatbazis;
@@ -53,6 +54,7 @@ public class BeallitasokFragment extends Fragment {
                 container, false);
         editTextNev = rootView.findViewById(R.id.editTextNev);
         editSzulDatum = rootView.findViewById(R.id.editSzulDatum);
+        dpSzulDatum = rootView.findViewById(R.id.dpSzulDatum);
         editTajSzam = rootView.findViewById(R.id.editTajSzam);
         btnMentes = rootView.findViewById(R.id.btnMentes);
         btnMegse = rootView.findViewById(R.id.btnMegse);
@@ -100,12 +102,15 @@ public class BeallitasokFragment extends Fragment {
                 }
             }
         });
+
+
         btnMegse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Nem történt beállítás", Toast.LENGTH_SHORT).show();
             }
         });
+
         return rootView;
     }
 }

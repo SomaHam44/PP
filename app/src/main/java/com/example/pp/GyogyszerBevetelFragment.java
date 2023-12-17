@@ -3,6 +3,7 @@ package com.example.pp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,9 @@ import android.widget.Button;
  */
 public class GyogyszerBevetelFragment extends Fragment {
     private Button btnMentes;
+    private Button btnLista, btnVissza, btnMinden, btnSemmi;
+    private RecyclerView rvGyogyszerLista;
+    private DBHelper adatbazis;
 
     public GyogyszerBevetelFragment() {
         // Required empty public constructor
@@ -30,11 +34,13 @@ public class GyogyszerBevetelFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        adatbazis = new DBHelper(getActivity());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_gyogyszer_bevetel, container, false);
 
 
         /*btnMentes.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +50,6 @@ public class GyogyszerBevetelFragment extends Fragment {
             }
         });
         */
-        return inflater.inflate(R.layout.fragment_gyogyszer_bevetel, container, false);
+        return rootView;
     }
 }
