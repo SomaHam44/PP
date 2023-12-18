@@ -24,11 +24,14 @@ public class GyogyszerReszletekFragment extends Fragment {
     private EditText editTextHatoanyag;
     private EditText editTextLink;
     private TextView TextViewSelectedID;
-    private EditText editTextNumber;
+    private EditText editTextNapi;
+    private EditText editTextKeszlet;
     private CheckBox cbRendszeres;
-    private RecyclerView rvIdopontok;
     private Button btnVissza, btnMentes;
     private DBHelper adatbazis;
+
+    private TextView napszam;
+    private int napok;
 
     public GyogyszerReszletekFragment() {
         // Required empty public constructor
@@ -54,17 +57,23 @@ public class GyogyszerReszletekFragment extends Fragment {
         editTextNev = rootView.findViewById(R.id.editTextNev);
         editTextHatoanyag = rootView.findViewById(R.id.editTextHatoanyag);
         editTextLink = rootView.findViewById(R.id.editTextLink);
-        editTextNumber = rootView.findViewById(R.id.editTextNumber);
+        editTextKeszlet = rootView.findViewById(R.id.editTextKeszlet);
+        editTextNapi = rootView.findViewById(R.id.editTextNapi);
         TextViewSelectedID = rootView.findViewById(R.id.TextViewSelectedID);
         cbRendszeres = rootView.findViewById(R.id.cbRendszeresSzedes);
         btnMentes = rootView.findViewById(R.id.btnTovabb);
         btnVissza = rootView.findViewById(R.id.btnVissza);
+        napszam.findViewById(R.id.napszam);
 
         Gyogyszer gyogyszer = ((MainActivity)getActivity()).getSelectedGyogyszer();
         TextViewSelectedID.setText(gyogyszer.getId());
         editTextNev.append(gyogyszer.getNev());
         editTextHatoanyag.append(gyogyszer.getHatoanyag());
-        editTextNu
+        editTextLink.append(gyogyszer.getLink());
+        editTextNapi.append(gyogyszer.getStringNapi());
+        editTextKeszlet.append(gyogyszer.getStringKeszlet());
+
+
 
 
 

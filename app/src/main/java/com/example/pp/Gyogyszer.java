@@ -66,6 +66,9 @@ public class Gyogyszer {
     public int getNapi() {
         return napi;
     }
+    public String getStringNapi(){
+        return String.valueOf(napi);
+    }
 
     public void setNapi(int napi) {
         this.napi = napi;
@@ -73,6 +76,9 @@ public class Gyogyszer {
 
     public int getKeszlet() {
         return keszlet;
+    }
+    public String getStringKeszlet(){
+        return String.valueOf(keszlet);
     }
 
     public void setKeszlet(int keszlet) {

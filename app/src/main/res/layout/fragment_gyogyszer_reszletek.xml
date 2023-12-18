@@ -11,11 +11,11 @@
         android:id="@+id/cim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="87dp"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="12dp"
         android:text="Gyógyszer részletek"
-        android:textSize="30sp"
         android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextNev"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -96,8 +96,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Ez a mennyiség még"
-        android:textSize="20sp"
         android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/keszlet"
         app:layout_constraintTop_toBottomOf="@+id/keszlet" />
 
@@ -182,23 +182,11 @@
         android:id="@+id/btnVissza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:text="Vissza"
         android:textColor="@color/colorPrimary"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="587dp" />
-
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="db"
-        android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/kezdoKeszlet"
-        app:layout_constraintStart_toEndOf="@+id/kezdoKeszlet"
-        app:layout_constraintTop_toTopOf="@+id/kezdoKeszlet" />
+        app:layout_constraintTop_toBottomOf="@+id/napok1"
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/TextViewSelectedID"
@@ -223,22 +211,24 @@
         android:id="@+id/napszam"
         android:layout_width="38dp"
         android:layout_height="26dp"
+        android:layout_marginStart="8dp"
         android:text="sok"
         app:layout_constraintBottom_toBottomOf="@+id/napok1"
-        app:layout_constraintTop_toTopOf="@+id/napok1"
-        tools:layout_editor_absoluteX="203dp" />
+        app:layout_constraintStart_toEndOf="@+id/napok1"
+        app:layout_constraintTop_toTopOf="@+id/napok1" />
 
     <EditText
         android:id="@+id/editTextKeszlet"
         android:layout_width="53dp"
         android:layout_height="36dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/keszlet"
+        app:layout_constraintStart_toEndOf="@+id/keszlet"
         app:layout_constraintTop_toTopOf="@+id/keszlet"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="216dp" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/editTextNapi"
