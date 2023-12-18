@@ -96,5 +96,6 @@ public class MainActivity extends AppCompatActivity {
         adatbazis = new DBHelper(this);
     }
 
-
+    public void navigateToDetails(Gyogyszer gyogyszer) {
+        Toast.makeText(this, gyogyszer.getId(), Toast.LENGTH_SHORT).show(); }
 }

@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.TextView;
 
 import java.sql.Array;
 import java.util.ArrayList;
@@ -50,6 +52,8 @@ public class GyogyszereimFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszereim, container, false);
         gyogyszerLista= rootView.findViewById(R.id.gyogyszerLista);
+
+
         btnHozzaad = rootView.findViewById(R.id.btnHozzaad);
         btnMegse = rootView.findViewById(R.id.btnMegse);
         List<Gyogyszer> gyogyszeresLista = new ArrayList<>();
@@ -63,6 +67,14 @@ public class GyogyszereimFragment extends Fragment {
         catch (Exception ex) {
             Toast.makeText(getActivity(),"Kérem adjon hozzá gyógyszert a listához!", Toast.LENGTH_SHORT).show();
         }
+
+        Lista_Adapter adapter = new Lista_Adapter(this, gyogyszeresLista);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity() .getApplicationContext());
+        gyogyszerLista.setLayoutManager(layoutManager);
+        gyogyszerLista.setAdapter(adapter);
         return rootView;
+    }
+    public void selectItemAndNavigate(Gyogyszer gyogyszer) {
+        ((MainActivity) getActivity()).navigateToDetails(gyogyszer);
     }
 }
