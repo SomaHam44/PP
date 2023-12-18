@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,7 +23,7 @@ public class GyogyszerReszletekFragment extends Fragment {
     private EditText editTextNev;
     private EditText editTextHatoanyag;
     private EditText editTextLink;
-
+    private TextView TextViewSelectedID;
     private EditText editTextNumber;
     private CheckBox cbRendszeres;
     private RecyclerView rvIdopontok;
@@ -49,14 +50,22 @@ public class GyogyszerReszletekFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszer_reszletek, container, false);
+
         editTextNev = rootView.findViewById(R.id.editTextNev);
         editTextHatoanyag = rootView.findViewById(R.id.editTextHatoanyag);
         editTextLink = rootView.findViewById(R.id.editTextLink);
         editTextNumber = rootView.findViewById(R.id.editTextNumber);
+        TextViewSelectedID = rootView.findViewById(R.id.TextViewSelectedID);
         rvIdopontok = rootView.findViewById(R.id.idopontLista);
         cbRendszeres = rootView.findViewById(R.id.cbRendszeresSzedes);
         btnMentes = rootView.findViewById(R.id.btnTovabb);
         btnVissza = rootView.findViewById(R.id.btnVissza);
+
+        Gyogyszer gyogyszer = ((MainActivity)getActivity()).getSelectedGyogyszer();
+        TextViewSelectedID.setText(gyogyszer.getId());
+
+
+
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

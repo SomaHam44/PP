@@ -16,6 +16,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MainActivity extends AppCompatActivity {
     private DBHelper adatbazis;
+    private Gyogyszer selectedGyogyszer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar foToolbar = findViewById(R.id.fo_toolbar);
         setSupportActionBar(foToolbar);
-        loadFragment(new FooldalFragment(), "fooldal");
+        loadFragment(new FooldalFragment(), "fooldal", false);
 
     }
 
@@ -40,39 +41,39 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_fooldal:
-                loadFragment(FooldalFragment.newInstance(), "fooldal");
+                loadFragment(FooldalFragment.newInstance(), "fooldal", false);
                 showMessage("Főoldal");
                 return true;
             case R.id.action_beallitasok:
-                loadFragment(BeallitasokFragment.newInstance(), "beallitasok");
+                loadFragment(BeallitasokFragment.newInstance(), "beallitasok", false);
                 showMessage("Beállítások");
                 return true;
             case R.id.action_gyogyszereim:
-                loadFragment(GyogyszereimFragment.newInstance(), "gyogyszereim");
+                loadFragment(GyogyszereimFragment.newInstance(), "gyogyszereim", false);
                 showMessage("Gyógyszereim");
                 return true;
             case R.id.action_figyelmeztetesek:
-                loadFragment(FigyelmeztetesekFragment.newInstance(), "figyelmeztetesek");
+                loadFragment(FigyelmeztetesekFragment.newInstance(), "figyelmeztetesek", false);
                 showMessage("Figyelmeztetések");
                 return true;
             case R.id.action_vasarlasRogzitese:
-                loadFragment(VasarlasRogziteseFragment.newInstance(), "vasarlasRogzitese");
+                loadFragment(VasarlasRogziteseFragment.newInstance(), "vasarlasRogzitese", false);
                 showMessage("Vásárlás rögzítése");
                 return true;
             case R.id.action_gyogyszerHozzaad:
-                loadFragment(GyogyszerHozzaadasaFragment.newInstance(), "gyogyszerHozzaad");
+                loadFragment(GyogyszerHozzaadasaFragment.newInstance(), "gyogyszerHozzaad", false);
                 showMessage("Gyógyszer hozzáadása");
                 return true;
             case R.id.action_gyogyszertarKeres:
-                loadFragment(GyogyszertarKeresFragment.newInstance(), "gyogyszertarKeres");
+                loadFragment(GyogyszertarKeresFragment.newInstance(), "gyogyszertarKeres", false);
                 showMessage("Gyógyszertár keresése");
                 return true;
             case R.id.action_gyogyszerBevetel:
-                loadFragment(GyogyszerBevetelFragment.newInstance(), "gyogyszerBevetel");
+                loadFragment(GyogyszerBevetelFragment.newInstance(), "gyogyszerBevetel", false);
                 showMessage("Gyógyszer bevétele");
                 return true;
             case R.id.action_gyogyszerReszletek:
-                loadFragment(GyogyszerReszletekFragment.newInstance(), "gyogyszerReszletek");
+                loadFragment(GyogyszerReszletekFragment.newInstance(), "gyogyszerReszletek", false);
                 showMessage("Gyógyszer részletek");
                 return true;
 
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
     }
-    private void loadFragment(Fragment fragment, String tag) {
+    private void loadFragment(Fragment fragment, String tag, boolean addToBackStack) {
         FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment, tag);
@@ -97,5 +98,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigateToDetails(Gyogyszer gyogyszer) {
-        Toast.makeText(this, gyogyszer.getId(), Toast.LENGTH_SHORT).show(); }
+        //Toast.makeText(this, gyogyszer.getId(), Toast.LENGTH_SHORT).show(); }
+        selectedGyogyszer = gyogyszer;
+        loadFragment(GyogyszerReszletekFragment.newInstance(), "details", true);
+    }
+    public Gyogyszer getSelectedGyogyszer() {
+        return selectedGyogyszer;
+    }
 }
