@@ -46,6 +46,17 @@
         app:layout_constraintTop_toBottomOf="@+id/nev" />
 
     <TextView
+        android:id="@+id/link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Link:"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/hatoanyag"
+        app:layout_constraintTop_toBottomOf="@+id/hatoanyag" />
+
+    <TextView
         android:id="@+id/rendszeres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,31 +64,54 @@
         android:text="Rendszeresen szedem:"
         android:textSize="20sp"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/hatoanyag"
-        app:layout_constraintTop_toBottomOf="@+id/hatoanyag" />
+        app:layout_constraintStart_toStartOf="@+id/link"
+        app:layout_constraintTop_toBottomOf="@+id/link" />
 
     <TextView
-        android:id="@+id/kezdoKeszlet"
+        android:id="@+id/keszlet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Aktuális készlet (db):"
         android:textSize="20sp"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/rendszeres"
-        app:layout_constraintTop_toBottomOf="@+id/rendszeres" />
+        app:layout_constraintStart_toStartOf="@+id/napiAdag"
+        app:layout_constraintTop_toBottomOf="@+id/napiAdag" />
 
 
     <TextView
-        android:id="@+id/hanyNapra"
+        android:id="@+id/napiAdag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hány napra elég:"
+        android:text="Napi adag:"
         android:textSize="20sp"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/kezdoKeszlet"
-        app:layout_constraintTop_toBottomOf="@+id/kezdoKeszlet" />
+        app:layout_constraintStart_toStartOf="@+id/rendszeres"
+        app:layout_constraintTop_toBottomOf="@+id/rendszeres" />
+
+    <TextView
+        android:id="@+id/napok1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Ez a mennyiség még"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/keszlet"
+        app:layout_constraintTop_toBottomOf="@+id/keszlet" />
+
+    <TextView
+        android:id="@+id/napok2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="napra elég."
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/napok1"
+        app:layout_constraintStart_toEndOf="@+id/napszam"
+        app:layout_constraintTop_toTopOf="@+id/napok1" />
 
     <EditText
         android:id="@+id/editTextNev"
@@ -108,6 +142,20 @@
         app:layout_constraintStart_toEndOf="@+id/hatoanyag"
         app:layout_constraintTop_toTopOf="@+id/hatoanyag" />
 
+    <EditText
+        android:id="@+id/editTextLink"
+        android:layout_width="299dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="Link"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/link"
+        app:layout_constraintStart_toEndOf="@+id/link"
+        app:layout_constraintTop_toTopOf="@+id/link" />
+
     <CheckBox
         android:id="@+id/cbRendszeresSzedes"
         android:layout_width="wrap_content"
@@ -119,26 +167,6 @@
         app:layout_constraintStart_toEndOf="@+id/rendszeres"
         app:layout_constraintTop_toTopOf="@+id/rendszeres" />
 
-    <TextView
-        android:id="@+id/idopontok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Adagolás:"
-        android:textSize="20sp"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/kezdoKeszlet"
-        app:layout_constraintTop_toBottomOf="@+id/hanyNapra" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idopontLista"
-        android:layout_width="351dp"
-        android:layout_height="163dp"
-        android:layout_marginTop="16dp"
-        android:scrollbars="vertical"
-        app:layout_constraintStart_toStartOf="@+id/idopontok"
-        app:layout_constraintTop_toBottomOf="@+id/idopontok" />
-
     <Button
         android:id="@+id/btnTovabb"
         android:layout_width="wrap_content"
@@ -146,19 +174,18 @@
         android:text="Mentés"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnVissza"
-        app:layout_constraintEnd_toEndOf="@+id/idopontLista"
         app:layout_constraintTop_toTopOf="@+id/btnVissza"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="279dp" />
 
     <Button
         android:id="@+id/btnVissza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="Vissza"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/idopontLista"
-        app:layout_constraintTop_toBottomOf="@+id/idopontLista" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="587dp" />
 
     <EditText
         android:id="@+id/editTextNumber"
@@ -172,21 +199,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/kezdoKeszlet"
         app:layout_constraintStart_toEndOf="@+id/kezdoKeszlet"
         app:layout_constraintTop_toTopOf="@+id/kezdoKeszlet" />
-
-    <EditText
-        android:id="@+id/editTextLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:ems="10"
-        android:hint="link"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/hanyNapra"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/hanyNapra"
-        app:layout_constraintTop_toTopOf="@+id/hanyNapra" />
 
     <TextView
         android:id="@+id/TextViewSelectedID"
@@ -206,5 +218,39 @@
         android:text="ID:"
         app:layout_constraintBottom_toTopOf="@+id/cim"
         app:layout_constraintStart_toStartOf="@+id/nev" />
+
+    <TextView
+        android:id="@+id/napszam"
+        android:layout_width="38dp"
+        android:layout_height="26dp"
+        android:text="sok"
+        app:layout_constraintBottom_toBottomOf="@+id/napok1"
+        app:layout_constraintTop_toTopOf="@+id/napok1"
+        tools:layout_editor_absoluteX="203dp" />
+
+    <EditText
+        android:id="@+id/editTextKeszlet"
+        android:layout_width="53dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/keszlet"
+        app:layout_constraintTop_toTopOf="@+id/keszlet"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="216dp" />
+
+    <EditText
+        android:id="@+id/editTextNapi"
+        android:layout_width="53dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/napiAdag"
+        app:layout_constraintStart_toEndOf="@+id/napiAdag"
+        app:layout_constraintTop_toTopOf="@+id/napiAdag"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

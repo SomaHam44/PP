@@ -56,13 +56,15 @@ public class GyogyszerReszletekFragment extends Fragment {
         editTextLink = rootView.findViewById(R.id.editTextLink);
         editTextNumber = rootView.findViewById(R.id.editTextNumber);
         TextViewSelectedID = rootView.findViewById(R.id.TextViewSelectedID);
-        rvIdopontok = rootView.findViewById(R.id.idopontLista);
         cbRendszeres = rootView.findViewById(R.id.cbRendszeresSzedes);
         btnMentes = rootView.findViewById(R.id.btnTovabb);
         btnVissza = rootView.findViewById(R.id.btnVissza);
 
         Gyogyszer gyogyszer = ((MainActivity)getActivity()).getSelectedGyogyszer();
         TextViewSelectedID.setText(gyogyszer.getId());
+        editTextNev.append(gyogyszer.getNev());
+        editTextHatoanyag.append(gyogyszer.getHatoanyag());
+        editTextNu
 
 
 
