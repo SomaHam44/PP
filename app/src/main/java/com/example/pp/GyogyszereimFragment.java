@@ -56,15 +56,13 @@ public class GyogyszereimFragment extends Fragment {
         try {
             Cursor c = adatbazis.listazas();
             while (c.moveToNext()) {
-
+                gyogyszeresLista.add(new Gyogyszer(c.getInt(0),c.getString(1), c.getString(2),c.getString(3), c.getString(4), c.getInt(5), c.getInt(6), c.getString(7)));
             }
             c.close();
         }
         catch (Exception ex) {
             Toast.makeText(getActivity(),"Kérem adjon hozzá gyógyszert a listához!", Toast.LENGTH_SHORT).show();
         }
-
-
         return rootView;
     }
 }
