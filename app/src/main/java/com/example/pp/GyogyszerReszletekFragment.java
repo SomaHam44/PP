@@ -63,18 +63,15 @@ public class GyogyszerReszletekFragment extends Fragment {
         cbRendszeres = rootView.findViewById(R.id.cbRendszeresSzedes);
         btnMentes = rootView.findViewById(R.id.btnTovabb);
         btnVissza = rootView.findViewById(R.id.btnVissza);
-        napszam.findViewById(R.id.napszam);
+        napszam = rootView.findViewById(R.id.napszam);
 
-        Gyogyszer gyogyszer = ((MainActivity)getActivity()).getSelectedGyogyszer();
+        Gyogyszer gyogyszer = ((MainActivity) getActivity()).getSelectedGyogyszer();
         TextViewSelectedID.setText(gyogyszer.getId());
         editTextNev.append(gyogyszer.getNev());
         editTextHatoanyag.append(gyogyszer.getHatoanyag());
         editTextLink.append(gyogyszer.getLink());
         editTextNapi.append(gyogyszer.getStringNapi());
         editTextKeszlet.append(gyogyszer.getStringKeszlet());
-
-
-
 
 
         btnMentes.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +88,7 @@ public class GyogyszerReszletekFragment extends Fragment {
             }
         });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gyogyszer_reszletek, container, false);
+
+        return rootView;
     }
 }

@@ -13,7 +13,7 @@ public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerH
     private List<Gyogyszer> gyogyszeresLista;
     private GyogyszereimFragment gyogyszereimFragment;
 
-    public Lista_Adapter(GyogyszereimFragment gyogyszereimFragment, List<Gyogyszer> moviesList) {
+    public Lista_Adapter(GyogyszereimFragment gyogyszereimFragment, List<Gyogyszer> gyogyszeresLista) {
         this.gyogyszereimFragment = gyogyszereimFragment;
         this.gyogyszeresLista = gyogyszeresLista;
     }

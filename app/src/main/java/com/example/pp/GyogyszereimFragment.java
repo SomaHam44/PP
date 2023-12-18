@@ -64,6 +64,7 @@ public class GyogyszereimFragment extends Fragment {
             }
             c.close();
         }
+
         catch (Exception ex) {
             Toast.makeText(getActivity(),"Kérem adjon hozzá gyógyszert a listához!", Toast.LENGTH_SHORT).show();
         }
@@ -72,6 +73,7 @@ public class GyogyszereimFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity() .getApplicationContext());
         gyogyszerLista.setLayoutManager(layoutManager);
         gyogyszerLista.setAdapter(adapter);
+
         return rootView;
     }
     public void selectItemAndNavigate(Gyogyszer gyogyszer) {
