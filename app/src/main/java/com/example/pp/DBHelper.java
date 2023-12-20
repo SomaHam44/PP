@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -25,6 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String GY_HATOANYAG = "gyogyszerHatoanyag";
     private static final String GY_LINK = "gyogyszerLink";
     private static final String GY_LEJARAT = "lejarat";
+    private static final String GY_RENDSZERES = "rendszeres";
     private static final String GY_NAPI = "napi";
     private static final String GY_KESZLET = "keszlet";
     private static final String GY_MOD = "utolsomod";
@@ -47,6 +49,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + GY_HATOANYAG+"TEXT,"
                 + GY_LINK+"TEXT,"
                 + GY_LEJARAT +" TEXT,"
+                + GY_RENDSZERES +" BOOLEAN, "
                 + GY_NAPI +" INTEGER,"
                 + GY_KESZLET +" INTEGER,"
                 + GY_MOD +" TEXT);";
@@ -76,20 +79,21 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT MAX("+P_ID+") FROM "+ TABLE_PROFIL+"", null);
     }
 
-    public boolean gyogyszerHozzaadas(String nev, String hatoanyag, String link, String lejarat, Integer napi, Integer keszlet, String modDatum){
+    public boolean gyogyszerHozzaadas(String nev, String hatoanyag, String link, String lejarat, boolean rendszeres, int napi, int keszlet, String modDatum){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(GY_NEV, nev);
         values.put(GY_HATOANYAG, hatoanyag);
         values.put(GY_LINK, link);
         values.put(GY_LEJARAT, lejarat);
+        values.put(GY_RENDSZERES, rendszeres);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
         values.put(GY_MOD, modDatum);
         return db.insert(TABLE_GYOGYSZEREK, null, values) != -1;
     }
 
-    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, String lejarat, int napi, int keszlet, String modStrDatum, int utolsoKeszlet, String utolsoMod){
+    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, String lejarat, boolean rendszeres, int napi, int keszlet, String modStrDatum, int utolsoKeszlet, String utolsoMod){
         SQLiteDatabase db = this.getWritableDatabase();
         Date modDatum= new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -99,6 +103,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(GY_HATOANYAG, hatoanyag);
         values.put(GY_LINK, link);
         values.put(GY_LEJARAT, lejarat);
+        values.put(GY_RENDSZERES, rendszeres);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
         if(keszlet==utolsoKeszlet){
@@ -119,7 +124,16 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(DELETE_ROW);
         db.close();
     }
+   public void keszletFrissites(String utolsoMod, String aktualisDatum, int keszlet, int napi){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date utolsoDate = dateFormat.parse(utolsoMod);
+            Date aktualisDate = dateFormat.parse(aktualisDatum);
+        } catch(ParseException e){
+            e.printStackTrace();
+        }
 
+   }
 
 }
 

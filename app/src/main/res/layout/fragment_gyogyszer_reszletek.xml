@@ -12,11 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:layout_marginBottom="12dp"
         android:text="Gyógyszer részletek"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNev"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,10 +25,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="Név:"
-        android:textSize="20sp"
         android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cim" />
 
@@ -115,16 +113,15 @@
 
     <EditText
         android:id="@+id/editTextNev"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Név"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/nev"
-        app:layout_constraintEnd_toEndOf="@+id/cim"
         app:layout_constraintStart_toEndOf="@+id/nev"
         app:layout_constraintTop_toTopOf="@+id/nev" />
 
@@ -144,9 +141,9 @@
 
     <EditText
         android:id="@+id/editTextLink"
-        android:layout_width="299dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Link"
         android:inputType="textPersonName"
@@ -209,10 +206,12 @@
 
     <TextView
         android:id="@+id/napszam"
-        android:layout_width="38dp"
-        android:layout_height="26dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:textSize="20sp"
         android:text="sok"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/napok1"
         app:layout_constraintStart_toEndOf="@+id/napok1"
         app:layout_constraintTop_toTopOf="@+id/napok1" />
@@ -242,5 +241,29 @@
         app:layout_constraintStart_toEndOf="@+id/napiAdag"
         app:layout_constraintTop_toTopOf="@+id/napiAdag"
         app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/frissites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Készlet frissítés:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/napok1"
+        app:layout_constraintTop_toBottomOf="@+id/napok1" />
+
+    <TextView
+        android:id="@+id/idopont"
+        android:layout_width="162dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:text="időpont"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/frissites"
+        app:layout_constraintStart_toEndOf="@+id/frissites"
+        app:layout_constraintTop_toTopOf="@+id/frissites"  />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

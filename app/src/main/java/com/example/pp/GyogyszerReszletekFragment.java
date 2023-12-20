@@ -32,6 +32,7 @@ public class GyogyszerReszletekFragment extends Fragment {
 
     private TextView napszam;
     private int napok;
+    private TextView idopont;
 
     public GyogyszerReszletekFragment() {
         // Required empty public constructor
@@ -64,6 +65,7 @@ public class GyogyszerReszletekFragment extends Fragment {
         btnMentes = rootView.findViewById(R.id.btnTovabb);
         btnVissza = rootView.findViewById(R.id.btnVissza);
         napszam = rootView.findViewById(R.id.napszam);
+        idopont = rootView.findViewById(R.id.idopont);
 
         Gyogyszer gyogyszer = ((MainActivity) getActivity()).getSelectedGyogyszer();
         TextViewSelectedID.setText(gyogyszer.getId());
@@ -73,6 +75,7 @@ public class GyogyszerReszletekFragment extends Fragment {
         editTextNapi.append(gyogyszer.getStringNapi());
         editTextKeszlet.append(gyogyszer.getStringKeszlet());
         napszam.append(String.valueOf(gyogyszer.getKeszlet()/gyogyszer.getNapi()));
+        idopont.append(gyogyszer.getMod());
 
         int utolsoKeszlet= gyogyszer.getKeszlet();
         String utolsoMod=gyogyszer.getMod();

@@ -45,6 +45,8 @@ public class GyogyszereimFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         adatbazis = new DBHelper(getActivity());
+
+
     }
 
     @Override
