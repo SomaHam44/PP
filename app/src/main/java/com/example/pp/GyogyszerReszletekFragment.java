@@ -72,7 +72,8 @@ public class GyogyszerReszletekFragment extends Fragment {
         editTextLink.append(gyogyszer.getLink());
         editTextNapi.append(gyogyszer.getStringNapi());
         editTextKeszlet.append(gyogyszer.getStringKeszlet());
-
+        String utolsoKeszlet= gyogyszer.getStringKeszlet();
+        String utolsoMod=gyogyszer.getMod();
 
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
