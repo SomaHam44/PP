@@ -89,7 +89,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_GYOGYSZEREK, null, values) != -1;
     }
 
-    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, String lejarat, int napi, int keszlet, String modStrDatum, String utolsoKeszlet, String utolsoMod){
+    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, String lejarat, int napi, int keszlet, String modStrDatum, int utolsoKeszlet, String utolsoMod){
         SQLiteDatabase db = this.getWritableDatabase();
         Date modDatum= new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -101,7 +101,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(GY_LEJARAT, lejarat);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
-        if(utolsoKeszlet.equals(keszlet)){
+        if(keszlet==utolsoKeszlet){
             values.put(GY_MOD, modStrDatum);
         }
         else{
