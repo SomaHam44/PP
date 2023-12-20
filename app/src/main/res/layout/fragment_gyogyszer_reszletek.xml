@@ -90,6 +90,29 @@
         app:layout_constraintStart_toStartOf="@+id/rendszeres"
         app:layout_constraintTop_toBottomOf="@+id/rendszeres" />
 
+    <TextView
+        android:id="@+id/napok1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Ez a mennyiség még"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/keszlet"
+        app:layout_constraintTop_toBottomOf="@+id/keszlet" />
+
+    <TextView
+        android:id="@+id/napok2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="napra elég."
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/napok1"
+        app:layout_constraintStart_toEndOf="@+id/napszam"
+        app:layout_constraintTop_toTopOf="@+id/napok1" />
+
     <EditText
         android:id="@+id/editTextNev"
         android:layout_width="0dp"
@@ -158,10 +181,12 @@
         android:id="@+id/btnVissza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
         android:text="Vissza"
         android:textColor="@color/colorPrimary"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="544dp" />
+        app:layout_constraintStart_toStartOf="@+id/napok1"
+        app:layout_constraintTop_toBottomOf="@+id/napok1" />
 
     <TextView
         android:id="@+id/TextViewSelectedID"
@@ -181,6 +206,16 @@
         android:text="ID:"
         app:layout_constraintBottom_toTopOf="@+id/cim"
         app:layout_constraintStart_toStartOf="@+id/nev" />
+
+    <TextView
+        android:id="@+id/napszam"
+        android:layout_width="38dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:text="sok"
+        app:layout_constraintBottom_toBottomOf="@+id/napok1"
+        app:layout_constraintStart_toEndOf="@+id/napok1"
+        app:layout_constraintTop_toTopOf="@+id/napok1" />
 
     <EditText
         android:id="@+id/editTextKeszlet"
