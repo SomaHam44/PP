@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "pirulapolc.db";
     private static final int version = 1;
@@ -84,6 +87,22 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(GY_KESZLET, keszlet);
         values.put(GY_MOD, modDatum);
         return db.insert(TABLE_GYOGYSZEREK, null, values) != -1;
+    }
+
+    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, String lejarat, int napi, int keszlet, String modStrDatum){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Date modDatum= new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        modStrDatum = formatter.format(modDatum);
+        ContentValues values = new ContentValues();
+        values.put(GY_NEV, nev);
+        values.put(GY_HATOANYAG, hatoanyag);
+        values.put(GY_LINK, link);
+        values.put(GY_LEJARAT, lejarat);
+        values.put(GY_NAPI, napi);
+        values.put(GY_KESZLET, keszlet);
+        values.put(GY_MOD, modStrDatum);
+        return db.update(TABLE_GYOGYSZEREK, values, "id=?", new String[]{String.valueOf(id)}) >0;
     }
     public Cursor listazas() {
         SQLiteDatabase db = this.getWritableDatabase();
