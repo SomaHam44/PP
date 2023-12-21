@@ -14,6 +14,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link GyogyszerReszletekFragment#newInstance} factory method to
@@ -80,6 +84,8 @@ public class GyogyszerReszletekFragment extends Fragment {
         int utolsoKeszlet= gyogyszer.getKeszlet();
         String utolsoMod=gyogyszer.getMod();
 
+
+
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,4 +103,8 @@ public class GyogyszerReszletekFragment extends Fragment {
 
         return rootView;
     }
+
+
+
+
 }

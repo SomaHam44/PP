@@ -14,6 +14,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
     private DBHelper adatbazis;
     private Gyogyszer selectedGyogyszer;
@@ -23,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-
         Toolbar foToolbar = findViewById(R.id.fo_toolbar);
         setSupportActionBar(foToolbar);
         loadFragment(new FooldalFragment(), "fooldal", false);
@@ -95,6 +98,27 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         adatbazis = new DBHelper(this);
+        keszletFrissites();
+    }
+
+    public int keszletFrissites(String utolsoMod, int keszlet, int napi){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        int ujkeszlet=keszlet;
+        try {
+            Date lastDate = dateFormat.parse(utolsoMod);
+            Date currentDate = new Date();
+            long differenceInMillis = currentDate.getTime() - lastDate.getTime();
+            long differenceInDays = differenceInMillis / (1000 * 60 * 60 * 24);
+            int napok = (int)differenceInDays;
+            ujkeszlet = keszlet-(napi*napok);
+        } catch(ParseException e){
+            e.printStackTrace();
+        }
+        return ujkeszlet;
+    }
+
+    public void keszletFrissites(){
+
     }
 
     public void navigateToDetails(Gyogyszer gyogyszer) {
