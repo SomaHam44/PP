@@ -48,7 +48,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 + GY_NEV +" TEXT NOT NULL,"
                 + GY_HATOANYAG+"TEXT,"
                 + GY_LINK+"TEXT,"
-                + GY_LEJARAT +" TEXT,"
                 + GY_RENDSZERES +" BOOLEAN, "
                 + GY_NAPI +" INTEGER,"
                 + GY_KESZLET +" INTEGER,"
@@ -79,13 +78,12 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT MAX("+P_ID+") FROM "+ TABLE_PROFIL+"", null);
     }
 
-    public boolean gyogyszerHozzaadas(String nev, String hatoanyag, String link, String lejarat, boolean rendszeres, int napi, int keszlet, String modDatum){
+    public boolean gyogyszerHozzaadas(String nev, String hatoanyag, String link, boolean rendszeres, int napi, int keszlet, String modDatum){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(GY_NEV, nev);
         values.put(GY_HATOANYAG, hatoanyag);
         values.put(GY_LINK, link);
-        values.put(GY_LEJARAT, lejarat);
         values.put(GY_RENDSZERES, rendszeres);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
@@ -93,7 +91,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_GYOGYSZEREK, null, values) != -1;
     }
 
-    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, String lejarat, boolean rendszeres, int napi, int keszlet, String modStrDatum, int utolsoKeszlet, String utolsoMod){
+    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, boolean rendszeres, int napi, int keszlet, String modStrDatum, int utolsoKeszlet, String utolsoMod){
         SQLiteDatabase db = this.getWritableDatabase();
         Date modDatum= new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -102,7 +100,6 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(GY_NEV, nev);
         values.put(GY_HATOANYAG, hatoanyag);
         values.put(GY_LINK, link);
-        values.put(GY_LEJARAT, lejarat);
         values.put(GY_RENDSZERES, rendszeres);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
