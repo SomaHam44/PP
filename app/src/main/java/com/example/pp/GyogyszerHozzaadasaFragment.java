@@ -24,6 +24,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
     private EditText editTextHatoanyago;
     private EditText editTextSzam;
     private EditText editTextLink;
+    private EditText editTextNapi;
     private CheckBox cbRendszeres;
     private RecyclerView rvAdagolas;
     private Button btnVissza, btnMentes;
@@ -52,13 +53,13 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszer_hozzaadasa, container, false);
         editTextNev = rootView.findViewById(R.id.editTextNev);
-        editTextHatoanyago = rootView.findViewById(R.id.editTextHatoanyago);
-        editTextSzam = rootView.findViewById(R.id.editTextNumber);
+        editTextHatoanyago = rootView.findViewById(R.id.editTextHatoanyag);
+        editTextSzam = rootView.findViewById(R.id.editTextKeszlet);
         editTextLink = rootView.findViewById(R.id.editTextLink);
-        cbRendszeres = rootView.findViewById(R.id.checkBox);
-        rvAdagolas = rootView.findViewById(R.id.idopontLista);
+        cbRendszeres = rootView.findViewById(R.id.cbRendszeresSzedes);
+        editTextNapi = rootView.findViewById(R.id.editTextNapi);
         btnVissza = rootView.findViewById(R.id.btnVissza);
-        btnMentes = rootView.findViewById(R.id.btnMentes);
+        btnMentes = rootView.findViewById(R.id.btnTovabb);
 
         // Inflate the layout for this fragment
         btnMentes.setOnClickListener(new View.OnClickListener() {

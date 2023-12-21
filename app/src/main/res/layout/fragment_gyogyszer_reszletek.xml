@@ -219,7 +219,7 @@
     <EditText
         android:id="@+id/editTextKeszlet"
         android:layout_width="53dp"
-        android:layout_height="36dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
@@ -232,7 +232,7 @@
     <EditText
         android:id="@+id/editTextNapi"
         android:layout_width="53dp"
-        android:layout_height="36dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
