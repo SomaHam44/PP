@@ -94,7 +94,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, boolean rendszeres, int napi, int keszlet, String modStrDatum, int utolsoKeszlet, String utolsoMod){
         SQLiteDatabase db = this.getWritableDatabase();
         Date modDatum= new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         modStrDatum = formatter.format(modDatum);
         ContentValues values = new ContentValues();
         values.put(GY_NEV, nev);
@@ -121,16 +121,38 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(DELETE_ROW);
         db.close();
     }
-   public void keszletFrissites(String utolsoMod, String aktualisDatum, int keszlet, int napi){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            Date utolsoDate = dateFormat.parse(utolsoMod);
-            Date aktualisDate = dateFormat.parse(aktualisDatum);
-        } catch(ParseException e){
-            e.printStackTrace();
-        }
 
+   public Cursor utolsoModLekerdezes(){
+       SQLiteDatabase db = this.getReadableDatabase();
+       return db.rawQuery(" SELECT GY_MOD FROM " + TABLE_GYOGYSZEREK, null);
    }
+    public Cursor keszletLekerdezes(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery(" SELECT GY_KESZLET FROM " + TABLE_GYOGYSZEREK, null);
+    }
+
+    public Cursor IDlistaLekerdezes(){
+
+
+    }
+    public boolean keszletFrissites(int id, int utolsoKeszlet, String utolsoMod, int ujKeszlet){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Date modDatum= new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        String modStrDatum = formatter.format(modDatum);
+        ContentValues values = new ContentValues();
+        values.put(GY_KESZLET, ujKeszlet);
+        if(ujKeszlet==utolsoKeszlet){
+            values.put(GY_MOD, modStrDatum);
+        }
+        else{
+            values.put(GY_MOD,utolsoMod);
+        }
+        return db.update(TABLE_GYOGYSZEREK, values, "id=?", new String[]{String.valueOf(id)}) >0;
+    }
+
+
+
 
 }
 
