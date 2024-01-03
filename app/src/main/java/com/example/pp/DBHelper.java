@@ -131,10 +131,10 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery(" SELECT GY_KESZLET FROM " + TABLE_GYOGYSZEREK, null);
     }
 
-    public Cursor IDlistaLekerdezes(){
+    /*public Cursor IDlistaLekerdezes(){
 
 
-    }
+    }*/
     public boolean keszletFrissites(int id, int utolsoKeszlet, String utolsoMod, int ujKeszlet){
         SQLiteDatabase db = this.getWritableDatabase();
         Date modDatum= new Date();

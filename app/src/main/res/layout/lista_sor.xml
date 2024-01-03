@@ -47,9 +47,9 @@
         android:layout_width="22dp"
         android:layout_height="19dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/KeszletTextView"
-        app:layout_constraintStart_toEndOf="@+id/KeszletTextView"
-        app:layout_constraintTop_toTopOf="@+id/KeszletTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/keszletTextView"
+        app:layout_constraintStart_toEndOf="@+id/keszletTextView"
+        app:layout_constraintTop_toTopOf="@+id/keszletTextView"
         tools:text="db" />
 
 
