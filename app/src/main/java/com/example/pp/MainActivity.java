@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigateToDetails(Gyogyszer gyogyszer) {
-        //Toast.makeText(this, gyogyszer.getId(), Toast.LENGTH_SHORT).show(); }
+        Toast.makeText(this, gyogyszer.getStringId(), Toast.LENGTH_SHORT).show();
         selectedGyogyszer = gyogyszer;
         loadFragment(GyogyszerReszletekFragment.newInstance(), "details", true);
     }

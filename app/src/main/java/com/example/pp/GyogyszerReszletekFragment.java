@@ -73,7 +73,7 @@ public class GyogyszerReszletekFragment extends Fragment {
         idopont = rootView.findViewById(R.id.idopont);
 
         Gyogyszer gyogyszer = ((MainActivity) getActivity()).getSelectedGyogyszer();
-        TextViewSelectedID.setText(gyogyszer.getId());
+        TextViewSelectedID.setText(gyogyszer.getStringId());
         editTextNev.append(gyogyszer.getNev());
         editTextHatoanyag.append(gyogyszer.getHatoanyag());
         editTextLink.append(gyogyszer.getLink());
@@ -81,10 +81,8 @@ public class GyogyszerReszletekFragment extends Fragment {
         editTextKeszlet.append(gyogyszer.getStringKeszlet());
         napszam.append(String.valueOf(gyogyszer.getKeszlet()/gyogyszer.getNapi()));
         //idopont.append(gyogyszer.getMod());
-        int utolsoKeszlet = gyogyszer.getKeszlet();
+        //int utolsoKeszlet = gyogyszer.getKeszlet();
         //String utolsoMod = gyogyszer.getMod();
-
-
 
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
