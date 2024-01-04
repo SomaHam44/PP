@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static final String DB_NAME = "pirulapolc.db";
+    private static final String DB_NAME = "pirulapolc2.db";
     private static final int version = 1;
 
     private static final String TABLE_PROFIL = "Profil";
@@ -20,7 +20,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String P_DATUM = "szuldatum";
     private static final String P_TAJ = "TAJ";
 
-    private static final String TABLE_GYOGYSZEREK="Gyogyszerek";
+    private static final String TABLE_GYOGYSZEREK="Gyogyszer";
     private static final String GY_ID="gyogyszerID";
     private static final String GY_NEV = "gyogyszerNev";
     private static final String GY_HATOANYAG = "gyogyszerHatoanyag";
@@ -38,22 +38,28 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+
         String Create_Profil_Table = "CREATE TABLE IF NOT EXISTS " + TABLE_PROFIL+ "("
                 + P_ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + P_NEV +" TEXT,"
                 + P_DATUM +" TEXT,"
                 + P_TAJ +" INTEGER);";
-        String Create_Gyogyszerek_Table = "CREATE TABLE IF NOT EXISTS " +TABLE_GYOGYSZEREK+"("
+        String Create_Gyogyszerek_Table = "CREATE TABLE IF NOT EXISTS " + TABLE_GYOGYSZEREK+ "("
                 + GY_ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + GY_NEV +" TEXT NOT NULL,"
-                + GY_HATOANYAG+" TEXT,"
-                + GY_LINK+" TEXT,"
+                + GY_NEV +" TEXT,"
+                + GY_HATOANYAG +" TEXT,"
+                + GY_LINK +" TEXT,"
                 + GY_NAPI +" INTEGER,"
                 + GY_KESZLET +" INTEGER);";
         //+ GY_RENDSZERES +" BOOLEAN, "
         //+ GY_MOD +" TEXT
+
         sqLiteDatabase.execSQL(Create_Profil_Table);
         sqLiteDatabase.execSQL(Create_Gyogyszerek_Table);
+    }
+    public void deleteTable(String tableName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + tableName);
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {

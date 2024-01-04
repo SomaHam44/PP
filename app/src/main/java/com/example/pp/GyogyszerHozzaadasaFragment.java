@@ -47,8 +47,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        adatbazis = new DBHelper(getActivity());
-    }
+        adatbazis = new DBHelper(getActivity());    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,7 +82,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
                             Toast.makeText(getActivity(), "Gyógyszer hozzáadása sikeres", Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            Toast.makeText(getActivity(), "Gógyszer hozzáadása sikertelen", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Gógyszer hozzáadása sikertelen "+keszlet, Toast.LENGTH_SHORT).show();
                         }
 
                     }
