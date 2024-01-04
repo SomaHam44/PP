@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         adatbazis = new DBHelper(this);
-        keszletFrissites();
+
     }
 
     public int keszletFrissites(String utolsoMod, int keszlet, int napi){

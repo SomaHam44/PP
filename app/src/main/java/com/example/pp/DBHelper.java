@@ -78,16 +78,16 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT MAX("+P_ID+") FROM "+ TABLE_PROFIL+"", null);
     }
 
-    public boolean gyogyszerHozzaadas(String nev, String hatoanyag, String link, boolean rendszeres, int napi, int keszlet, String modDatum){
+    public boolean gyogyszerHozzaadas(String nev, String hatoanyag, String link, int napi, int keszlet){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(GY_NEV, nev);
         values.put(GY_HATOANYAG, hatoanyag);
         values.put(GY_LINK, link);
-        values.put(GY_RENDSZERES, rendszeres);
+        //values.put(GY_RENDSZERES, rendszeres);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
-        values.put(GY_MOD, modDatum);
+        //values.put(GY_MOD, modDatum);
         return db.insert(TABLE_GYOGYSZEREK, null, values) != -1;
     }
 

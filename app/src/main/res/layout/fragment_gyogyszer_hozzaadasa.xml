@@ -158,17 +158,17 @@
         android:id="@+id/btnVissza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:text="Vissza"
         android:textColor="@color/colorPrimary"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="544dp" />
+        app:layout_constraintStart_toStartOf="@+id/cim"
+        app:layout_constraintTop_toBottomOf="@+id/keszlet" />
 
     <TextView
         android:id="@+id/TextViewSelectedID"
         android:layout_width="58dp"
         android:layout_height="22dp"
-        android:text="TextView"
-
+        android:text="sorszam"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
@@ -185,27 +185,25 @@
     <EditText
         android:id="@+id/editTextKeszlet"
         android:layout_width="53dp"
-        android:layout_height="36dp"
+        android:layout_height="46dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/keszlet"
         app:layout_constraintStart_toEndOf="@+id/keszlet"
-        app:layout_constraintTop_toTopOf="@+id/keszlet"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/keszlet" />
 
     <EditText
         android:id="@+id/editTextNapi"
         android:layout_width="53dp"
-        android:layout_height="36dp"
+        android:layout_height="46dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/napiAdag"
         app:layout_constraintStart_toEndOf="@+id/napiAdag"
-        app:layout_constraintTop_toTopOf="@+id/napiAdag"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/napiAdag" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

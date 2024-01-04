@@ -21,8 +21,8 @@ import android.widget.Toast;
  */
 public class GyogyszerHozzaadasaFragment extends Fragment {
     private EditText editTextNev;
-    private EditText editTextHatoanyago;
-    private EditText editTextSzam;
+    private EditText editTextHatoanyagok;
+    private EditText editTextKeszlet;
     private EditText editTextLink;
     private EditText editTextNapi;
     private CheckBox cbRendszeres;
@@ -53,8 +53,8 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszer_hozzaadasa, container, false);
         editTextNev = rootView.findViewById(R.id.editTextNev);
-        editTextHatoanyago = rootView.findViewById(R.id.editTextHatoanyag);
-        editTextSzam = rootView.findViewById(R.id.editTextKeszlet);
+        editTextHatoanyagok = rootView.findViewById(R.id.editTextHatoanyag);
+        editTextKeszlet = rootView.findViewById(R.id.editTextKeszlet);
         editTextLink = rootView.findViewById(R.id.editTextLink);
         cbRendszeres = rootView.findViewById(R.id.cbRendszeresSzedes);
         editTextNapi = rootView.findViewById(R.id.editTextNapi);
@@ -65,24 +65,30 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nev = editTextNev.getText().toString().trim();
-                String hatoanyag = editTextHatoanyago.getText().toString().trim();
-                String szamString = editTextSzam.getText().toString().trim();
+                String nev = editTextNev.getText().toString();
+                String hatoanyag = editTextHatoanyagok.getText().toString();
+                String keszletString = editTextKeszlet.getText().toString().trim();
                 String link = editTextLink.getText().toString().trim();
-                if (nev.isEmpty() || hatoanyag.isEmpty() || szamString.isEmpty() || link.isEmpty()) {
+                String napiString = editTextNapi.getText().toString().trim();
+                if (nev.isEmpty() || hatoanyag.isEmpty() || keszletString.isEmpty() || link.isEmpty()) {
                     Toast.makeText(getActivity(), "Minden mező kitöltése kötelező", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     try {
-                        int szam = Integer.parseInt(szamString);
+                        int keszlet = Integer.parseInt(keszletString);
+                        int napi = Integer.parseInt(napiString);
+                        if (adatbazis.gyogyszerHozzaadas(nev,hatoanyag,link,napi,keszlet)) {
+                            Toast.makeText(getActivity(), "Gyógyszer hozzáadása sikeres", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(getActivity(), "Gógyszer hozzáadása sikertelen", Toast.LENGTH_SHORT).show();
+                        }
 
                     }
                     catch (NumberFormatException ex){
-                        Toast.makeText(getActivity(), "Számnak kell lennie", Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(getActivity(), "A készletnek és a napi mennyiségnek számnak kell lennie", Toast.LENGTH_SHORT).show();
                     }
                 }
-
 
             }
         });
@@ -93,7 +99,6 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
 
             }
         });
-        
 
         return inflater.inflate(R.layout.fragment_gyogyszer_hozzaadasa, container, false);
     }
