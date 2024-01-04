@@ -27,7 +27,9 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
     private EditText editTextNapi;
     private CheckBox cbRendszeres;
     private RecyclerView rvAdagolas;
-    private Button btnVissza, btnMentes;
+    private Button btnVissza;
+
+    private Button btnMentes;
 
     private DBHelper adatbazis;
 
@@ -59,12 +61,13 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
         cbRendszeres = rootView.findViewById(R.id.cbRendszeresSzedes);
         editTextNapi = rootView.findViewById(R.id.editTextNapi);
         btnVissza = rootView.findViewById(R.id.btnVissza);
-        btnMentes = rootView.findViewById(R.id.btnTovabb);
+        btnMentes = rootView.findViewById(R.id.btnMentes);
 
         // Inflate the layout for this fragment
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getActivity(), "KATTTT", Toast.LENGTH_SHORT).show();
                 String nev = editTextNev.getText().toString();
                 String hatoanyag = editTextHatoanyagok.getText().toString();
                 String keszletString = editTextKeszlet.getText().toString().trim();

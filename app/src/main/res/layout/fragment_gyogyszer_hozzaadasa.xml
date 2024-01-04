@@ -145,7 +145,7 @@
         app:layout_constraintTop_toTopOf="@+id/rendszeres" />
 
     <Button
-        android:id="@+id/btnTovabb"
+        android:id="@+id/btnMentes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"

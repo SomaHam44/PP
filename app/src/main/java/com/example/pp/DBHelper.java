@@ -48,10 +48,10 @@ public class DBHelper extends SQLiteOpenHelper {
                 + GY_NEV +" TEXT NOT NULL,"
                 + GY_HATOANYAG+"TEXT,"
                 + GY_LINK+"TEXT,"
-                + GY_RENDSZERES +" BOOLEAN, "
+                //+ GY_RENDSZERES +" BOOLEAN, "
                 + GY_NAPI +" INTEGER,"
-                + GY_KESZLET +" INTEGER,"
-                + GY_MOD +" TEXT);";
+                + GY_KESZLET +" INTEGER);";
+        //+ GY_MOD +" TEXT
         sqLiteDatabase.execSQL(Create_Profil_Table);
         sqLiteDatabase.execSQL(Create_Gyogyszerek_Table);
     }
