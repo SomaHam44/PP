@@ -57,10 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(Create_Profil_Table);
         sqLiteDatabase.execSQL(Create_Gyogyszerek_Table);
     }
-    public void deleteTable(String tableName) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DROP TABLE IF EXISTS " + tableName);
-    }
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
