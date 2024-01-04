@@ -24,9 +24,9 @@ public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerH
     }
     public void onBindViewHolder(GyogyszerHolder holder, int position) {
         final Gyogyszer gyogyszer = gyogyszeresLista.get(position);
-        holder.IDTextView.setText(gyogyszer.getId());
+        holder.IDTextView.setText(gyogyszer.getStringId());
         holder.gyogyszerNevTextView.setText(gyogyszer.getNev());
-        holder.keszletTextView.setText(gyogyszer.getKeszlet());
+        holder.keszletTextView.setText(gyogyszer.getStringKeszlet());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 gyogyszereimFragment.selectItemAndNavigate(gyogyszer);

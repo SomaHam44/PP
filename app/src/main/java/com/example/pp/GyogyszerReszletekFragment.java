@@ -80,10 +80,9 @@ public class GyogyszerReszletekFragment extends Fragment {
         editTextNapi.append(gyogyszer.getStringNapi());
         editTextKeszlet.append(gyogyszer.getStringKeszlet());
         napszam.append(String.valueOf(gyogyszer.getKeszlet()/gyogyszer.getNapi()));
-        idopont.append(gyogyszer.getMod());
-
+        //idopont.append(gyogyszer.getMod());
         int utolsoKeszlet = gyogyszer.getKeszlet();
-        String utolsoMod = gyogyszer.getMod();
+        //String utolsoMod = gyogyszer.getMod();
 
 
 

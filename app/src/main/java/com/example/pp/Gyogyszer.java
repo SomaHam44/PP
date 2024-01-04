@@ -7,19 +7,19 @@ public class Gyogyszer {
     private String nev;
     private String hatoanyag;
     private String link;
-    private boolean rendszeres;
+    //private boolean rendszeres;
     private int napi;
     private int keszlet;
-    private String mod;
+    //private String mod;
 
-    public Gyogyszer(int id, String nev, String hatoanyag, String link, int napi, int keszlet, String mod) {
+    public Gyogyszer(int id, String nev, String hatoanyag, String link, int napi, int keszlet) {
         this.id = id;
         this.nev = nev;
         this.hatoanyag = hatoanyag;
         this.link = link;
         this.napi = napi;
         this.keszlet = keszlet;
-        this.mod = mod;
+        //this.mod = mod;
     }
 
     public Gyogyszer() {
@@ -27,6 +27,10 @@ public class Gyogyszer {
 
     public int getId() {
         return id;
+    }
+
+    public String getStringId(){
+        return String.valueOf(id);
     }
 
     public void setId(int id) {
@@ -78,11 +82,11 @@ public class Gyogyszer {
         this.keszlet = keszlet;
     }
 
-    public String getMod() {
+    /*public String getMod() {
         return mod;
     }
 
     public void setMod(String mod) {
         this.mod = mod;
-    }
+    }*/
 }

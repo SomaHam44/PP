@@ -45,8 +45,6 @@ public class GyogyszereimFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         adatbazis = new DBHelper(getActivity());
-
-
     }
 
     @Override
@@ -54,15 +52,13 @@ public class GyogyszereimFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszereim, container, false);
         gyogyszerLista = rootView.findViewById(R.id.gyogyszerLista);
-
-
         btnHozzaad = rootView.findViewById(R.id.btnHozzaad);
         btnMegse = rootView.findViewById(R.id.btnMegse);
         List<Gyogyszer> gyogyszeresLista = new ArrayList<>();
         try {
             Cursor c = adatbazis.listazas();
             while (c.moveToNext()) {
-                gyogyszeresLista.add(new Gyogyszer(c.getInt(0),c.getString(1), c.getString(2),c.getString(3), c.getInt(4), c.getInt(5), c.getString(6)));
+                gyogyszeresLista.add(new Gyogyszer(c.getInt(0),c.getString(1), c.getString(2),c.getString(3), c.getInt(4), c.getInt(5)));
             }
             c.close();
         }
