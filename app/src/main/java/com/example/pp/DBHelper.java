@@ -91,7 +91,8 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_GYOGYSZEREK, null, values) != -1;
     }
 
-    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, boolean rendszeres, int napi, int keszlet, String modStrDatum, int utolsoKeszlet, String utolsoMod){
+    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, boolean rendszeres, int napi,
+                                      int keszlet, String modStrDatum, int utolsoKeszlet, String utolsoMod){
         SQLiteDatabase db = this.getWritableDatabase();
         Date modDatum= new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
@@ -103,7 +104,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(GY_RENDSZERES, rendszeres);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
-        if(keszlet==utolsoKeszlet){
+        if(keszlet == utolsoKeszlet){
             values.put(GY_MOD, modStrDatum);
         }
         else{
@@ -137,12 +138,12 @@ public class DBHelper extends SQLiteOpenHelper {
     }*/
     public boolean keszletFrissites(int id, int utolsoKeszlet, String utolsoMod, int ujKeszlet){
         SQLiteDatabase db = this.getWritableDatabase();
-        Date modDatum= new Date();
+        Date modDatum = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         String modStrDatum = formatter.format(modDatum);
         ContentValues values = new ContentValues();
         values.put(GY_KESZLET, ujKeszlet);
-        if(ujKeszlet==utolsoKeszlet){
+        if(ujKeszlet == utolsoKeszlet){
             values.put(GY_MOD, modStrDatum);
         }
         else{

@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -81,8 +82,8 @@ public class GyogyszerReszletekFragment extends Fragment {
         napszam.append(String.valueOf(gyogyszer.getKeszlet()/gyogyszer.getNapi()));
         idopont.append(gyogyszer.getMod());
 
-        int utolsoKeszlet= gyogyszer.getKeszlet();
-        String utolsoMod=gyogyszer.getMod();
+        int utolsoKeszlet = gyogyszer.getKeszlet();
+        String utolsoMod = gyogyszer.getMod();
 
 
 
@@ -96,10 +97,10 @@ public class GyogyszerReszletekFragment extends Fragment {
         btnVissza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getActivity(), "Vissza", Toast.LENGTH_SHORT).show();
 
             }
         });
-        // Inflate the layout for this fragment
 
         return rootView;
     }

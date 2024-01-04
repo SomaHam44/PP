@@ -84,7 +84,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
                             Toast.makeText(getActivity(), "Gyógyszer hozzáadása sikeres", Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            Toast.makeText(getActivity(), "Gógyszer hozzáadása sikertelen", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Gyógyszer hozzáadása sikertelen", Toast.LENGTH_SHORT).show();
                         }
 
                     }
