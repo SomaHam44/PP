@@ -79,6 +79,6 @@ public class VasarlasRogziteseFragment extends Fragment {
             }
         });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vasarlas_rogzitese, container, false);
+        return rootView;
     }
 }

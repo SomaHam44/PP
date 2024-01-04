@@ -53,7 +53,7 @@ public class GyogyszereimFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszereim, container, false);
-        gyogyszerLista= rootView.findViewById(R.id.gyogyszerLista);
+        gyogyszerLista = rootView.findViewById(R.id.gyogyszerLista);
 
 
         btnHozzaad = rootView.findViewById(R.id.btnHozzaad);

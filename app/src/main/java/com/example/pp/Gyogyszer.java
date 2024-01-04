@@ -15,8 +15,8 @@ public class Gyogyszer {
     public Gyogyszer(int id, String nev, String hatoanyag, String link, int napi, int keszlet, String mod) {
         this.id = id;
         this.nev = nev;
-        this.hatoanyag=hatoanyag;
-        this.link=link;
+        this.hatoanyag = hatoanyag;
+        this.link = link;
         this.napi = napi;
         this.keszlet = keszlet;
         this.mod = mod;
