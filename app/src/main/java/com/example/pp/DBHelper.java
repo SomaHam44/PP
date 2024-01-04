@@ -46,11 +46,11 @@ public class DBHelper extends SQLiteOpenHelper {
         String Create_Gyogyszerek_Table = "CREATE TABLE IF NOT EXISTS " +TABLE_GYOGYSZEREK+"("
                 + GY_ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + GY_NEV +" TEXT NOT NULL,"
-                + GY_HATOANYAG+"TEXT,"
-                + GY_LINK+"TEXT,"
-                //+ GY_RENDSZERES +" BOOLEAN, "
+                + GY_HATOANYAG+" TEXT,"
+                + GY_LINK+" TEXT,"
                 + GY_NAPI +" INTEGER,"
                 + GY_KESZLET +" INTEGER);";
+        //+ GY_RENDSZERES +" BOOLEAN, "
         //+ GY_MOD +" TEXT
         sqLiteDatabase.execSQL(Create_Profil_Table);
         sqLiteDatabase.execSQL(Create_Gyogyszerek_Table);
@@ -91,24 +91,24 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_GYOGYSZEREK, null, values) != -1;
     }
 
-    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, boolean rendszeres, int napi, int keszlet, String modStrDatum, int utolsoKeszlet, String utolsoMod){
+    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, int napi, int keszlet){
         SQLiteDatabase db = this.getWritableDatabase();
         Date modDatum= new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-        modStrDatum = formatter.format(modDatum);
+        //modStrDatum = formatter.format(modDatum);
         ContentValues values = new ContentValues();
         values.put(GY_NEV, nev);
         values.put(GY_HATOANYAG, hatoanyag);
         values.put(GY_LINK, link);
-        values.put(GY_RENDSZERES, rendszeres);
+        //values.put(GY_RENDSZERES, rendszeres);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
-        if(keszlet==utolsoKeszlet){
+        /*if(keszlet==utolsoKeszlet){
             values.put(GY_MOD, modStrDatum);
         }
         else{
             values.put(GY_MOD,utolsoMod);
-        }
+        }*/
         return db.update(TABLE_GYOGYSZEREK, values, "id=?", new String[]{String.valueOf(id)}) >0;
     }
     public Cursor listazas() {

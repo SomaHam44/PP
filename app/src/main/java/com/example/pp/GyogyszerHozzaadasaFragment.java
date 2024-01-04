@@ -67,9 +67,8 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "KATTTT", Toast.LENGTH_SHORT).show();
-                String nev = editTextNev.getText().toString();
-                String hatoanyag = editTextHatoanyagok.getText().toString();
+                String nev = editTextNev.getText().toString().trim();
+                String hatoanyag = editTextHatoanyagok.getText().toString().trim();
                 String keszletString = editTextKeszlet.getText().toString().trim();
                 String link = editTextLink.getText().toString().trim();
                 String napiString = editTextNapi.getText().toString().trim();
@@ -99,10 +98,10 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
         btnVissza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Toast.makeText(getActivity(), "VISSZA", Toast.LENGTH_SHORT).show();
             }
         });
 
-        return inflater.inflate(R.layout.fragment_gyogyszer_hozzaadasa, container, false);
+        return rootView;
     }
 }
