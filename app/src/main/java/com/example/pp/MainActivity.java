@@ -126,7 +126,12 @@ public class MainActivity extends AppCompatActivity {
         selectedGyogyszer = gyogyszer;
         loadFragment(GyogyszerReszletekFragment.newInstance(), "details", true);
     }
+
     public Gyogyszer getSelectedGyogyszer() {
         return selectedGyogyszer;
+    }
+
+    public void navigateToGyogyszereim() {
+        loadFragment(GyogyszereimFragment.newInstance(), "details", true);
     }
 }

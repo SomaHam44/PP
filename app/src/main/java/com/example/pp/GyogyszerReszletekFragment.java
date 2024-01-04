@@ -32,7 +32,7 @@ public class GyogyszerReszletekFragment extends Fragment {
     private EditText editTextNapi;
     private EditText editTextKeszlet;
     private CheckBox cbRendszeres;
-    private Button btnVissza, btnMentes;
+    private Button btnVissza, btnMentes, btnTorles;
     private DBHelper adatbazis;
 
     private TextView napszam;
@@ -59,7 +59,6 @@ public class GyogyszerReszletekFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszer_reszletek, container, false);
-
         editTextNev = rootView.findViewById(R.id.editTextNev);
         editTextHatoanyag = rootView.findViewById(R.id.editTextHatoanyag);
         editTextLink = rootView.findViewById(R.id.editTextLink);
@@ -69,6 +68,7 @@ public class GyogyszerReszletekFragment extends Fragment {
         cbRendszeres = rootView.findViewById(R.id.cbRendszeresSzedes);
         btnMentes = rootView.findViewById(R.id.btnTovabb);
         btnVissza = rootView.findViewById(R.id.btnVissza);
+        btnTorles = rootView.findViewById(R.id.btnTorles);
         napszam = rootView.findViewById(R.id.napszam);
         idopont = rootView.findViewById(R.id.idopont);
 
@@ -87,7 +87,31 @@ public class GyogyszerReszletekFragment extends Fragment {
         btnMentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String nev = editTextNev.getText().toString().trim();
+                String hatoanyag = editTextHatoanyag.getText().toString().trim();
+                String keszletString = editTextKeszlet.getText().toString().trim();
+                String link = editTextLink.getText().toString().trim();
+                String napiString = editTextNapi.getText().toString().trim();
+                try {
+                    int keszlet = Integer.parseInt(keszletString);
+                    int napi = Integer.parseInt(napiString);
+                    if (adatbazis.gyogyszerModositas(gyogyszer.getId(), nev, hatoanyag, link, napi, keszlet)) {
+                        Toast.makeText(getActivity(), "Gyógyszer módosítása sikeres", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Gógyszer módosítása sikertelen " + keszlet, Toast.LENGTH_SHORT).show();
+                    }
+                }
+                catch (NumberFormatException ex){
+                    Toast.makeText(getActivity(), "A készletnek és a napi mennyiségnek számnak kell lennie", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
+        btnTorles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adatbazis.torles(gyogyszer.getId());
+                ((MainActivity) getActivity()).navigateToGyogyszereim();
             }
         });
 
@@ -95,14 +119,10 @@ public class GyogyszerReszletekFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Vissza", Toast.LENGTH_SHORT).show();
-
+                ((MainActivity) getActivity()).navigateToGyogyszereim();
             }
         });
-
         return rootView;
     }
-
-
-
 
 }

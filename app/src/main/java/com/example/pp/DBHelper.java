@@ -100,6 +100,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         //modStrDatum = formatter.format(modDatum);
         ContentValues values = new ContentValues();
+        values.put(GY_ID, id);
         values.put(GY_NEV, nev);
         values.put(GY_HATOANYAG, hatoanyag);
         values.put(GY_LINK, link);

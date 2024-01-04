@@ -168,7 +168,7 @@
         android:id="@+id/btnTovabb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="40dp"
         android:text="Mentés"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/btnVissza"
@@ -209,9 +209,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:textSize="20sp"
-        android:text="sok"
         android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/napok1"
         app:layout_constraintStart_toEndOf="@+id/napok1"
         app:layout_constraintTop_toTopOf="@+id/napok1" />
@@ -264,6 +263,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/frissites"
         app:layout_constraintStart_toEndOf="@+id/frissites"
         app:layout_constraintTop_toTopOf="@+id/frissites"  />
+
+    <Button
+        android:id="@+id/btnTorles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="Törlés"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/btnTovabb"
+        app:layout_constraintStart_toEndOf="@+id/btnTovabb"
+        app:layout_constraintTop_toTopOf="@+id/btnTovabb" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
