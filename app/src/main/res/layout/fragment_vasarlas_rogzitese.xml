@@ -8,7 +8,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/vasarlasRogzitese"
+        android:id="@+id/cimText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="106dp"
@@ -20,68 +20,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/gyogyszerNeve"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="Gyógyszer neve (listából):"
-        android:textSize="20sp"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vasarlasRogzitese" />
-
-    <TextView
-        android:id="@+id/kiszereles"
+        android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Kiszerelés( db/doboz) :"
-        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        android:text="Vásárolt mennyiség:"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/gyogyszerNeve"
-        app:layout_constraintTop_toBottomOf="@+id/gyogyszerNeve" />
-
-    <TextView
-        android:id="@+id/lejarat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Lejárat:"
         android:textSize="20sp"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/kiszereles"
-        app:layout_constraintTop_toBottomOf="@+id/kiszereles" />
-
-    <TextView
-        android:id="@+id/dobozSzama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Hány doboz:"
-        android:textSize="20sp"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/lejarat"
-        app:layout_constraintTop_toBottomOf="@+id/lejarat" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/vasarlasLista"
-        android:layout_width="351dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="16dp"
-        android:scrollbars="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dobozSzama" />
+        app:layout_constraintEnd_toEndOf="@+id/cimText"
+        app:layout_constraintStart_toStartOf="@+id/cimText"
+        app:layout_constraintTop_toBottomOf="@+id/cimText" />
 
     <Button
         android:id="@+id/btnTovabb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
         android:text="Mentés"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnVissza"
-        app:layout_constraintEnd_toEndOf="@+id/vasarlasLista"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnVissza"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -89,60 +47,33 @@
         android:id="@+id/btnVissza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="120dp"
         android:text="Vissza"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/vasarlasLista"
-        app:layout_constraintTop_toBottomOf="@+id/vasarlasLista" />
-
-    <Button
-        android:id="@+id/btnFelvesz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Felvétel"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/gyogyszerNeve"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gyogyszerNeve"
-        app:layout_constraintTop_toTopOf="@+id/gyogyszerNeve" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
 
     <EditText
-        android:id="@+id/editTextKiszereles"
-        android:layout_width="157dp"
+        android:id="@+id/editTextNumber"
+        android:layout_width="142dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="@+id/text1"
+        app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="58dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="8"
-        android:hint="(db/doboz)"
-        android:inputType="date"
-        android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/kiszereles"
-        app:layout_constraintStart_toEndOf="@+id/kiszereles"
-        app:layout_constraintTop_toTopOf="@+id/kiszereles" />
-
-    <DatePicker
-        android:id="@+id/dpLejarat"
-        android:layout_width="135dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="8dp"
-        android:ems="0"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/lejarat"
-        app:layout_constraintStart_toEndOf="@+id/lejarat"
-        app:layout_constraintTop_toTopOf="@+id/lejarat" />
-
-    <Button
-        android:id="@+id/btnHozzaado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginStart="200dp"
-        android:text="Hozzáad"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/dobozSzama"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dobozSzama" />
+        android:layout_marginStart="16dp"
+        android:text="db"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumber"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
