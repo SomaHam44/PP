@@ -31,6 +31,7 @@ public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerH
             holder.IDTextView.setTextColor(Color.RED);
             holder.gyogyszerNevTextView.setTextColor(Color.RED);
             holder.keszletTextView.setTextColor(Color.RED);
+            holder.db.setTextColor(Color.RED);
         }
         holder.IDTextView.setText(gyogyszer.getStringId());
         holder.gyogyszerNevTextView.setText(gyogyszer.getNev());
@@ -49,9 +50,11 @@ public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerH
         public TextView IDTextView;
         public TextView gyogyszerNevTextView;
         public TextView keszletTextView;
+        public TextView db;
         public GyogyszerHolder(View itemView) { super(itemView);
             IDTextView = itemView.findViewById(R.id.IDTextView);
             gyogyszerNevTextView = itemView.findViewById(R.id.gyogyszerNevTextView);
-            keszletTextView = itemView.findViewById(R.id.keszletTextView); } }
+            keszletTextView = itemView.findViewById(R.id.keszletTextView);
+            db=itemView.findViewById(R.id.DarabTextView);} }
 
 }

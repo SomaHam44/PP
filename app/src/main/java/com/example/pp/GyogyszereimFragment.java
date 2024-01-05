@@ -28,8 +28,10 @@ import java.util.List;
  */
 public class GyogyszereimFragment extends Fragment {
     private RecyclerView gyogyszerLista;
+
     private Button btnHozzaad, btnMegse;
     private DBHelper adatbazis;
+
 
     public GyogyszereimFragment() {
         // Required empty public constructor
