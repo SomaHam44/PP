@@ -239,29 +239,6 @@
         app:layout_constraintTop_toTopOf="@+id/napiAdag"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/frissites"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Készlet frissítés:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/napok1"
-        app:layout_constraintTop_toBottomOf="@+id/napok1" />
-
-    <TextView
-        android:id="@+id/idopont"
-        android:layout_width="162dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="16dp"
-        android:text="időpont"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/frissites"
-        app:layout_constraintStart_toEndOf="@+id/frissites"
-        app:layout_constraintTop_toTopOf="@+id/frissites"  />
-
     <Button
         android:id="@+id/btnTorles"
         android:layout_width="wrap_content"

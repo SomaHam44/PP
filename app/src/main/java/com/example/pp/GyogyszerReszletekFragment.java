@@ -72,7 +72,6 @@ public class GyogyszerReszletekFragment extends Fragment {
         btnNov=rootView.findViewById(R.id.btnNov);
         btnCsokk=rootView.findViewById(R.id.btnCsokk);
         napszam = rootView.findViewById(R.id.napszam);
-        idopont = rootView.findViewById(R.id.idopont);
 
         Gyogyszer gyogyszer = ((MainActivity) getActivity()).getSelectedGyogyszer();
         TextViewSelectedID.setText(gyogyszer.getStringId());
