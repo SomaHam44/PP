@@ -60,12 +60,17 @@ public class VasarlasRogziteseFragment extends Fragment {
                 try{
                     int nov = Integer.parseInt(novString);
                     int ujKeszlet = aktualisKeszlet+nov;
-                    adatbazis.keszletModositas(gyogyszer.getId(),ujKeszlet);
+                    if(adatbazis.keszletModositas(gyogyszer.getId(),ujKeszlet)){
+                        Toast.makeText(getActivity(), "A készlet módosítása sikeres", Toast.LENGTH_SHORT).show();
+                        ((MainActivity) getActivity()).navigateToGyogyszereim();
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "A készlet módosítása sikertelen", Toast.LENGTH_SHORT).show();
+                    };
                 }
                 catch (NumberFormatException ex){
                     Toast.makeText(getActivity(), "A készletnek számnak kell lennie", Toast.LENGTH_SHORT).show();
                 }
-                ((MainActivity) getActivity()).navigateToGyogyszereim();
             }
         });
 

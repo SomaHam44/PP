@@ -24,11 +24,6 @@
         app:showAsAction="never"
         />
     <item
-        android:id="@+id/action_vasarlasRogzitese"
-        android:title="Vásárlás rögzítése"
-        app:showAsAction="never"
-        />
-    <item
         android:id="@+id/action_gyogyszerHozzaad"
         android:title="Új gyógyszer hozzáadása"
         app:showAsAction="never"
@@ -38,10 +33,6 @@
         android:title="Gyógyszertár keresés"
         app:showAsAction="never"
         />
-    <item
-        android:id="@+id/action_gyogyszerBevetel"
-        android:title="Gyógyszer bevétel"
-        app:showAsAction="never"
-        />
+
 
 </menu>

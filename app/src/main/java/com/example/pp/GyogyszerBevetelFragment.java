@@ -60,12 +60,18 @@ public class GyogyszerBevetelFragment extends Fragment {
                 try{
                     int csokk = Integer.parseInt(csokkString);
                     int ujKeszlet = aktualisKeszlet-csokk;
-                    adatbazis.keszletModositas(gyogyszer.getId(),ujKeszlet);
+                    if(adatbazis.keszletModositas(gyogyszer.getId(),ujKeszlet)){
+                        Toast.makeText(getActivity(), "A készlet módosítása sikeres", Toast.LENGTH_SHORT).show();
+                        ((MainActivity) getActivity()).navigateToGyogyszereim();
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "A készlet módosítása sikertelen", Toast.LENGTH_SHORT).show();
+                    };
                 }
                 catch (NumberFormatException ex){
                     Toast.makeText(getActivity(), "A készletnek számnak kell lennie", Toast.LENGTH_SHORT).show();
                 }
-                ((MainActivity) getActivity()).navigateToGyogyszereim();
+
             }
         });
 

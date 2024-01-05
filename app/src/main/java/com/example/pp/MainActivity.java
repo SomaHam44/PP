@@ -59,10 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 loadFragment(FigyelmeztetesekFragment.newInstance(), "figyelmeztetesek", false);
                 showMessage("Figyelmeztetések");
                 return true;
-            case R.id.action_vasarlasRogzitese:
-                loadFragment(VasarlasRogziteseFragment.newInstance(), "vasarlasRogzitese", false);
-                showMessage("Vásárlás rögzítése");
-                return true;
             case R.id.action_gyogyszerHozzaad:
                 loadFragment(GyogyszerHozzaadasaFragment.newInstance(), "gyogyszerHozzaad", false);
                 showMessage("Gyógyszer hozzáadása");
@@ -70,10 +66,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_gyogyszertarKeres:
                 loadFragment(GyogyszertarKeresFragment.newInstance(), "gyogyszertarKeres", false);
                 showMessage("Gyógyszertár keresése");
-                return true;
-            case R.id.action_gyogyszerBevetel:
-                loadFragment(GyogyszerBevetelFragment.newInstance(), "gyogyszerBevetel", false);
-                showMessage("Gyógyszer bevétele");
                 return true;
 
         }
@@ -127,11 +119,6 @@ public class MainActivity extends AppCompatActivity {
         selectedGyogyszer = gyogyszer;
         loadFragment(GyogyszerBevetelFragment.newInstance(), "details", true);
     }
-    public void navigateToGyogyszerVasarlas(Gyogyszer gyogyszer) {
-        Toast.makeText(this, gyogyszer.getStringId(), Toast.LENGTH_SHORT).show();
-        selectedGyogyszer = gyogyszer;
-        loadFragment(VasarlasRogziteseFragment.newInstance(), "details", true);
-    }
 
     public Gyogyszer getSelectedGyogyszer() {
         return selectedGyogyszer;
@@ -139,5 +126,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void navigateToGyogyszereim() {
         loadFragment(GyogyszereimFragment.newInstance(), "details", true);
+    }
+    public void navigateToGyogyszerVasarlas(Gyogyszer gyogyszer) {
+        loadFragment(VasarlasRogziteseFragment.newInstance(), "details", true);
+    }
+    public void navigateToFooldal() {
+        loadFragment(FooldalFragment.newInstance(), "details", true);
+    }
+    public void navigateToGyogyszerHozzaadasa() {
+        loadFragment(GyogyszerHozzaadasaFragment.newInstance(), "details", true);
     }
 }

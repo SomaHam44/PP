@@ -99,6 +99,7 @@ public class GyogyszerReszletekFragment extends Fragment {
                     int napi = Integer.parseInt(napiString);
                     if (adatbazis.gyogyszerModositas(gyogyszer.getId(), nev, hatoanyag, link, napi, keszlet)) {
                         Toast.makeText(getActivity(), "Gyógyszer módosítása sikeres", Toast.LENGTH_SHORT).show();
+                        ((MainActivity) getActivity()).navigateToGyogyszereim();
                     } else {
                         Toast.makeText(getActivity(), "Gógyszer módosítása sikertelen " + keszlet, Toast.LENGTH_SHORT).show();
                     }
@@ -106,6 +107,7 @@ public class GyogyszerReszletekFragment extends Fragment {
                 catch (NumberFormatException ex){
                     Toast.makeText(getActivity(), "A készletnek és a napi mennyiségnek számnak kell lennie", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 

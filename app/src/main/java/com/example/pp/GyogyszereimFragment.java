@@ -71,7 +71,18 @@ public class GyogyszereimFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity() .getApplicationContext());
         gyogyszerLista.setLayoutManager(layoutManager);
         gyogyszerLista.setAdapter(adapter);
-
+        btnMegse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).navigateToFooldal();
+            }
+        });
+        btnHozzaad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).navigateToGyogyszerHozzaadasa();
+            }
+        });
         return rootView;
     }
     public void selectItemAndNavigate(Gyogyszer gyogyszer) {

@@ -68,17 +68,6 @@
         app:layout_constraintStart_toEndOf="@+id/nev"
         app:layout_constraintTop_toTopOf="@+id/nev" />
 
-    <DatePicker
-        android:id="@+id/dpSzulDatum"
-        android:layout_width="15dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintBottom_toBottomOf="@+id/editSzulDatum"
-        app:layout_constraintStart_toEndOf="@+id/editSzulDatum"
-        app:layout_constraintTop_toTopOf="@+id/editSzulDatum" />
-
     <EditText
         android:id="@+id/editTajSzam"
         android:layout_width="wrap_content"
@@ -98,7 +87,7 @@
         android:id="@+id/btnMegse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="200dp"
         android:text="Mégse"
         android:textColor="@color/colorPrimary"
@@ -109,7 +98,7 @@
         android:id="@+id/btnMentes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="38dp"
+        android:layout_marginEnd="50dp"
         android:text="Mentés"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnMegse"
@@ -117,14 +106,14 @@
 
     <EditText
         android:id="@+id/editSzulDatum"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:ems="10"
+        android:hint="YYYY-MM-DD"
         android:inputType="date"
-        android:hint="Születési dátum"
-        android:textColorHint="@color/colorPrimary"
         android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/szuletesiDatum"
         app:layout_constraintStart_toEndOf="@+id/szuletesiDatum"
         app:layout_constraintTop_toTopOf="@+id/szuletesiDatum"

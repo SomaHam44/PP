@@ -80,6 +80,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
                         int napi = Integer.parseInt(napiString);
                         if (adatbazis.gyogyszerHozzaadas(nev,hatoanyag,link,napi,keszlet)) {
                             Toast.makeText(getActivity(), "Gyógyszer hozzáadása sikeres", Toast.LENGTH_SHORT).show();
+                            ((MainActivity) getActivity()).navigateToGyogyszereim();
                         }
                         else {
                             Toast.makeText(getActivity(), "Gógyszer hozzáadása sikertelen "+keszlet, Toast.LENGTH_SHORT).show();
