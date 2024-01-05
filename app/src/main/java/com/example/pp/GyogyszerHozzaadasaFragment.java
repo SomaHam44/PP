@@ -98,6 +98,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "VISSZA", Toast.LENGTH_SHORT).show();
+                ((MainActivity) getActivity()).navigateToGyogyszereim();
             }
         });
 

@@ -108,6 +108,7 @@ public class BeallitasokFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Nem történt beállítás", Toast.LENGTH_SHORT).show();
+                ((MainActivity) getActivity()).navigateToGyogyszereim();
             }
         });
 

@@ -75,10 +75,6 @@ public class MainActivity extends AppCompatActivity {
                 loadFragment(GyogyszerBevetelFragment.newInstance(), "gyogyszerBevetel", false);
                 showMessage("Gyógyszer bevétele");
                 return true;
-            case R.id.action_gyogyszerReszletek:
-                loadFragment(GyogyszerReszletekFragment.newInstance(), "gyogyszerReszletek", false);
-                showMessage("Gyógyszer részletek");
-                return true;
 
         }
         return true;

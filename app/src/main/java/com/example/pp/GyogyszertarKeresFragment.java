@@ -67,6 +67,16 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
         mapView = view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+        btnVissza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Vissza", Toast.LENGTH_SHORT).show();
+                ((MainActivity) getActivity()).navigateToGyogyszereim();
+            }
+        });
+
+
+
         return view;
     }
 
@@ -130,6 +140,8 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
         }
 
     }
+
+
 
 
 }

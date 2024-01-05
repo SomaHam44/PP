@@ -189,7 +189,6 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
-        android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/keszlet"
         app:layout_constraintStart_toEndOf="@+id/keszlet"
         app:layout_constraintTop_toTopOf="@+id/keszlet" />
@@ -201,7 +200,6 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
-        android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/napiAdag"
         app:layout_constraintStart_toEndOf="@+id/napiAdag"
         app:layout_constraintTop_toTopOf="@+id/napiAdag" />

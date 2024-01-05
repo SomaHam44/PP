@@ -222,7 +222,6 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
-        android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/keszlet"
         app:layout_constraintStart_toEndOf="@+id/keszlet"
         app:layout_constraintTop_toTopOf="@+id/keszlet"
@@ -235,7 +234,6 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
-        android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/napiAdag"
         app:layout_constraintStart_toEndOf="@+id/napiAdag"
         app:layout_constraintTop_toTopOf="@+id/napiAdag"
@@ -274,6 +272,23 @@
         app:layout_constraintBottom_toBottomOf="@+id/btnTovabb"
         app:layout_constraintStart_toEndOf="@+id/btnTovabb"
         app:layout_constraintTop_toTopOf="@+id/btnTovabb" />
+
+    <Button
+        android:id="@+id/btnNov"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:text="....+...."
+        app:layout_constraintStart_toStartOf="@+id/btnVissza"
+        app:layout_constraintTop_toBottomOf="@+id/btnVissza" />
+
+    <Button
+        android:id="@+id/btnCsokk"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:text="....-...."
+        app:layout_constraintEnd_toEndOf="@+id/btnTorles"
+        app:layout_constraintTop_toTopOf="@+id/btnNov" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
