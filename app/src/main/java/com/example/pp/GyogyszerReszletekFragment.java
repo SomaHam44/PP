@@ -32,7 +32,7 @@ public class GyogyszerReszletekFragment extends Fragment {
     private EditText editTextNapi;
     private EditText editTextKeszlet;
     private CheckBox cbRendszeres;
-    private Button btnVissza, btnMentes, btnTorles;
+    private Button btnVissza, btnMentes, btnTorles, btnNov, btnCsokk;
     private DBHelper adatbazis;
 
     private TextView napszam;
@@ -69,6 +69,8 @@ public class GyogyszerReszletekFragment extends Fragment {
         btnMentes = rootView.findViewById(R.id.btnTovabb);
         btnVissza = rootView.findViewById(R.id.btnVissza);
         btnTorles = rootView.findViewById(R.id.btnTorles);
+        btnNov=rootView.findViewById(R.id.btnNov);
+        btnCsokk=rootView.findViewById(R.id.btnCsokk);
         napszam = rootView.findViewById(R.id.napszam);
         idopont = rootView.findViewById(R.id.idopont);
 
@@ -118,8 +120,21 @@ public class GyogyszerReszletekFragment extends Fragment {
         btnVissza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Vissza", Toast.LENGTH_SHORT).show();
                 ((MainActivity) getActivity()).navigateToGyogyszereim();
+            }
+        });
+
+        btnCsokk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).navigateToGyogyszerBevetel(gyogyszer);
+            }
+        });
+
+        btnNov.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).navigateToGyogyszerVasarlas(gyogyszer);
             }
         });
         return rootView;

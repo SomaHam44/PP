@@ -122,6 +122,16 @@ public class MainActivity extends AppCompatActivity {
         selectedGyogyszer = gyogyszer;
         loadFragment(GyogyszerReszletekFragment.newInstance(), "details", true);
     }
+    public void navigateToGyogyszerBevetel(Gyogyszer gyogyszer) {
+        Toast.makeText(this, gyogyszer.getStringId(), Toast.LENGTH_SHORT).show();
+        selectedGyogyszer = gyogyszer;
+        loadFragment(GyogyszerBevetelFragment.newInstance(), "details", true);
+    }
+    public void navigateToGyogyszerVasarlas(Gyogyszer gyogyszer) {
+        Toast.makeText(this, gyogyszer.getStringId(), Toast.LENGTH_SHORT).show();
+        selectedGyogyszer = gyogyszer;
+        loadFragment(VasarlasRogziteseFragment.newInstance(), "details", true);
+    }
 
     public Gyogyszer getSelectedGyogyszer() {
         return selectedGyogyszer;

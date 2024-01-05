@@ -138,22 +138,15 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     }*/
-    public boolean keszletFrissites(int id, int utolsoKeszlet, String utolsoMod, int ujKeszlet){
+    public boolean keszletModositas(int id, int ujKeszlet){
         SQLiteDatabase db = this.getWritableDatabase();
-        Date modDatum= new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-        String modStrDatum = formatter.format(modDatum);
+        //Date modDatum= new Date();
+        //SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        //String modStrDatum = formatter.format(modDatum);
         ContentValues values = new ContentValues();
         values.put(GY_KESZLET, ujKeszlet);
-        if(ujKeszlet==utolsoKeszlet){
-            values.put(GY_MOD, modStrDatum);
-        }
-        else{
-            values.put(GY_MOD,utolsoMod);
-        }
-        return db.update(TABLE_GYOGYSZEREK, values, "id=?", new String[]{String.valueOf(id)}) >0;
+        return db.update(TABLE_GYOGYSZEREK, values, GY_ID+"=?", new String[]{String.valueOf(id)}) >0;
     }
-
 
 
 
