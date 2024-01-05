@@ -34,7 +34,7 @@
 
     <TextView
         android:id="@+id/keszletTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/gyogyszerNevTextView"
@@ -45,12 +45,12 @@
     <TextView
         android:id="@+id/DarabTextView"
         android:layout_width="22dp"
-        android:layout_height="19dp"
+        android:layout_height="22dp"
         android:layout_marginStart="8dp"
+        android:text="db"
         app:layout_constraintBottom_toBottomOf="@+id/keszletTextView"
         app:layout_constraintStart_toEndOf="@+id/keszletTextView"
-        app:layout_constraintTop_toTopOf="@+id/keszletTextView"
-        tools:text="db" />
+        app:layout_constraintTop_toTopOf="@+id/keszletTextView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -118,6 +118,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.rawQuery(" SELECT * FROM " + TABLE_GYOGYSZEREK, null);
     }
+
     public void torles(int id){
         String DELETE_ROW = "DELETE FROM " + TABLE_GYOGYSZEREK + " WHERE " + GY_ID + " = " + id;
         SQLiteDatabase db = this.getWritableDatabase();

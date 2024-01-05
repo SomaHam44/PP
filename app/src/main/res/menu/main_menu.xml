@@ -14,11 +14,6 @@
         app:showAsAction="always"
         />
     <item
-        android:id="@+id/action_figyelmeztetesek"
-        android:title="Figyelmeztetések"
-        app:showAsAction="never"
-        />
-    <item
         android:id="@+id/action_gyogyszereim"
         android:title="Gyógyszereim"
         app:showAsAction="never"

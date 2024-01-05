@@ -55,10 +55,6 @@ public class MainActivity extends AppCompatActivity {
                 loadFragment(GyogyszereimFragment.newInstance(), "gyogyszereim", false);
                 showMessage("Gyógyszereim");
                 return true;
-            case R.id.action_figyelmeztetesek:
-                loadFragment(FigyelmeztetesekFragment.newInstance(), "figyelmeztetesek", false);
-                showMessage("Figyelmeztetések");
-                return true;
             case R.id.action_gyogyszerHozzaad:
                 loadFragment(GyogyszerHozzaadasaFragment.newInstance(), "gyogyszerHozzaad", false);
                 showMessage("Gyógyszer hozzáadása");
@@ -71,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
     private void showMessage(String message) {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();

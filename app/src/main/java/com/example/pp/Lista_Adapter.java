@@ -12,6 +12,7 @@ import java.util.List;
 
 public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerHolder> {
     private List<Gyogyszer> gyogyszeresLista;
+
     private GyogyszereimFragment gyogyszereimFragment;
 
     public Lista_Adapter(GyogyszereimFragment gyogyszereimFragment, List<Gyogyszer> gyogyszeresLista) {
@@ -34,6 +35,7 @@ public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerH
         holder.IDTextView.setText(gyogyszer.getStringId());
         holder.gyogyszerNevTextView.setText(gyogyszer.getNev());
         holder.keszletTextView.setText(gyogyszer.getStringKeszlet());
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 gyogyszereimFragment.selectItemAndNavigate(gyogyszer);
