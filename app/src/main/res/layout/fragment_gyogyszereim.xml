@@ -32,8 +32,8 @@
 
     <Button
         android:id="@+id/btnHozzaad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
         android:text="Hozzáad"
@@ -43,8 +43,8 @@
 
     <Button
         android:id="@+id/btnMegse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginStart="48dp"
         android:text="Mégse"
         android:textColor="@color/colorPrimary"

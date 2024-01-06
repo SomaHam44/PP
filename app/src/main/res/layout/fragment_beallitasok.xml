@@ -70,8 +70,8 @@
 
     <EditText
         android:id="@+id/editTajSzam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="TAJ szám"
@@ -85,8 +85,8 @@
 
     <Button
         android:id="@+id/btnMegse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="200dp"
         android:text="Mégse"
@@ -96,8 +96,8 @@
 
     <Button
         android:id="@+id/btnMentes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="50dp"
         android:text="Mentés"
         android:textColor="@color/colorPrimary"
@@ -118,6 +118,28 @@
         app:layout_constraintStart_toEndOf="@+id/szuletesiDatum"
         app:layout_constraintTop_toTopOf="@+id/szuletesiDatum"
         app:layout_constraintVertical_bias="0.47" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="Hány napnál figyelmeztessen:"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tajSzam"
+        app:layout_constraintTop_toBottomOf="@+id/editTajSzam" />
+
+    <EditText
+        android:id="@+id/editTextFigy"
+        android:layout_width="39dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

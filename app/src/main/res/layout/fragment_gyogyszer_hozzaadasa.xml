@@ -146,8 +146,8 @@
 
     <Button
         android:id="@+id/btnMentes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="60dp"
         android:text="Mentés"
         android:textColor="@color/colorPrimary"
@@ -156,8 +156,8 @@
 
     <Button
         android:id="@+id/btnVissza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="100dp"
         android:text="Vissza"
@@ -172,6 +172,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/keszlet"
         app:layout_constraintStart_toEndOf="@+id/keszlet"
         app:layout_constraintTop_toTopOf="@+id/keszlet" />
@@ -183,6 +184,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/napiAdag"
         app:layout_constraintStart_toEndOf="@+id/napiAdag"
         app:layout_constraintTop_toTopOf="@+id/napiAdag" />

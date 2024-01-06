@@ -34,6 +34,7 @@ public class BeallitasokFragment extends Fragment {
     private DatePicker datePicker;
     private EditText editTajSzam;
     private Button btnMegse, btnMentes, btnDatum;
+    private EditText editFigy;
     private DBHelper adatbazis;
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -62,6 +63,7 @@ public class BeallitasokFragment extends Fragment {
         editTajSzam = rootView.findViewById(R.id.editTajSzam);
         btnMentes = rootView.findViewById(R.id.btnMentes);
         btnMegse = rootView.findViewById(R.id.btnMegse);
+        editFigy= rootView.findViewById(R.id.editTextFigy);
 
         try {
             int maxId = -1;
@@ -75,6 +77,7 @@ public class BeallitasokFragment extends Fragment {
                 editTextNev.append(c2.getString(1));
                 editSzulDatum.append((c2.getString(2)));
                 editTajSzam.append(c2.getString(3));
+                editFigy.append(c2.getString(4));
             }
             c2.close();
         }
@@ -88,13 +91,18 @@ public class BeallitasokFragment extends Fragment {
                 String nev = editTextNev.getText().toString().trim();
                 String tajString = editTajSzam.getText().toString().trim();
                 String szulDatum = editSzulDatum.getText().toString();
+                String figyString= editFigy.getText().toString();
                 if (nev.isEmpty() || tajString.isEmpty() || szulDatum.isEmpty()) {
                     Toast.makeText(getActivity(), "Minden mező kitöltése kötelező", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    if (figyString.isEmpty()){
+                        int figy = 3;
+                    }
                     try {
                         int taj = Integer.parseInt(tajString);
-                        if (adatbazis.profilHozzaadas(nev, szulDatum, taj)) {
+                        int figy = Integer.parseInt(figyString);
+                        if (adatbazis.profilHozzaadas(nev, szulDatum, taj, figy)) {
                             Toast.makeText(getActivity(), "Sikeres művelet", Toast.LENGTH_SHORT).show();
                         }
                         else {
