@@ -23,6 +23,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
@@ -75,14 +76,20 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
             }
         });
 
-
-
         return view;
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        // A googleMap készen áll a használatra. Itt adhatja hozzá a kívánt térképi elemeket.
+        mMap = googleMap;
+        LatLngBounds Hungary = new LatLngBounds(
+                new LatLng(45.5, 18.4), new LatLng(47.5, 19.1));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Hungary.getCenter(), 6));
+        //mMap.setMyLocationEnabled(true);
+        //currentLocation = new LatLng(currentLocation.latitude, currentLocation.longitude);
+        //mMap.addMarker(new MarkerOptions().position(currentLocation.longitude).title("New Marker"));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation));
+        //A googleMap készen áll a használatra. Itt adhatja hozzá a kívánt térképi elemeket.
         /*String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + currentLocation.latitude + "," + currentLocation.longitude + "&radius=5000&type=pharmacy&key=" + "AIzaSyBlRYsVtIkknjJ6PZ88e9PymA5MaWzbtPk";
         new FetchPlaces().execute(url);*/
     }
@@ -140,8 +147,6 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
         }
 
     }
-
-
 
 
 }

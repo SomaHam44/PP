@@ -21,11 +21,11 @@
     <TextView
         android:id="@+id/bevezetoSzoveg"
         android:layout_width="300dp"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         android:layout_marginTop="80dp"
         android:text="Gyógyszerkészlet nyilvántartó"
         android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/alkalmazasNeve"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="@+id/alkalmazasNeve"
@@ -33,11 +33,12 @@
 
     <Button
         android:id="@+id/btnIndit"
-        android:layout_width="131dp"
-        android:layout_height="93dp"
+        android:layout_width="190dp"
+        android:layout_height="80dp"
         android:layout_marginTop="300dp"
-        android:text="Indít"
+        android:text="Indítás"
         android:textSize="25sp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/alkalmazasNeve"
         app:layout_constraintStart_toStartOf="@+id/alkalmazasNeve"
         app:layout_constraintTop_toBottomOf="@+id/alkalmazasNeve" />

@@ -23,7 +23,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gyogyszerLista"
         android:layout_width="351dp"
-        android:layout_height="400dp"
+        android:layout_height="350dp"
         android:layout_marginTop="16dp"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
-        android:text="Hozzaad"
+        android:text="Hozzáad"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gyogyszerLista" />

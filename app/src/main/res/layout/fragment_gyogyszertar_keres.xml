@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="106dp"
         android:text="Gyógyszertár kereső"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,11 +30,13 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/map"
-        android:layout_width="349dp"
-        android:layout_height="383dp"
+        android:layout_width="325dp"
+        android:layout_height="350dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/gyogyszertarKeres"
         app:layout_constraintStart_toStartOf="@+id/gyogyszertarKeres"
-        app:layout_constraintTop_toBottomOf="@+id/gyogyszertarKeres" />
+        app:layout_constraintTop_toBottomOf="@+id/gyogyszertarKeres"
+        tools:ignore="SpeakableTextPresentCheck"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
