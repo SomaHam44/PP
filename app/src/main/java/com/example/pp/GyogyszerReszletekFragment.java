@@ -81,6 +81,12 @@ public class GyogyszerReszletekFragment extends Fragment {
         editTextNapi.append(gyogyszer.getStringNapi());
         editTextKeszlet.append(gyogyszer.getStringKeszlet());
         napszam.append(String.valueOf(gyogyszer.getKeszlet()/gyogyszer.getNapi()));
+        if(gyogyszer.getRendszeres()==1) {
+            cbRendszeres.setChecked(true);
+        }
+        else{
+            cbRendszeres.setChecked(false);
+        }
         //idopont.append(gyogyszer.getMod());
         //int utolsoKeszlet = gyogyszer.getKeszlet();
         //String utolsoMod = gyogyszer.getMod();
@@ -93,10 +99,17 @@ public class GyogyszerReszletekFragment extends Fragment {
                 String keszletString = editTextKeszlet.getText().toString().trim();
                 String link = editTextLink.getText().toString().trim();
                 String napiString = editTextNapi.getText().toString().trim();
+                int rendszeres = 0;
+                if(cbRendszeres.isChecked()){
+                    rendszeres = 1;
+                }
+                else {
+                    rendszeres = 0;
+                }
                 try {
                     int keszlet = Integer.parseInt(keszletString);
                     int napi = Integer.parseInt(napiString);
-                    if (adatbazis.gyogyszerModositas(gyogyszer.getId(), nev, hatoanyag, link, napi, keszlet)) {
+                    if (adatbazis.gyogyszerModositas(gyogyszer.getId(), nev, hatoanyag, link, napi, keszlet, rendszeres)) {
                         Toast.makeText(getActivity(), "Gyógyszer módosítása sikeres", Toast.LENGTH_SHORT).show();
                         ((MainActivity) getActivity()).navigateToGyogyszereim();
                     } else {

@@ -71,6 +71,13 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
                 String keszletString = editTextKeszlet.getText().toString().trim();
                 String link = editTextLink.getText().toString().trim();
                 String napiString = editTextNapi.getText().toString().trim();
+                int rendszeres = 0;
+                if(cbRendszeres.isChecked()){
+                    rendszeres = 1;
+                }
+                else {
+                    rendszeres = 0;
+                }
                 if (nev.isEmpty() || hatoanyag.isEmpty() || keszletString.isEmpty() || link.isEmpty()) {
                     Toast.makeText(getActivity(), "Minden mező kitöltése kötelező", Toast.LENGTH_SHORT).show();
                 }
@@ -78,20 +85,19 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
                     try {
                         int keszlet = Integer.parseInt(keszletString);
                         int napi = Integer.parseInt(napiString);
-                        if (adatbazis.gyogyszerHozzaadas(nev,hatoanyag,link,napi,keszlet)) {
+
+                        if (adatbazis.gyogyszerHozzaadas(nev,hatoanyag,link,napi,keszlet,rendszeres)) {
                             Toast.makeText(getActivity(), "Gyógyszer hozzáadása sikeres", Toast.LENGTH_SHORT).show();
                             ((MainActivity) getActivity()).navigateToGyogyszereim();
                         }
                         else {
                             Toast.makeText(getActivity(), "Gógyszer hozzáadása sikertelen "+keszlet, Toast.LENGTH_SHORT).show();
                         }
-
                     }
                     catch (NumberFormatException ex){
                         Toast.makeText(getActivity(), "A készletnek és a napi mennyiségnek számnak kell lennie", Toast.LENGTH_SHORT).show();
                     }
                 }
-
             }
         });
 

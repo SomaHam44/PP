@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static final String DB_NAME = "pirulapolc3.db";
+    private static final String DB_NAME = "pirulapolc4.db";
     private static final int version = 1;
 
     private static final String TABLE_PROFIL = "Profil";
@@ -52,7 +52,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 + GY_HATOANYAG +" TEXT,"
                 + GY_LINK +" TEXT,"
                 + GY_NAPI +" INTEGER,"
-                + GY_KESZLET +" INTEGER);";
+                + GY_KESZLET +" INTEGER,"
+                + GY_RENDSZERES +" INTEGER);";
         //+ GY_RENDSZERES +" BOOLEAN, "
         //+ GY_MOD +" TEXT
 
@@ -84,20 +85,20 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT MAX("+P_ID+") FROM "+ TABLE_PROFIL+"", null);
     }
 
-    public boolean gyogyszerHozzaadas(String nev, String hatoanyag, String link, int napi, int keszlet){
+    public boolean gyogyszerHozzaadas(String nev, String hatoanyag, String link, int napi, int keszlet, int rendszeres){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(GY_NEV, nev);
         values.put(GY_HATOANYAG, hatoanyag);
         values.put(GY_LINK, link);
-        //values.put(GY_RENDSZERES, rendszeres);
+        values.put(GY_RENDSZERES, rendszeres);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
         //values.put(GY_MOD, modDatum);
         return db.insert(TABLE_GYOGYSZEREK, null, values) != -1;
     }
 
-    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, int napi, int keszlet){
+    public boolean gyogyszerModositas(int id, String nev, String hatoanyag, String link, int napi, int keszlet, int rendszeres){
         SQLiteDatabase db = this.getWritableDatabase();
         //Date modDatum= new Date();
         //SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
@@ -106,7 +107,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(GY_NEV, nev);
         values.put(GY_HATOANYAG, hatoanyag);
         values.put(GY_LINK, link);
-        //values.put(GY_RENDSZERES, rendszeres);
+        values.put(GY_RENDSZERES, rendszeres);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
         /*if(keszlet==utolsoKeszlet){

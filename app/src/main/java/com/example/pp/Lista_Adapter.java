@@ -38,7 +38,7 @@ public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerH
         holder.IDTextView.setText(gyogyszer.getStringId());
         holder.gyogyszerNevTextView.setText(gyogyszer.getNev());
         holder.keszletTextView.setText(gyogyszer.getStringKeszlet());
-        holder.db.setText(String.valueOf(figy));
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 gyogyszereimFragment.selectItemAndNavigate(gyogyszer);
