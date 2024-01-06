@@ -166,9 +166,9 @@
 
     <Button
         android:id="@+id/btnTovabb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="35dp"
         android:text="Mentés"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/btnVissza"
@@ -176,8 +176,8 @@
 
     <Button
         android:id="@+id/btnVissza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="100dp"
         android:text="Vissza"
@@ -190,7 +190,7 @@
         android:layout_width="58dp"
         android:layout_height="22dp"
         android:text="TextView"
-
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
@@ -201,6 +201,7 @@
         android:layout_height="19dp"
         android:layout_marginBottom="32dp"
         android:text="ID:"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/cim"
         app:layout_constraintStart_toStartOf="@+id/nev" />
 
@@ -222,6 +223,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/keszlet"
         app:layout_constraintStart_toEndOf="@+id/keszlet"
         app:layout_constraintTop_toTopOf="@+id/keszlet"
@@ -234,6 +236,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/napiAdag"
         app:layout_constraintStart_toEndOf="@+id/napiAdag"
         app:layout_constraintTop_toTopOf="@+id/napiAdag"
@@ -241,9 +244,9 @@
 
     <Button
         android:id="@+id/btnTorles"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="35dp"
         android:text="Törlés"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnTovabb"
@@ -253,17 +256,19 @@
     <Button
         android:id="@+id/btnNov"
         android:layout_width="150dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginTop="32dp"
         android:text="....+...."
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/btnVissza"
         app:layout_constraintTop_toBottomOf="@+id/btnVissza" />
 
     <Button
         android:id="@+id/btnCsokk"
         android:layout_width="150dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:text="....-...."
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/btnTorles"
         app:layout_constraintTop_toTopOf="@+id/btnNov" />
 

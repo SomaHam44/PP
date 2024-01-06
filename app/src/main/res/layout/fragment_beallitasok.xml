@@ -85,8 +85,8 @@
 
     <Button
         android:id="@+id/btnMegse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="200dp"
         android:text="Mégse"
@@ -96,8 +96,8 @@
 
     <Button
         android:id="@+id/btnMentes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="50dp"
         android:text="Mentés"
         android:textColor="@color/colorPrimary"
