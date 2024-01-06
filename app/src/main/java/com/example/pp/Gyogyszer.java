@@ -72,9 +72,17 @@ public class Gyogyszer {
         this.napi = napi;
     }
 
+    public int getRendszeres(){
+        return rendszeres;
+    }
+    public void setRendszeres(int r){
+        this.rendszeres=r;
+    }
+
     public int getKeszlet() {
         return keszlet;
     }
+
     public String getStringKeszlet(){
         return String.valueOf(keszlet);
     }
@@ -83,12 +91,7 @@ public class Gyogyszer {
         this.keszlet = keszlet;
     }
 
-    public int getRendszeres(){
-        return rendszeres;
-    }
-    public void setRendszeres(int r){
-        this.rendszeres=r;
-    }
+
 
 
 }
