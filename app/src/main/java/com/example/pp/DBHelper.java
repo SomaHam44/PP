@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static final String DB_NAME = "pirulapolc2.db";
+    private static final String DB_NAME = "pirulapolc3.db";
     private static final int version = 1;
 
     private static final String TABLE_PROFIL = "Profil";
@@ -19,6 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String P_NEV = "nev";
     private static final String P_DATUM = "szuldatum";
     private static final String P_TAJ = "TAJ";
+    private static final String P_FIGY = "figy";
 
     private static final String TABLE_GYOGYSZEREK="Gyogyszer";
     private static final String GY_ID="gyogyszerID";
@@ -43,7 +44,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 + P_ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + P_NEV +" TEXT,"
                 + P_DATUM +" TEXT,"
-                + P_TAJ +" INTEGER);";
+                + P_TAJ +" INTEGER,"
+                + P_FIGY +" INTEGER);";
         String Create_Gyogyszerek_Table = "CREATE TABLE IF NOT EXISTS " + TABLE_GYOGYSZEREK+ "("
                 + GY_ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + GY_NEV +" TEXT,"
@@ -63,12 +65,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean profilHozzaadas(String nev, String datum, Integer taj) {
+    public boolean profilHozzaadas(String nev, String datum, int taj, int figy) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(P_NEV, nev);
         values.put(P_DATUM, datum);
         values.put(P_TAJ, taj);
+        values.put(P_FIGY, figy);
         return db.insert(TABLE_PROFIL, null, values)!= -1;
     }
     public Cursor profilMegjelenites(int Id) {

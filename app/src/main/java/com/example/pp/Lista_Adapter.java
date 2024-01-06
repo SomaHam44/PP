@@ -12,12 +12,14 @@ import java.util.List;
 
 public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerHolder> {
     private List<Gyogyszer> gyogyszeresLista;
+    private int figy;
 
     private GyogyszereimFragment gyogyszereimFragment;
 
     public Lista_Adapter(GyogyszereimFragment gyogyszereimFragment, List<Gyogyszer> gyogyszeresLista) {
         this.gyogyszereimFragment = gyogyszereimFragment;
         this.gyogyszeresLista = gyogyszeresLista;
+        this.figy=figy;
     }
     @Override
     public GyogyszerHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -27,7 +29,7 @@ public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerH
     public void onBindViewHolder(GyogyszerHolder holder, int position) {
         final Gyogyszer gyogyszer = gyogyszeresLista.get(position);
         int napok = gyogyszer.getKeszlet()/gyogyszer.getNapi();
-        if(napok<3){
+        if(napok<figy){
             holder.IDTextView.setTextColor(Color.RED);
             holder.gyogyszerNevTextView.setTextColor(Color.RED);
             holder.keszletTextView.setTextColor(Color.RED);

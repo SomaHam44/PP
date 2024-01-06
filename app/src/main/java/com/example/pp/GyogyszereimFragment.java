@@ -28,7 +28,6 @@ import java.util.List;
  */
 public class GyogyszereimFragment extends Fragment {
     private RecyclerView gyogyszerLista;
-
     private Button btnHozzaad, btnMegse;
     private DBHelper adatbazis;
 
@@ -56,6 +55,18 @@ public class GyogyszereimFragment extends Fragment {
         gyogyszerLista = rootView.findViewById(R.id.gyogyszerLista);
         btnHozzaad = rootView.findViewById(R.id.btnHozzaad);
         btnMegse = rootView.findViewById(R.id.btnMegse);
+        int figy;
+        int id=0;
+        Cursor b = adatbazis.legfrissebbId();
+        if (b.moveToFirst()) {
+            id = b.getInt(0);
+        }
+        b.close();
+        Cursor a = adatbazis.profilMegjelenites(id);
+        while (a.moveToNext()){
+            figy=a.getInt(4);
+        }
+        a.close();
         List<Gyogyszer> gyogyszeresLista = new ArrayList<>();
         try {
             Cursor c = adatbazis.listazas();
