@@ -55,7 +55,7 @@ public class GyogyszereimFragment extends Fragment {
         gyogyszerLista = rootView.findViewById(R.id.gyogyszerLista);
         btnHozzaad = rootView.findViewById(R.id.btnHozzaad);
         btnMegse = rootView.findViewById(R.id.btnMegse);
-        int figy;
+        int figy=3;
         int id=0;
         Cursor b = adatbazis.legfrissebbId();
         if (b.moveToFirst()) {
@@ -80,7 +80,7 @@ public class GyogyszereimFragment extends Fragment {
             Toast.makeText(getActivity(),"Kérem adjon hozzá gyógyszert a listához!", Toast.LENGTH_SHORT).show();
         }
 
-        Lista_Adapter adapter = new Lista_Adapter(this, gyogyszeresLista);
+        Lista_Adapter adapter = new Lista_Adapter(this, gyogyszeresLista, figy);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity() .getApplicationContext());
         gyogyszerLista.setLayoutManager(layoutManager);
         gyogyszerLista.setAdapter(adapter);

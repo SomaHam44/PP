@@ -16,7 +16,7 @@ public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerH
 
     private GyogyszereimFragment gyogyszereimFragment;
 
-    public Lista_Adapter(GyogyszereimFragment gyogyszereimFragment, List<Gyogyszer> gyogyszeresLista) {
+    public Lista_Adapter(GyogyszereimFragment gyogyszereimFragment, List<Gyogyszer> gyogyszeresLista, int figy) {
         this.gyogyszereimFragment = gyogyszereimFragment;
         this.gyogyszeresLista = gyogyszeresLista;
         this.figy=figy;
@@ -38,7 +38,7 @@ public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerH
         holder.IDTextView.setText(gyogyszer.getStringId());
         holder.gyogyszerNevTextView.setText(gyogyszer.getNev());
         holder.keszletTextView.setText(gyogyszer.getStringKeszlet());
-
+        holder.db.setText(String.valueOf(figy));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 gyogyszereimFragment.selectItemAndNavigate(gyogyszer);
