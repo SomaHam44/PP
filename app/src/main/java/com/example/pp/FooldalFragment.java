@@ -45,8 +45,6 @@ public class FooldalFragment extends Fragment {
             }
         });
 
-
-
         return rootView;
     }
 }

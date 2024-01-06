@@ -63,8 +63,6 @@ public class BeallitasokFragment extends Fragment {
         btnMentes = rootView.findViewById(R.id.btnMentes);
         btnMegse = rootView.findViewById(R.id.btnMegse);
 
-
-
         try {
             int maxId = -1;
             Cursor c1 = adatbazis.legfrissebbId();

@@ -106,7 +106,7 @@ public class DBHelper extends SQLiteOpenHelper {
         //values.put(GY_RENDSZERES, rendszeres);
         values.put(GY_NAPI, napi);
         values.put(GY_KESZLET, keszlet);
-        /*if(keszlet==utolsoKeszlet){
+        /*if(keszlet == utolsoKeszlet){
             values.put(GY_MOD, modStrDatum);
         }
         else{
@@ -137,7 +137,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     /*public Cursor IDlistaLekerdezes(){
 
-
     }*/
     public boolean keszletModositas(int id, int ujKeszlet){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -147,9 +146,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(GY_KESZLET, ujKeszlet);
         return db.update(TABLE_GYOGYSZEREK, values, GY_ID+"=?", new String[]{String.valueOf(id)}) >0;
+
     }
-
-
-
 }
 

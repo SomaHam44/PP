@@ -50,7 +50,7 @@ public class VasarlasRogziteseFragment extends Fragment {
         btnMentes = rootView.findViewById(R.id.btnTovabb);
         btnVissza = rootView.findViewById(R.id.btnVissza);
         Gyogyszer gyogyszer = ((MainActivity) getActivity()).getSelectedGyogyszer();
-        int aktualisKeszlet=gyogyszer.getKeszlet();
+        int aktualisKeszlet = gyogyszer.getKeszlet();
         gyogyszerNev.setText(gyogyszer.getNev());
 
         btnMentes.setOnClickListener(new View.OnClickListener() {

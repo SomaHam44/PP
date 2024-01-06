@@ -100,7 +100,7 @@ public class GyogyszerReszletekFragment extends Fragment {
                         Toast.makeText(getActivity(), "Gyógyszer módosítása sikeres", Toast.LENGTH_SHORT).show();
                         ((MainActivity) getActivity()).navigateToGyogyszereim();
                     } else {
-                        Toast.makeText(getActivity(), "Gógyszer módosítása sikertelen " + keszlet, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Gyógyszer módosítása sikertelen " + keszlet, Toast.LENGTH_SHORT).show();
                     }
                 }
                 catch (NumberFormatException ex){

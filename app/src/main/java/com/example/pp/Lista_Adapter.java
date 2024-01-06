@@ -27,7 +27,7 @@ public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerH
     public void onBindViewHolder(GyogyszerHolder holder, int position) {
         final Gyogyszer gyogyszer = gyogyszeresLista.get(position);
         int napok = gyogyszer.getKeszlet()/gyogyszer.getNapi();
-        if(napok<3){
+        if(napok < 3){
             holder.IDTextView.setTextColor(Color.RED);
             holder.gyogyszerNevTextView.setTextColor(Color.RED);
             holder.keszletTextView.setTextColor(Color.RED);
