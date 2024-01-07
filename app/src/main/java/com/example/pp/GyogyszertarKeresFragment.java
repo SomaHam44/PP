@@ -51,7 +51,6 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCallback {
-
     private MapView mapView;
     private final int FINE_PERMISSION_CODE = 1;
     private Location cLocation;
@@ -76,13 +75,13 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_gyogyszertar_keres, container, false);
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        getLastLocation();
         btnVissza = view.findViewById(R.id.btnGyogyszertarKeresVissza);
         mapSearchView = view.findViewById(R.id.mapSearch);
         mapView = view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
-        mapView.getMapAsync(this);
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
-        getLastLocation();
+        //mapView.getMapAsync(this);
         mapSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -99,7 +98,7 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
                     Address address = addressList.get(0);
                     LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
                     mMap.addMarker(new MarkerOptions().position(latLng).title(location));
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 6));
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
                 }
                 return false;
             }
@@ -124,7 +123,6 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
     private void getLastLocation() {
         if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, FINE_PERMISSION_CODE);
-
             return;
         }
         Task<Location> task = fusedLocationProviderClient.getLastLocation();
@@ -133,6 +131,7 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
             public void onSuccess(Location location) {
                 if (location != null) {
                     cLocation = location;
+                    mapView.getMapAsync(GyogyszertarKeresFragment.this);
 
                 }
             }
@@ -142,11 +141,21 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        //LatLng hungary = new LatLng(47.5, 19.1);
+        LatLng cl = new LatLng(cLocation.getLatitude(), cLocation.getLongitude());
+        //mMap.addMarker(new MarkerOptions().position(hungary).title("Hungary"));
+        mMap.addMarker(new MarkerOptions().position(cl).title("My Location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(cl));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cl, 6));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(hungary));
+        //MarkerOptions options = new MarkerOptions().position(hungary).title("Hungary");
+        //options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN));
+        //mMap.addMarker(options);
         /*LatLng h = new LatLng(cLocation.getLatitude(), cLocation.getLongitude());
         mMap.addMarker(new MarkerOptions().position(h).title("My Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(h));
 */
-        LatLngBounds Hungary = new LatLngBounds(
+        /*LatLngBounds Hungary = new LatLngBounds(
                 new LatLng(45.5, 18.4), new LatLng(47.5, 19.1));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Hungary.getCenter(), 6));
         /*if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
