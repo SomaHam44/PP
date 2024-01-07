@@ -11,7 +11,7 @@
         android:id="@+id/cim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="106dp"
         android:text="Gyógyszer részletek"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
@@ -90,30 +90,30 @@
 
     <TextView
         android:id="@+id/napok1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Ez a mennyiség még"
         android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/keszlet"
         app:layout_constraintTop_toBottomOf="@+id/keszlet" />
 
     <TextView
         android:id="@+id/napok2"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="napra elég."
         android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/napok1"
         app:layout_constraintStart_toEndOf="@+id/napszam"
         app:layout_constraintTop_toTopOf="@+id/napok1" />
 
     <EditText
         android:id="@+id/editTextNev"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:ems="10"
@@ -127,7 +127,7 @@
 
     <EditText
         android:id="@+id/editTextHatoanyag"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:ems="10"
@@ -141,7 +141,7 @@
 
     <EditText
         android:id="@+id/editTextLink"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:ems="10"
@@ -166,9 +166,9 @@
 
     <Button
         android:id="@+id/btnTovabb"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="60dp"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="20dp"
         android:text="Mentés"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/btnVissza"
@@ -176,19 +176,20 @@
 
     <Button
         android:id="@+id/btnVissza"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="16dp"
         android:text="Vissza"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/napok1"
-        app:layout_constraintTop_toBottomOf="@+id/napok1" />
+        app:layout_constraintTop_toBottomOf="@+id/napok1"/>
 
     <TextView
         android:id="@+id/TextViewSelectedID"
         android:layout_width="58dp"
         android:layout_height="22dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
@@ -199,11 +200,13 @@
         android:id="@+id/textView2"
         android:layout_width="20dp"
         android:layout_height="19dp"
+        android:layout_marginTop="72dp"
         android:layout_marginBottom="32dp"
         android:text="ID:"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/cim"
-        app:layout_constraintStart_toStartOf="@+id/nev" />
+        app:layout_constraintStart_toStartOf="@+id/nev"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/napszam"
@@ -244,9 +247,9 @@
 
     <Button
         android:id="@+id/btnTorles"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="60dp"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="20dp"
         android:text="Törlés"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnTovabb"
@@ -255,21 +258,23 @@
 
     <Button
         android:id="@+id/btnNov"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="24dp"
         android:text="....+...."
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/btnVissza"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnVissza" />
 
     <Button
         android:id="@+id/btnCsokk"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="60dp"
         android:text="....-...."
         android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/btnTorles"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnNov" />
 
 

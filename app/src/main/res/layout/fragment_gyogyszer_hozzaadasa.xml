@@ -107,7 +107,7 @@
 
     <EditText
         android:id="@+id/editTextHatoanyag"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:ems="10"
@@ -121,7 +121,7 @@
 
     <EditText
         android:id="@+id/editTextLink"
-        android:layout_width="299dp"
+        android:layout_width="200dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:ems="10"
@@ -150,6 +150,7 @@
         android:layout_height="60dp"
         android:layout_marginEnd="60dp"
         android:text="Mentés"
+        android:textSize="15sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnVissza" />
@@ -161,6 +162,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="100dp"
         android:text="Vissza"
+        android:textSize="15sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/keszlet" />
@@ -180,7 +182,7 @@
     <EditText
         android:id="@+id/editTextNapi"
         android:layout_width="53dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="text"

@@ -63,7 +63,7 @@ public class BeallitasokFragment extends Fragment {
         editTajSzam = rootView.findViewById(R.id.editTajSzam);
         btnMentes = rootView.findViewById(R.id.btnMentes);
         btnMegse = rootView.findViewById(R.id.btnMegse);
-        editFigy= rootView.findViewById(R.id.editTextFigy);
+        editFigy = rootView.findViewById(R.id.editTextFigy);
 
         try {
             int maxId = -1;
@@ -91,7 +91,7 @@ public class BeallitasokFragment extends Fragment {
                 String nev = editTextNev.getText().toString().trim();
                 String tajString = editTajSzam.getText().toString().trim();
                 String szulDatum = editSzulDatum.getText().toString();
-                String figyString= editFigy.getText().toString();
+                String figyString = editFigy.getText().toString();
                 if (nev.isEmpty() || tajString.isEmpty() || szulDatum.isEmpty()) {
                     Toast.makeText(getActivity(), "Minden mező kitöltése kötelező", Toast.LENGTH_SHORT).show();
                 }

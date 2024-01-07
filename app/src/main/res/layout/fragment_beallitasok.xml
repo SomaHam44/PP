@@ -90,6 +90,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="200dp"
         android:text="Mégse"
+        android:textSize="15sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTajSzam" />
@@ -100,13 +101,14 @@
         android:layout_height="60dp"
         android:layout_marginEnd="50dp"
         android:text="Mentés"
+        android:textSize="15sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnMegse"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/editSzulDatum"
-        android:layout_width="150dp"
+        android:layout_width="125dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:ems="10"
@@ -123,16 +125,17 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="16dp"
         android:text="Hány napnál figyelmeztessen:"
         android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/tajSzam"
         app:layout_constraintTop_toBottomOf="@+id/editTajSzam" />
 
     <EditText
         android:id="@+id/editTextFigy"
-        android:layout_width="39dp"
-        android:layout_height="43dp"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="number"
