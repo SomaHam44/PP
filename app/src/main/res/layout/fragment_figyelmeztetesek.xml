@@ -33,9 +33,10 @@
     <Button
         android:id="@+id/btnFigyelmeztetesekVissza"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="24dp"
         android:text="Vissza"
+        android:textSize="15sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/figyelmeztetesekLista"
         app:layout_constraintTop_toBottomOf="@+id/figyelmeztetesekLista" />
@@ -43,8 +44,9 @@
     <Button
         android:id="@+id/btnGyogyszertarKeresohoz"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="Gyógyszertár keresése"
+        android:textSize="15sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnFigyelmeztetesekVissza"
         app:layout_constraintEnd_toEndOf="@+id/figyelmeztetesekLista"

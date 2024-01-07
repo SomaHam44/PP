@@ -170,6 +170,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:text="Mentés"
+        android:textSize="14sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/btnVissza"
         app:layout_constraintTop_toTopOf="@+id/btnVissza" />
@@ -181,6 +182,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="Vissza"
+        android:textSize="14sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/napok1"
         app:layout_constraintTop_toBottomOf="@+id/napok1"/>
@@ -251,6 +253,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:text="Törlés"
+        android:textSize="14sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/btnTovabb"
         app:layout_constraintStart_toEndOf="@+id/btnTovabb"
@@ -263,6 +266,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="....+...."
+        android:textSize="15sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnVissza" />
@@ -273,6 +277,7 @@
         android:layout_height="60dp"
         android:layout_marginEnd="60dp"
         android:text="....-...."
+        android:textSize="15sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnNov" />
