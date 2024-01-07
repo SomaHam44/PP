@@ -72,7 +72,7 @@ public class GyogyszerHozzaadasaFragment extends Fragment {
                 String link = editTextLink.getText().toString().trim();
                 String napiString = editTextNapi.getText().toString().trim();
                 int rendszeres = 0;
-                if(cbRendszeres.isChecked()){
+                if (cbRendszeres.isChecked()){
                     rendszeres = 1;
                 }
                 else {

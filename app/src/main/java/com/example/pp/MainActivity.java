@@ -86,14 +86,14 @@ public class MainActivity extends AppCompatActivity {
 
     public int keszletFrissites(String utolsoMod, int keszlet, int napi){
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        int ujkeszlet=keszlet;
+        int ujkeszlet = keszlet;
         try {
             Date lastDate = dateFormat.parse(utolsoMod);
             Date currentDate = new Date();
             long differenceInMillis = currentDate.getTime() - lastDate.getTime();
             long differenceInDays = differenceInMillis / (1000 * 60 * 60 * 24);
             int napok = (int)differenceInDays;
-            ujkeszlet = keszlet-(napi*napok);
+            ujkeszlet = keszlet - (napi * napok);
         } catch(ParseException e){
             e.printStackTrace();
         }
@@ -130,5 +130,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public void navigateToGyogyszerHozzaadasa() {
         loadFragment(GyogyszerHozzaadasaFragment.newInstance(), "details", true);
+    }
+
+    public void navigateToGyogyszertarKereso() {
+        loadFragment(GyogyszertarKeresFragment.newInstance(), "details", true);
     }
 }

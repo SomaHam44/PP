@@ -49,8 +49,7 @@ public class FigyelmeztetesekFragment extends Fragment {
         btnGyogyszertarKereso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+                ((MainActivity) getActivity()).navigateToGyogyszertarKereso();
             }
         });
 
@@ -58,6 +57,7 @@ public class FigyelmeztetesekFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Visszatérés", Toast.LENGTH_SHORT).show();
+                ((MainActivity) getActivity()).navigateToGyogyszereim();
             }
         });
         return rootView;

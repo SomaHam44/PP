@@ -45,12 +45,12 @@ public class GyogyszerBevetelFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gyogyszer_bevetel, container, false);
-        gyogyszerNev=rootView.findViewById(R.id.CimText);
-        darab=rootView.findViewById(R.id.editTextNumber);
+        gyogyszerNev = rootView.findViewById(R.id.CimText);
+        darab = rootView.findViewById(R.id.editTextNumber);
         btnVissza = rootView.findViewById(R.id.btnVissza);
         btnMentes = rootView.findViewById(R.id.btnTovabb);
         Gyogyszer gyogyszer = ((MainActivity) getActivity()).getSelectedGyogyszer();
-        int aktualisKeszlet=gyogyszer.getKeszlet();
+        int aktualisKeszlet = gyogyszer.getKeszlet();
         gyogyszerNev.setText(gyogyszer.getNev());
 
         btnMentes.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +59,7 @@ public class GyogyszerBevetelFragment extends Fragment {
                 String csokkString = darab.getText().toString().trim();
                 try{
                     int csokk = Integer.parseInt(csokkString);
-                    if(csokk>aktualisKeszlet){
+                    if(csokk > aktualisKeszlet){
                         Toast.makeText(getActivity(), "Ennyi nincs!!", Toast.LENGTH_SHORT).show();
                     }
                     else {

@@ -81,7 +81,7 @@ public class GyogyszerReszletekFragment extends Fragment {
         editTextNapi.append(gyogyszer.getStringNapi());
         editTextKeszlet.append(gyogyszer.getStringKeszlet());
         napszam.append(String.valueOf(gyogyszer.getKeszlet()/gyogyszer.getNapi()));
-        if(gyogyszer.getRendszeres()==1) {
+        if (gyogyszer.getRendszeres() == 1) {
             cbRendszeres.setChecked(true);
         }
         else{
@@ -100,7 +100,7 @@ public class GyogyszerReszletekFragment extends Fragment {
                 String link = editTextLink.getText().toString().trim();
                 String napiString = editTextNapi.getText().toString().trim();
                 int rendszeres = 0;
-                if(cbRendszeres.isChecked()){
+                if (cbRendszeres.isChecked()){
                     rendszeres = 1;
                 }
                 else {

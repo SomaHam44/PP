@@ -45,8 +45,8 @@ public class VasarlasRogziteseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_vasarlas_rogzitese, container, false);
-        gyogyszerNev=rootView.findViewById(R.id.cimText);
-        darab=rootView.findViewById(R.id.editTextNumber);
+        gyogyszerNev = rootView.findViewById(R.id.cimText);
+        darab = rootView.findViewById(R.id.editTextNumber);
         btnMentes = rootView.findViewById(R.id.btnTovabb);
         btnVissza = rootView.findViewById(R.id.btnVissza);
         Gyogyszer gyogyszer = ((MainActivity) getActivity()).getSelectedGyogyszer();
