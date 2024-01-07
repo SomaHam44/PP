@@ -12,12 +12,14 @@ import java.util.List;
 
 public class Lista_Adapter extends RecyclerView.Adapter<Lista_Adapter.GyogyszerHolder> {
     private List<Gyogyszer> gyogyszeresLista;
+    private int figy;
 
     private GyogyszereimFragment gyogyszereimFragment;
 
-    public Lista_Adapter(GyogyszereimFragment gyogyszereimFragment, List<Gyogyszer> gyogyszeresLista) {
+    public Lista_Adapter(GyogyszereimFragment gyogyszereimFragment, List<Gyogyszer> gyogyszeresLista, int figy) {
         this.gyogyszereimFragment = gyogyszereimFragment;
         this.gyogyszeresLista = gyogyszeresLista;
+        this.figy = figy;
     }
     @Override
     public GyogyszerHolder onCreateViewHolder(ViewGroup parent, int viewType) {

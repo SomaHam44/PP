@@ -19,6 +19,8 @@ import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -28,6 +30,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,6 +53,9 @@ import java.util.List;
 public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCallback {
 
     private MapView mapView;
+    private final int FINE_PERMISSION_CODE = 1;
+    private Location cLocation;
+    FusedLocationProviderClient fusedLocationProviderClient;
     private GoogleMap mMap;
     private LatLng currentLocation;
     private Button btnVissza;
@@ -74,8 +81,9 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
         mapView = view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
-
-        /*mapSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        getLastLocation();
+        mapSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 String location = mapSearchView.getQuery().toString();
@@ -101,7 +109,7 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
                 return false;
             }
         });
-        */
+
         btnVissza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,20 +121,35 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
         return view;
     }
 
+    private void getLastLocation() {
+        if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, FINE_PERMISSION_CODE);
+
+            return;
+        }
+        Task<Location> task = fusedLocationProviderClient.getLastLocation();
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location != null) {
+                    cLocation = location;
+
+                }
+            }
+        });
+    }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        /*LatLng h = new LatLng(cLocation.getLatitude(), cLocation.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(h).title("My Location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(h));
+*/
         LatLngBounds Hungary = new LatLngBounds(
                 new LatLng(45.5, 18.4), new LatLng(47.5, 19.1));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Hungary.getCenter(), 6));
         /*if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
             return;
         }*/
         //mMap.setMyLocationEnabled(true);
@@ -139,7 +162,20 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
         /*String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + currentLocation.latitude + "," + currentLocation.longitude + "&radius=5000&type=pharmacy&key=" + "AIzaSyBlRYsVtIkknjJ6PZ88e9PymA5MaWzbtPk";
         new FetchPlaces().execute(url);*/
     }
-    private class FetchPlaces extends AsyncTask<String, Void, String> {
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == FINE_PERMISSION_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                getLastLocation();
+            } else {
+                Toast.makeText(getActivity(), "PP", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    /*private class FetchPlaces extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... strings) {
             try {
@@ -193,5 +229,6 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
         }
 
     }
+    */
 
 }
