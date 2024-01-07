@@ -179,7 +179,7 @@ public class GyogyszertarKeresFragment extends Fragment implements OnMapReadyCal
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getLastLocation();
             } else {
-                Toast.makeText(getActivity(), "PP", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Permission", Toast.LENGTH_SHORT).show();
             }
         }
     }
