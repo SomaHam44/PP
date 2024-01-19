@@ -113,7 +113,7 @@
 
     <EditText
         android:id="@+id/editTextNev"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:ems="10"
@@ -127,7 +127,7 @@
 
     <EditText
         android:id="@+id/editTextHatoanyag"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:ems="10"
@@ -141,7 +141,7 @@
 
     <EditText
         android:id="@+id/editTextLink"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:ems="10"
@@ -166,32 +166,31 @@
 
     <Button
         android:id="@+id/btnTovabb"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
         android:text="Mentés"
-        android:textSize="14sp"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnTorles"
         app:layout_constraintStart_toEndOf="@+id/btnVissza"
         app:layout_constraintTop_toTopOf="@+id/btnVissza" />
 
     <Button
         android:id="@+id/btnVissza"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:text="Vissza"
-        android:textSize="14sp"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/napok1"
-        app:layout_constraintTop_toBottomOf="@+id/napok1"/>
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/btnNov"
+        app:layout_constraintTop_toBottomOf="@+id/btnNov" />
 
     <TextView
         android:id="@+id/TextViewSelectedID"
         android:layout_width="58dp"
         android:layout_height="22dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="3dp"
         android:text="TextView"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
@@ -249,37 +248,35 @@
 
     <Button
         android:id="@+id/btnTorles"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
         android:text="Törlés"
-        android:textSize="14sp"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnTovabb"
-        app:layout_constraintStart_toEndOf="@+id/btnTovabb"
-        app:layout_constraintTop_toTopOf="@+id/btnTovabb" />
+        app:layout_constraintEnd_toEndOf="@+id/btnCsokk"
+        app:layout_constraintTop_toTopOf="@+id/btnTovabb"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnNov"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="24dp"
-        android:text="....+...."
-        android:textSize="15sp"
+        android:layout_marginTop="30dp"
+        android:text="Készlet+"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVissza" />
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/napok1"
+        app:layout_constraintTop_toBottomOf="@+id/napok1" />
 
     <Button
         android:id="@+id/btnCsokk"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="60dp"
-        android:text="....-...."
-        android:textSize="15sp"
+        android:text="Készlet-"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextLink"
         app:layout_constraintTop_toTopOf="@+id/btnNov" />
 
 
