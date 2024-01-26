@@ -1,27 +1,24 @@
 package com.example.pp;
 
-import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Calendar;
+
+
+
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,6 +35,10 @@ public class BeallitasokFragment extends Fragment {
     private DBHelper adatbazis;
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
+
+
+
+
     public BeallitasokFragment() {
         // Required empty public constructor
     }
@@ -52,6 +53,8 @@ public class BeallitasokFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         adatbazis = new DBHelper(getActivity());
+
+
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,6 +67,58 @@ public class BeallitasokFragment extends Fragment {
         btnMentes = rootView.findViewById(R.id.btnMentes);
         btnMegse = rootView.findViewById(R.id.btnMegse);
         editFigy = rootView.findViewById(R.id.editTextFigy);
+
+        editSzulDatum.addTextChangedListener(new TextWatcher() {
+            private boolean isUpdating=false;
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after){
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() == 4 || s.length() == 7) {
+                    isUpdating = true;
+                    editSzulDatum.setText(s + "-");
+                    editSzulDatum.setSelection(editSzulDatum.getText().length());
+                    isUpdating = false;
+                }
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                boolean wrongDate=false;
+                if (!isUpdating) {
+                    String text = s.toString();
+                    if (text.length() > 10) {
+                        editSzulDatum.setText(text.substring(0, 10));
+                        editSzulDatum.setSelection(10);
+                    }
+                }
+                String text=editSzulDatum.getText().toString();
+                if(text.length()==10) {
+                    int year = Integer.parseInt(text.substring(0, 4));
+                    int month;
+                    int day;
+                    int month1 = Integer.parseInt(text.substring(5, 6));
+                    if (month1 == 0) {
+                        month = Integer.parseInt(text.substring(6, 7));
+                    } else {
+                        month = Integer.parseInt(text.substring(5, 7));
+                    }
+
+                    int day1 = Integer.parseInt(text.substring(8, 9));
+                    if (day1 == 0) {
+                        day = Integer.parseInt(text.substring(9, 10));
+                    } else {
+                        day = Integer.parseInt(text.substring(8, 10));
+                    }
+                    if (year < 1900 || year > 2024 || month < 1 || month > 12 || day < 1 || day > 31) {
+                        Toast.makeText(getActivity(), "Helytelen dátum!", Toast.LENGTH_SHORT).show();
+                        editSzulDatum.setText("");
+                    }
+                }
+            }
+
+        });
 
         try {
             int maxId = -1;
